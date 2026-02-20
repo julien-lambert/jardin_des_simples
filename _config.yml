@@ -1,6 +1,9 @@
 title: Jardin des simples
 tagline: Hortus pharmacologique — botanique, chimie, histoire
+description: Jardin des simples — notes botaniques, pharmacologiques et historiques.
 theme: minima
 markdown: kramdown
 kramdown:
   input: GFM
+  hard_wrap: false
+plugins: []

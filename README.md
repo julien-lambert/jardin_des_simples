@@ -1,14 +1,16 @@
-# Jekyll “plat” (sans sous-dossiers)
+# Jardin des simples — GitHub Pages + Jekyll (rendu Markdown correct)
 
-Oui : c’est bien un site Jekyll/GitHub Pages.
-Non : il n’y a **aucun** sous-dossier. Tout est à la racine.
+Ce dépôt suit la structure Jekyll minimale (nécessaire pour avoir un vrai layout + CSS propre).
 
-Fichiers :
-- `index.md` (contient le squelette HTML + ton contenu Markdown)
-- `site.css` (le CSS)
-- `_config.yml`
+## Fichiers
+- `index.md` : ton contenu (Markdown pur)
+- `_layouts/default.html` : le template HTML (charge le CSS + les polices)
+- `assets/css/style.scss` : ton CSS (Jekyll génère `assets/css/style.css`)
+- `_config.yml` : configuration + thème `minima` (base)
 
-## Déploiement GitHub Pages
-1) Crée un repo GitHub.
-2) Upload ces fichiers à la racine.
-3) Settings → Pages → Deploy from a branch → `main` + `/ (root)`.
+## Activation GitHub Pages
+Settings → Pages → Source: Deploy from a branch → Branch: `main` → Folder: `/(root)` → Save.
+
+## Important
+- Ne mets pas de `.nojekyll`.
+- Supprime tout workflow `.github/workflows/*` (laisse Pages gérer le build Jekyll).
