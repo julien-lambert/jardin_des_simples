@@ -1,189 +1,157 @@
 ---
 ---
 
-/* ============================================================
-   JARDIN DES SIMPLES — Cabinet botanique / musée ancien
-   ============================================================ */
+/* ======================================================
+   JARDIN DES SIMPLES — édition papier / herbier imprimé
+   Lisible, léger, long texte
+   ====================================================== */
 
 :root{
-  --bg:#0f0d0b;
-  --bg2:#15120f;
-  --panel:#1b1713;
-  --panel2:#221c16;
-  --text:#f0eadf;
-  --muted:#cbbfae;
-  --faint:#9b8e7b;
-  --accent:#d6b56d;
-  --accent2:#90c9a7;
-  --border:#2d251d;
-  --shadow:0 18px 60px rgba(0,0,0,.55);
-  --radius:22px;
+  --paper:#f5f2ea;
+  --paper2:#ede8dc;
+  --ink:#2b2a27;
+  --ink-soft:#4a4843;
+  --ink-faint:#8a867c;
+  --accent:#6b7a57;
+  --border:#d9d2c4;
+  --table-head:#e6e1d5;
 
-  --mono:"Source Code Pro",ui-monospace,Menlo,monospace;
-  --serif:"EB Garamond",Georgia,serif;
-  --display:"IM Fell English","EB Garamond",serif;
+  --serif:"EB Garamond", Georgia, "Times New Roman", serif;
+  --display:"IM Fell English", Georgia, serif;
+  --mono:"Source Code Pro", monospace;
 }
-
-/* Fond global */
 
 html,body{
   margin:0;
-  color:var(--text);
+  background:var(--paper);
+  color:var(--ink);
   font-family:var(--serif);
-  line-height:1.65;
-  font-size:18px;
-
-  background:
-    radial-gradient(1200px 700px at 20% 10%, rgba(214,181,109,.14), transparent 60%),
-    radial-gradient(900px 600px at 80% 15%, rgba(144,201,167,.10), transparent 55%),
-    radial-gradient(1200px 900px at 50% 110%, rgba(255,255,255,.06), transparent 60%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 70%, #0b0908 100%);
+  line-height:1.7;
+  font-size:19px;
 }
 
-/* Largeur page */
+/* largeur lecture confortable */
 
 .main{
-  max-width: 980px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 46px 22px 80px;
+  padding: 40px 24px 80px;
 }
 
-/* Bandeau titre */
+/* titre site */
 
 .site-header{
-  padding: 18px 20px 14px;
-  margin: 6px 0 26px;
-
-  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.06);
-  border-radius: 18px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.35);
-  backdrop-filter: blur(8px);
+  border-bottom:1px solid var(--border);
+  margin-bottom:34px;
+  padding-bottom:14px;
 }
 
 .site-title{
-  font-family: var(--display);
-  font-size: 28px;
+  font-family:var(--display);
+  font-size:30px;
+  letter-spacing:.3px;
 }
 
 .site-tagline{
-  margin-top:4px;
-  font-size: 14px;
-  color: var(--muted);
+  color:var(--ink-faint);
+  font-size:14px;
+  margin-top:3px;
 }
 
-/* Carte principale */
+/* corps texte */
 
 .prose{
-  background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.02));
-  border: 1px solid rgba(255,255,255,.06);
-  border-radius: var(--radius);
-  padding: 34px 34px 40px;
-  box-shadow: var(--shadow);
+  background:var(--paper);
 }
-
-/* Titres */
 
 h1,h2,h3,h4{
-  font-family: var(--display);
-  font-weight: 400;
-  letter-spacing:.2px;
+  font-family:var(--display);
+  font-weight:400;
+  color:#1f1e1b;
+  margin-top:1.6em;
 }
 
-h1{font-size:46px}
+h1{font-size:44px;margin-top:.2em}
 h2{font-size:30px}
 h3{font-size:24px}
-h4{font-size:20px;color:var(--muted)}
+h4{font-size:20px;color:var(--ink-soft)}
 
-p{margin:.9em 0}
-strong{color:#fff}
-em{color:var(--muted)}
+p{
+  margin:.9em 0;
+}
 
-/* Séparateurs */
+strong{color:#1f1e1b}
+em{color:var(--ink-soft)}
 
 hr{
-  border:0;
-  height:1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
-  margin: 1.6em 0;
+  border:none;
+  border-top:1px solid var(--border);
+  margin:1.8em 0;
 }
 
-/* Citations */
+/* citations */
 
 blockquote{
-  margin: 1.2em 0;
-  padding: 14px 16px;
-  border-left: 3px solid rgba(214,181,109,.55);
-  background: rgba(0,0,0,.25);
-  border-radius: 14px;
-  color: var(--muted);
+  border-left:3px solid var(--accent);
+  padding-left:14px;
+  margin:1.4em 0;
+  color:var(--ink-soft);
+  font-style:italic;
 }
 
-/* Code */
+/* code discret */
 
 code{
-  font-family: var(--mono);
-  font-size: .92em;
-  padding: .12em .35em;
-  border-radius: 9px;
-  background: rgba(0,0,0,.35);
-  border: 1px solid rgba(255,255,255,.08);
+  font-family:var(--mono);
+  background:var(--paper2);
+  padding:.15em .4em;
+  border-radius:4px;
+  font-size:.9em;
 }
 
 pre{
-  font-family: var(--mono);
-  font-size: .9em;
-  padding: 16px 18px;
-  border-radius: 16px;
-  background: rgba(0,0,0,.45);
-  border: 1px solid rgba(255,255,255,.09);
+  background:var(--paper2);
+  padding:14px 16px;
+  border-radius:6px;
   overflow:auto;
 }
 
-/* Listes */
+/* listes */
 
-ul,ol{padding-left:1.25em}
+ul,ol{padding-left:1.3em}
 li{margin:.35em 0}
 
-/* TABLEAUX — très important pour toi */
+/* TABLEAUX — important pour toi */
 
 table{
   width:100%;
-  border-collapse: collapse;
-  margin: 1.1em 0;
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 16px;
-  overflow: hidden;
-  background: rgba(0,0,0,.22);
+  border-collapse:collapse;
+  margin:1.2em 0;
+  font-size:.95em;
 
   display:block;
   overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
 }
 
 thead th{
-  position:sticky;
-  top:0;
-  background: rgba(0,0,0,.55);
-  color:#fff;
+  background:var(--table-head);
   text-align:left;
   font-weight:600;
 }
 
 th,td{
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
+  padding:8px 10px;
+  border:1px solid var(--border);
+  vertical-align:top;
 }
 
-tbody tr:hover td{
-  background: rgba(255,255,255,.03);
+tbody tr:nth-child(even){
+  background:rgba(0,0,0,.03);
 }
 
-/* Images */
+/* images */
 
 img{
   max-width:100%;
-  border-radius:16px;
-  box-shadow:0 14px 40px rgba(0,0,0,.45);
-  border:1px solid rgba(255,255,255,.08);
+  margin:1.2em 0;
 }
