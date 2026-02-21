@@ -13,6 +13,13 @@ Un *hortus pharmacologique* — médecine, poison, sorcellerie
 {: .page__lead}
 
 ---
+<details class="tocbox">
+  <summary>Sommaire</summary>
+
+* 1
+{:toc}
+
+</details>
 
 ## LE SITE  
 
