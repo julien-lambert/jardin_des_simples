@@ -8,6 +8,13 @@ Un *hortus pharmacologique* — médecine, poison, sorcellerie
 
 ---
 
+## SOMMAIRE
+
+* TOC
+{:toc}
+
+---
+
 ## LE SITE  
 
 Commune : Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, en bordure est du Parc naturel régional Livradois-Forez.  
@@ -271,6 +278,9 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Absinthe ⚠️|*Artemisia absinthium* L.|Astéracées|Thuyone, absinthine|amer digestif|Antagoniste GABA → convulsions à dose élevée 🛡️⚡|🏔️🪴|
 |Petite pervenche ⚠️|*Vinca minor* L.|Apocynacées|Vincamine (alcaloïde indolique)|Fatigue, vigilance, cognition|Vasodilatateur cérébral → troubles neurologiques à forte dose. Plante des cimetières médiévaux|🏔️🪴|
 |Acore odorant ⚠️|*Acorus calamus* L.|Acoracées|Asarone (phénylpropanoïde)|Fatigue, vigilance, cognition|Stimulant digestif antique → hallucinogène léger, présent dans des onguents de combat médiévaux — neurotoxique|🏔️🪴|
+|Coca (feuilles) ⚠️|*Erythroxylum coca* Lam.|Érythroxylacées|Cocaïne (alcaloïde)|stimulant traditionnel andin ; anesthésique local (historique)|Inhibiteur recapture DA/NA → tachycardie, HTA, vasoconstriction ; risque arythmies 💓|🏠|
+|Khat / Qat ⚠️|*Catha edulis* (Vahl) Endl.|Célastracées|Cathinone, cathine (phénylpropylamines)|stimulant traditionnel (Corne de l’Afrique / Arabie)|Sympathomimétique → insomnie, HTA, risque cardio-neuro 💓|🏠|
+|Tutu (coriarie arborescente) ☠️|*Coriaria arborea* Lindsay|Coriariacées|Tutin, coriamyrtine|Poison (miel contaminé, NZ) / non thérapeutique|Antagonisme GABA → convulsions, délire, coma 🧠|🏠|
 
 #### Anticholinergiques — alcaloïdes tropaniques
 
@@ -336,6 +346,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Vératre vert ⚠️|*Veratrum viride* Aiton|Mélanthiacées|Vératridine|antihypertenseur historique américain|Ouverture canaux Na⁺ → marge thérapeutique étroite|❄️|
 |Vératre noir ☠️|*Veratrum nigrum* L.|Mélanthiacées|Protovératrine|variante rare, fleurs sombres|Ouverture canaux Na⁺ → même toxicité que V. album|🏔️🪴|
 |If commun ☠️|*Taxus baccata* L.|Taxacées|Taxines ; paclitaxel (feuilles)|toutes parties toxiques sauf arille rouge|Canaux Na⁺/Ca²⁺ → arythmies, arrêt cardiaque → paclitaxel (Taxol) : anticancéreux majeur ⚠️ chiens|🏔️🪴|
+|If du Pacifique ☠️|*Taxus brevifolia* Nutt.|Taxacées|Taxines ; paclitaxel (écorce, aiguilles)|source historique du paclitaxel (Taxol)|Même spectre que l’if européen → arythmies, arrêt cardiaque|🏔️🪴|
 |Gelsémier ☠️|*Gelsemium sempervirens* (L.) W.T.Aiton|Gelsémiacées|Gelsémine (alcaloïde indolique)|sédatif neural historique|Canaux Na⁺ → paralysie respiratoire. Confondu avec le chèvrefeuille|❄️|
 |Œnanthe safranée ☠️|*Oenanthe crocata* L.|Apiacées|Œnanthotoxine (polyacétylène)|Poison (non thérapeutique)|Antagonisme GABA → convulsivant violent, arrêt cardiaque. Laisse un “sourire sardonique” sur le cadavre. Sève orange caractéristique|🪴|
 |Laurier-cerise ☠️|*Prunus laurocerasus* L.|Rosacées|Prunaside (hétéroside cyanogène)|Poison (non thérapeutique)|Libération de cyanure d’hydrogène → histotoxique, arrêt respiratoire cellulaire|🏔️🪴|
@@ -464,6 +475,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Courge (graines)|*Cucurbita pepo* L.|Cucurbitacées|Cucurbitine (acide aminé)|ténia|Antiparasitaire → sans toxicité 🛡️|🪴|
 |Grenadier (écorce racine) ⚠️|*Punica granatum* L.|Lythriacées|Pelletiérine (alcaloïde pipéridinique)|ténia|Anthelminthique → convulsions, mort en excès. Fruit comestible 🛡️|❄️|
 |Charbon végétal (Bouleau)|*Betula* spp.|Bétulacées|Carbone activé|antidote de première intention|Adsorbant → sans toxicité 🫀|🏔️🪴|
+|Kosso (Hagenia) ⚠️|*Hagenia abyssinica* (Bruce) J.F.Gmel.|Rosacées|Kosins (phloroglucinols)|anthelminthique historique (ténia)|Irritant digestif → purge, nausées ; hépatotoxique possible en abus|🏠|
 
 #### Purgatifs & drastiques
 
@@ -471,6 +483,8 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |---|---|---|---|---|---|---|
 |Ricin commun ☠️|*Ricinus communis* L.|Euphorbiacées|Ricine (lectine, graines) ; acide ricinoléique (huile)|huile pressée à froid : purgatif (ricine détruite)|Toxine ribosomale → graines entières : toxine létale à faible quantité. Arme chimique (affaire Georgi Markov, 1978) ⚠️ enfants et animaux. Semer en intérieur mars, pleine terre fin mai|🌱|
 |Rhubarbe palmée ⚠️|*Rheum palmatum* L.|Polygonacées|Anthraquinones (émodine, rhéine)|purgatif drastique, “chaleurs toxiques” en médecine chinoise|Anthraquinone → déshydratation sévère|🏔️🪴|
+|Bourdaine ⚠️|*Frangula alnus* Mill.|Rhamnacées|Anthraquinones (frangulines)|constipation (purgatif doux, écorce maturée)|Anthraquinone → coliques, déséquilibre électrolytique en excès|🏔️🪴|
+|Nerprun purgatif ⚠️|*Rhamnus cathartica* L.|Rhamnacées|Anthraquinones (émodine, rhamnoxanthone)|purgatif drastique|Anthraquinone → purge violente, déshydratation|🏔️🪴|
 |Podophylle pelté ☠️|*Podophyllum peltatum* L.|Berbéridacées|Podophyllotoxine (lignan)|purgatif amérindien|Mitotoxique → base des anticancéreux étoposide et téniposide|🏔️🪴|
 |Podophylle de l’Himalaya ☠️|*Podophyllum hexandrum* Royle|Berbéridacées|Podophyllotoxine|purgatif ayurvédique extrême|Mitotoxique → destruction cellulaire|🏔️🪴|
 |Bryone dioïque ☠️|*Bryonia dioica* Jacq.|Cucurbitacées|Cucurbitacines (triterpènes)|purgatif drastique|Triterpénique → hémorragies digestives. “Mandragore du pauvre”|🏔️🪴|
@@ -483,6 +497,8 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Hièble ☠️|*Sambucus ebulus* L.|Adoxacées|Sambunigrine (hétéroside cyanogène)|Poison (danger aigu) / non thérapeutique|Cyanogène → purgatif violent → confusion mortelle documentée avec sureau commun comestible ⚠️ enfants|🪴|
 |Symphorine ⚠️|*Symphoricarpos albus* (L.) S.F.Blake|Caprifoliacées|Alcaloïdes isoquinoléiques|Purgatif (usage médical historique) ; poison|“Baies de fantôme” (folklore médiéval) → vomitif puissant, irritation gastrique|🏔️🪴|
 |Troène d’Europe ☠️|*Ligustrum vulgare* L.|Oléacées|Ligustrine (glucoside iridoïde)|astringent|Glucoside → diarrhées sanglantes, collapsus|🏔️🪴|
+|Lierre grimpant ⚠️|*Hedera helix* L.|Araliacées|Hédérine, saponines|expectorant (usage externe) ; baies toxiques|Saponines → vomissements, diarrhées ; contact : dermatite possible 🌸|🏔️🪴|
+|Houx commun ☠️|*Ilex aquifolium* L.|Aquifoliacées|Saponines triterpéniques|baies toxiques (vomitif)|Saponines → gastro-entérite violente, bradycardie possible (enfant) 💓|🏔️🪴|
 
 -----
 
@@ -550,6 +566,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Chélidoine ⚠️|*Chelidonium majus* L.|Papavéracées|Chélidonine (suc jaune)|kératolytique, verrues (application locale)|Alcaloïde → caustique pour les muqueuses 🌿|🏔️🪴|
 |Euphorbe ésule rouge ⚠️|*Euphorbia peplus* L.|Euphorbiacées|Esters diterpéniques (ingénol)|kératolytique, kératoses actiniques|Diterpénique → caustique muqueux|🪴|
 |Euphorbe des jardins ⚠️|*Euphorbia lathyris* L.|Euphorbiacées|Latex diterpénique|taupe-répulsif traditionnel|Diterpénique → brûlures cutanées et oculaires|🪴|
+|Euphorbe résinifère ☠️|*Euphorbia resinifera* O.Berg|Euphorbiacées|Résinifératoxine (diterpène)|latex caustique ; modèle neurobiologique de la douleur|Agoniste TRPV1 ultra-puissant → brûlures, cécité si contact. Irritant majeur|🏠|
 |Fraxinelle (Buisson ardent) ⚠️|*Dictamnus albus* L.|Rutacées|Furocoumarines, huiles volatiles|Verrues/callosités (externe) ; phototoxicité/caustique|Coumarine phototoxique extrême → brûlures au 3e degré sur peau humide + soleil. Dégage des vapeurs inflammables|🏔️🪴|
 |Rue officinale ☠️ ⚠️|*Ruta graveolens* L.|Rutacées|Furocoumarines (bergaptène, xanthoxine)|Verrues/callosités (externe) ; phototoxicité/caustique|Coumarine phototoxique → brûlures solaires sévères + utérotonique, abortif à dose élevée. Dans les *Causae et Curae* d’Hildegarde (remède) et dans les procès du XVe s. (preuve d’un crime) 🛡️⚡|🪴|
 |Arum tacheté ⚠️|*Arum maculatum* L.|Aracées|Oxalates de calcium (raphides)|Verrues/callosités (externe) ; phototoxicité/caustique|Mécanique + chimique → brûlures immédiates bouche et gorge. Baies orange attractives. Racine comestible cuite ⚠️ enfants|🏔️🪴|
@@ -586,6 +603,8 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |---|---|---|---|---|---|---|
 |Armoise commune ⚠️|*Artemisia vulgaris* L.|Astéracées|Thuyone, sesquiterpènes|vermifuge léger|Cétone → neurotoxique 🌿⚡|🏔️🪴|
 |Absinthe ⚠️|*Artemisia absinthium* L.|Astéracées|Thuyone, absinthine|vermifuge, antiparasitaire|Cétone → antagoniste GABA 🧠|🏔️🪴|
+|Armoise annuelle ⚠️|*Artemisia annua* L.|Astéracées|Artémisinine (endoperoxyde sesquiterpénique)|antipaludique majeur (histoire + modèle thérapeutique)|Endoperoxyde → bien toléré aux doses usuelles ; extraits concentrés : neurotoxicité potentielle|🌱|
+|Quinquina (quinine) ⚠️|*Cinchona officinalis* L.|Rubiacées|Quinine, quinidine (alcaloïdes quinoliniques)|antipaludique historique ; antiarythmique (quinidine) 💓|“Cinchonisme” (acouphènes, nausées) ; troubles du rythme à forte dose 💓|🏠|
 |Chénopode vermifuge ⚠️|*Dysphania ambrosioides* (L.) Mosyakin & Clemants (syn. *Chenopodium ambrosioides*)|Amaranthacées|Ascaridol (endoperoxyde)|anthelminthique puissant|Terpénique → neurotoxique, hépatotoxique|🪴|
 
 #### Insecticides & répulsifs
@@ -621,8 +640,10 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Rhodiola|*Rhodiola rosea* L.|Crassulacées|Salidroside, rosavine|fatigue, stress|Adaptogène → contre-indiqué bipolaire|🏔️🪴|
 |Ashwagandha ⚠️|*Withania somnifera* (L.) Dunal|Solanacées|Withanolides (stéroïdes lactones)|anxiété, fatigue|Cortisol-modulant → hépatotoxique rapporté à dose élevée|❄️ ⚠️ protéger si gel intense|
 |Théier ⚠️|*Camellia sinensis* (L.) Kuntze|Théacées|Caféine, L-théanine, catéchines|vigilance|Xanthine → hépatotoxique paradoxal (suppléments concentrés) 🫀|❄️|
-|Maté ⚠️|*Ilex paraguariensis* A.St.-Hil.|Aquifoliacées|Caféine, théobromine (xanthines)|endurance|Xanthine → tachycardie à dose élevée|🪴 *(résiste à –8°C)*|
+|Maté ⚠️|*Ilex paraguariensis* A.St.-Hil.|Aquifoliacées|Caféine, théobromine (xanthines)|endurance|Xanthine → tachycardie à dose élevée|🏠|
 |Azalée pontique ☠️|*Rhododendron luteum* Sweet|Éricacées|Grayanotoxines (diterpènes)|“miel fou” (Xénophon, 401 av. J.-C.) — première arme chimique végétale documentée|Ouverture canaux Na⁺ → bradycardie, paralysie, hallucinations 🧠💓|🏔️🪴|
+|Rhododendron ferrugineux ☠️|*Rhododendron ferrugineum* L.|Éricacées|Diterpènes grayananes (toxiques, profil variable)|plante alpine toxique (intoxications animales possibles)|Bradycardie/hypotension et troubles neuro possibles (grayananes) 🧠💓|🏔️🪴|
+|Kalmia à larges feuilles ☠️|*Kalmia latifolia* L.|Éricacées|Grayanotoxines|poison de bétail (Amérique du Nord) ; miel toxique (local)|Bradycardie, salivation, convulsions à dose élevée 🧠💓|🪴|
 |Pivoine officinale ⚠️|*Paeonia officinalis* L.|Paéoniacées|Péoniflorine (monoterpène)|antispasmodique, sédatif. Collier anti-démons médiéval|GABAergique → neurotoxique si graines ingérées 🧠|🏔️🪴|
 |Sceau-de-Salomon ⚠️|*Polygonatum multiflorum* (L.) All.|Asparagacées|Saponines stéroïdiennes|baies toxiques (troubles cardiaques, digestifs) 💓|Magie de la signature médiévale (répare les os cassés) → baies toxiques (troubles cardiaques, digestifs) 💓|🏔️🪴|
 |Lycopode en massue ⚠️|*Lycopodium clavatum* L.|Lycopodiacées|Alcaloïdes (lycopodine)|Tonicité / adaptogène ; rituel (selon)|“Poudre de sorcière” — spores projetées au feu : boule de feu spectaculaire → toxique si ingéré|🏔️🪴|
