@@ -4,7 +4,7 @@ url: "https://julien-lambert.github.io"
 baseurl: "/jardin_des_simples"
 
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark"
+minimal_mistakes_skin: "contrast"
 
 plugins:
   - jekyll-remote-theme
