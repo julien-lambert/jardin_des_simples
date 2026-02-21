@@ -321,6 +321,95 @@ pre{
   }
 }
 
+/* ====== POLISH iPhone masthead (moins "gros carré blanc") ====== */
+@media (max-width: 768px){
+
+  /* barre plus fine + couleur "papier" */
+  .masthead,
+  .greedy-nav{
+    background: rgba(243,239,230,.92) !important;
+  }
+
+  /* réduire la hauteur du header */
+  .masthead__inner-wrap{
+    padding: .55rem .85rem !important;
+  }
+
+  /* titre plus propre */
+  .greedy-nav a.site-title{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  /* enlever tout “bloc” visuel parasite autour du titre */
+  .greedy-nav{
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* bouton Toggle Menu dans la barre, à droite, discret */
+  .nav__list label{
+    top: calc(env(safe-area-inset-top, 0px) + 6px) !important;
+    right: 10px !important;
+    padding: .30rem .55rem !important;
+    border-radius: 10px !important;
+    background: rgba(251,248,242,.78) !important;
+    border: 1px solid rgba(0,0,0,.10) !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.08) !important;
+  }
+
+  /* laisse de la place au bouton à droite, sans faire une barre énorme */
+  .greedy-nav a.site-title{
+    padding-right: 92px !important;
+  }
+}
+
+/* ====== POLISH iPhone masthead (moins "gros carré blanc") ====== */
+@media (max-width: 768px){
+
+  /* barre plus fine + couleur "papier" */
+  .masthead,
+  .greedy-nav{
+    background: rgba(243,239,230,.92) !important;
+  }
+
+  /* réduire la hauteur du header */
+  .masthead__inner-wrap{
+    padding: .55rem .85rem !important;
+  }
+
+  /* titre plus propre */
+  .greedy-nav a.site-title{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  /* enlever tout “bloc” visuel parasite autour du titre */
+  .greedy-nav{
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* bouton Toggle Menu dans la barre, à droite, discret */
+  .nav__list label{
+    top: calc(env(safe-area-inset-top, 0px) + 6px) !important;
+    right: 10px !important;
+    padding: .30rem .55rem !important;
+    border-radius: 10px !important;
+    background: rgba(251,248,242,.78) !important;
+    border: 1px solid rgba(0,0,0,.10) !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.08) !important;
+  }
+
+  /* laisse de la place au bouton à droite, sans faire une barre énorme */
+  .greedy-nav a.site-title{
+    padding-right: 92px !important;
+  }
+}
 /* =========================================================
    Marker de debug (pour grep dans main.css)
    ========================================================= */
