@@ -39,15 +39,12 @@ Quatre ambivalences structurent ce champ, et elles se recouvrent partiellement s
 
 Déplier l’histoire des simples, c’est suivre ces axes sur la longue durée, depuis l’Antiquité jusqu’aux listes contemporaines des substances vénéneuses.  
 
-### Illustrations (requêtes)  
-- `Asclepius statue Epidaurus Archaeological Museum`  
-- `Plan of Saint Gall monastery plan 820 830`  
-- `Hildegard of Bingen Physica manuscript illumination`  
-- `Malleus Maleficarum woodcut witches`  
+![Plan de l’abbaye de Saint-Gall (IXe siècle) — infirmerie et jardin médicinal](https://upload.wikimedia.org/wikipedia/commons/e/e6/Plan.abbaye.Saint.Gall.png)  
+Plan de Saint-Gall (tradition carolingienne, reprise graphique par Viollet-le-Duc). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Plan.abbaye.Saint.Gall.png).  
 
 ---
 
-## 1. Des origines antiques au dispositif monastique  
+## Des origines antiques au dispositif monastique  
 
 L’Antiquité grecque fournit une scène originelle où “médecine”, “rite” et “poison” ne sont pas encore séparés. D’un côté, la mythologie met en place une généalogie du savoir thérapeutique : Chiron, centaure éducateur et guérisseur, enseigne l’art de soigner à Asclépios, qui deviendra figure divine du soin. Cette filiation raconte une vérité anthropologique durable : la médecine s’inscrit dans une tradition de transmission, pas dans une “découverte” isolée.  
 
@@ -63,15 +60,18 @@ Le jardin ensuite : l’administration carolingienne pense déjà en “liste”
 
 Cette logique se retrouve dans l’idéal monastique : le Plan de Saint-Gall (vers 820–830) représente un complexe bénédictin où figure un jardin médicinal associé à l’infirmerie, avec des planches nommées. Il ne s'agit pas seulement d’horticulture, mais d’une mise en ordre du soin par l’espace. Dans la même veine, Walafrid Strabo (IXe siècle) écrit l’*Hortulus*, poème de jardin monastique : la plante y est à la fois objet technique, objet médicinal et objet contemplatif, ce qui rappelle qu’un jardin de simples n’est jamais uniquement pharmacologique ; il est aussi un régime de sens.  
 
-#### Illustrations (requêtes)  
-- `Chiron teaching Asclepius ancient vase`  
-- `Asclepius Epidaurus votive relief`  
-- `Plan of Saint Gall infirmary physic garden`  
-- `Walafrid Strabo Hortulus manuscript`  
+![Apollon, Chiron et Asclépios — fresque romaine de Pompéi](https://upload.wikimedia.org/wikipedia/commons/9/96/Apollo_Chiron_Asclepios_MAN_Napoli_Inv8846.jpg)  
+Fresque romaine : Apollon, Chiron et Asclépios. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Apollo_Chiron_Asclepios_MAN_Napoli_Inv8846.jpg).  
+
+![« Groupe des sept médecins » — Vienne Dioscoride, fol. 3v](https://upload.wikimedia.org/wikipedia/commons/6/6c/ViennaDioscoridesFolio3v7Physicians.jpg)  
+Vienne Dioscoride : un moment de la transmission savante de la *materia medica*. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ViennaDioscoridesFolio3v7Physicians.jpg).  
+
+![*Capitulare de villis* — extrait listant des plantes à cultiver](https://upload.wikimedia.org/wikipedia/commons/f/fd/Capitulare_de_villis_vel_curtis_imperii_LXX.jpg)  
+Logique carolingienne de la liste et de l’utilité : prescrire des cultures, donc stabiliser un répertoire. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Capitulare_de_villis_vel_curtis_imperii_LXX.jpg).  
 
 ---
 
-## 2. De l’abbaye à l’université : le basculement des juridictions du soin  
+## De l’abbaye à l’université : le basculement des juridictions du soin  
 
 Ce cadre monastique permet de comprendre l’ambivalence magie/sorcellerie sans caricature. Dans les abbayes, des gestes aujourd’hui rangés sous “symbolique” — prière, bénédiction, herbes protectrices, fumigations — coexistent avec une thérapeutique matérielle. L’ensemble forme une épistémologie cohérente où corps, esprit, monde et plante appartiennent à un même tissu d’influences. Ce n’est pas une naïveté, c’est une ontologie pratique : la guérison est un fait à la fois physiologique et social.  
 
@@ -81,14 +81,18 @@ Salerne (XIIe siècle) cristallise un tournant : le *Circa Instans* (attribué �
 
 C’est aussi, autour de Salerne, que se déploie une tradition gynécologique médiévale (la *Trotula*, compendium de médecine des femmes), qui atteste l’existence d’un savoir spécifique, fortement transmis et traduit, où la régulation du cycle, la fertilité et la grossesse sont des objets médicaux centraux. Cette zone concentre les forces explosives de l’ambivalence : ce que l’on nomme “soin” (régulation, accouchement, interruption) peut être nommé “crime” selon la norme juridique ; et, dans un autre registre, “maleficium” ou “sorcellerie” quand l’acte est attribué à une puissance illégitime. Autrement dit, l’avortement est un exemple où les quatre ambivalences se superposent : physiologie (effet utérin), morale sociale, droit, et statut de celle ou celui qui agit.  
 
-#### Illustrations (requêtes)  
-- `Hildegard of Bingen Physica manuscript folio`  
-- `Trotula manuscript Salerno`  
-- `Salerno medical school medieval illustration`  
+![Hildegarde de Bingen recevant l’inspiration — *Liber Scivias*](https://upload.wikimedia.org/wikipedia/commons/b/ba/Hildegard_von_Bingen.jpg)  
+Miniature du Rupertsberger Codex (*Liber Scivias*). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Hildegard_von_Bingen.jpg).  
+
+![Trotula de Salerne — figure manuscrite de la médecine des femmes](https://upload.wikimedia.org/wikipedia/commons/a/aa/Trotula_of_Salerno.jpg)  
+Représentation de Trotula (tradition salernitaine). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Trotula_of_Salerno.jpg).  
+
+![La Schola Medica Salernitana — miniature du *Canon* d’Avicenne](https://upload.wikimedia.org/wikipedia/commons/a/a4/ScuolaMedicaMiniatura.jpg)  
+Mise en scène médiévale du prestige salernitain. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:ScuolaMedicaMiniatura.jpg).  
 
 ---
 
-## 3. La criminalisation du savoir et l’invention du *Veneficium*  
+## La criminalisation du savoir et l’invention du *Veneficium*  
 
 Le XVIe siècle marque une cristallisation conceptuelle : Paracelse formule *dosis sola facit venenum*, donnant à l’université une maxime qui rend dicible ce que les pratiques vernaculaires savaient déjà empiriquement. Mais c’est aussi le siècle où la frontière magie/sorcellerie devient une machine politico-judiciaire, et où l’Europe élabore une littérature démonologique et inquisitoriale.  
 
@@ -100,15 +104,21 @@ La France fournit un épisode tardif et spectaculaire où poison et occultisme s
 
 L’intérêt d’une monographie sérieuse est de refuser l’explication unique (“superstition”) et de montrer les conflits internes de la rationalité moderne. Un point d’érudition décisif est la controverse entre Jean Wier (Weyer), médecin humaniste, et Jean Bodin : Wier propose dès le XVIe siècle une naturalisation du *maleficium* et une critique des démonologues, distinguant la sorcière comme malade de l’empoisonneur criminel ; Bodin, au contraire, combat cette lecture et renforce l’appareil répressif. Cette dispute montre que “médecine vs sorcellerie” n’est pas l’opposition d’un âge obscur et d’un âge rationnel : c’est une lutte de définitions à l’intérieur même de la modernité.  
 
-#### Illustrations (requêtes)  
-- `Malleus Maleficarum woodcut`  
-- `Affaire des poisons La Voisin engraving`  
-- `Jean Wier De praestigiis daemonum title page`  
-- `Jean Bodin Demonomanie des sorciers title page`  
+![Exécution par le feu — imagerie associée au *Malleus Maleficarum*](https://upload.wikimedia.org/wikipedia/commons/f/f8/Burning_witches_Malleus_Maleficarum_Montague_Summers.jpg)  
+Imagerie de la répression : l’acte judiciaire se nourrit d’images. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Burning_witches_Malleus_Maleficarum_Montague_Summers.jpg).  
+
+![Johann Weyer, *De praestigiis daemonum* — page de titre (1568)](https://upload.wikimedia.org/wikipedia/commons/3/33/Johann_Weyer_%22De_prestigiis...%22_1568._Title_page_Wellcome_M0014279.jpg)  
+Page de titre (Bâle, 1568) : médicaliser, distinguer, contester l’appareil démonologique. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Johann_Weyer_%22De_prestigiis...%22_1568._Title_page_Wellcome_M0014279.jpg).  
+
+![Jean Bodin, *De la démonomanie des sorciers* — page de titre (1593)](https://upload.wikimedia.org/wikipedia/commons/5/52/De_la_d%C3%A9monomanie_des_sorciers_1593_-_Archives_nationales_%28France%29.jpg)  
+Page de titre (Lyon, 1593) : un texte de qualification du crime. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:De_la_d%C3%A9monomanie_des_sorciers_1593_-_Archives_nationales_%28France%29.jpg).  
+
+![Catherine Deshayes, dite « La Voisin » (1680)](https://upload.wikimedia.org/wikipedia/commons/5/59/Catherine_Deshayes_%28Monvoisin%2C_dite_%C2%ABLa_Voisin%C2%BB%29_1680.jpg)  
+Affaire des Poisons : portrait diffusé (fonds Gallica/BnF). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Catherine_Deshayes_%28Monvoisin%2C_dite_%C2%ABLa_Voisin%C2%BB%29_1680.jpg).  
 
 ---
 
-## 4. La pharmacologie moderne : la mesure de l’ambivalence  
+## La pharmacologie moderne : la mesure de l’ambivalence  
 
 Le passage à la “science dure” ne détruit pas l’ambivalence ; il la rend mesurable, industrialisable et donc plus fortement régulée. Le XVIIIe et le XIXe siècles sont déterminants : la pharmacologie se déplace d’un monde de plantes variables vers un monde d’entités isolées, purifiées et dosables.  
 
@@ -118,15 +128,21 @@ La cocaïne est un autre exemple instructif précisément parce qu’elle est na
 
 L’ergot du seigle (*Claviceps purpurea*) porte une ambivalence encore plus “historique”, car il relie catastrophe alimentaire et médecine. L’ergotisme, appelé “feu de Saint Antoine”, a marqué l’Europe médiévale ; il fut pris dans des interprétations religieuses et parfois démonologiques, tandis que des ordres hospitaliers prenaient en charge les victimes. Plus tard, la chimie des alcaloïdes de l’ergot deviendra la matrice de médicaments (utérotoniques, antimigraineux), montrant comment une même source naturelle peut être fléau et ressource selon l’encadrement et la standardisation.  
 
-#### Illustrations (requêtes)  
-- `William Withering 1785 foxglove title page`  
-- `Digitalis purpurea botanical illustration`  
-- `St Anthony fire ergotism medieval painting`  
-- `Claviceps purpurea ergot sclerotia photo`  
+![William Withering, *An Account of the Foxglove* — page de titre (1785)](https://upload.wikimedia.org/wikipedia/commons/4/4d/Withering%2C_An_account_of_the_foxglove%2C_1785_Wellcome_M0016335.jpg)  
+Page de titre (Birmingham, 1785) : mesurer l’ambivalence, la rendre prescriptible. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Withering,_An_account_of_the_foxglove,_1785_Wellcome_M0016335.jpg).  
+
+![Digitalis purpurea — illustration botanique (Lindman)](https://upload.wikimedia.org/wikipedia/commons/b/b6/566_Digitalis_purpurea.jpg)  
+Illustration botanique (C. A. M. Lindman, début XXe siècle). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:566_Digitalis_purpurea.jpg).  
+
+![Ergotisme (« feu de Saint Antoine ») — détail de Grünewald](https://upload.wikimedia.org/wikipedia/commons/2/22/Particular_from_The_Temptation_of_St._Anthony_by_Matthias_Gr%C3%BCnewald_%281512-1516%29.jpg)  
+Détail de la Tentation de saint Antoine (Isenheim), souvent lu comme représentation d’ergotisme. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Particular_from_The_Temptation_of_St._Anthony_by_Matthias_Gr%C3%BCnewald_(1512-1516).jpg).  
+
+![Claviceps purpurea — ergot sur épi de seigle](https://upload.wikimedia.org/wikipedia/commons/c/ca/Claviceps_purpurea.JPG)  
+Ergot du seigle : sclérote de *Claviceps purpurea*. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Claviceps_purpurea.JPG).  
 
 ---
 
-## 5. Enthéogènes, cultes et psychonautes : la plante comme sacrement  
+## Enthéogènes, cultes et psychonautes : la plante comme sacrement  
 
 L’Antiquité ne faisait pas que tolérer la modification de conscience, elle l’institutionnalisait au plus haut niveau de l’État. Les Mystères d’Éleusis, culte initiatique majeur de la Grèce antique, reposaient sur l’ingestion du *kykeôn*. La nature exacte de ce breuvage demeure discutée, mais une hypothèse célèbre — notamment dans le sillage de Wasson, Hofmann et Ruck — propose un rôle d’alcaloïdes dérivés de l’ergot. Quoi qu’il en soit, le point structurant est clair : l’Occident ancien a pu placer au cœur de son dispositif religieux une expérience d’altération ritualisée, encadrée, interprétée, et politiquement centrale.  
 
@@ -138,15 +154,18 @@ Cette guerre de qualification se lit jusque dans les noms populaires des plantes
 
 Aujourd’hui, l’histoire boucle la boucle avec la figure du psychonaute. Ces explorateurs modernes de la conscience ont délaissé le terme moralisateur de “drogue” pour forger celui d’“enthéogène” — ce qui “engendre le divin en soi”. Qu’il s’agisse de l’initié grec, de la paysannerie européenne, du chaman amazonien ou du psychonaute contemporain, la démarche structurelle reste la même : mobiliser la biochimie du vivant pour fracturer l’évidence de la conscience. La seule différence, c’est l’étiquette que la société décide de coller sur l’expérience.  
 
-#### Illustrations (requêtes)  
-- `Eleusinian mysteries initiation vase painting`  
-- `kykeon Eleusis depiction`  
-- `ayahuasca ceremony photo`  
-- `Echinopsis pachanoi San Pedro cactus`  
+![Mystères d’Éleusis — plaque votive (NAMA, Athènes)](https://upload.wikimedia.org/wikipedia/commons/8/85/NAMA_Myst%C3%A8res_d%27Eleusis.jpg)  
+Plaque votive (dite « tablette de Ninnion ») : iconographie des Mystères d’Éleusis. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:NAMA_Myst%C3%A8res_d%27Eleusis.jpg).  
+
+![Banisteriopsis caapi — liane associée à l’ayahuasca](https://upload.wikimedia.org/wikipedia/commons/e/ee/Banisteriopsis_caapi_vine.JPG)  
+Banisteriopsis caapi (Pastaza, Équateur). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Banisteriopsis_caapi_vine.JPG).  
+
+![Echinopsis pachanoi — « San Pedro » (sommet)](https://upload.wikimedia.org/wikipedia/commons/b/b3/Echinopsis_pachanoi_fma._cuatro_vientos.jpg)  
+Echinopsis pachanoi (macro). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Echinopsis_pachanoi_fma._cuatro_vientos.jpg).  
 
 ---
 
-## 6. Listes, interdits et Renaissance psychédélique  
+## Listes, interdits et Renaissance psychédélique  
 
 Le monde contemporain rend la frontière médecine/crime littérale et consultable : elle prend la forme de listes. En France, le Code de la santé publique encadre les “plantes, substances ou préparations vénéneuses” classées comme stupéfiants ou psychotropes ou inscrites sur listes I et II par décision de l’ANSM. L’ANSM publie des listes consolidées, mises à jour, qui actent le classement des stupéfiants et des psychotropes, et renvoient aux arrêtés et décisions correspondants.  
 
@@ -154,14 +173,18 @@ Ce point est essentiel pour une monographie : l’ambivalence n’est pas seulem
 
 L’“usage illégal” ne relève donc pas d’un sensationnalisme, mais d’une sociologie des marchés et des interdits. Historiquement, les interdits fabriquent des zones grises : poudres d’héritage, philtres vendus clandestinement, accusations de *veneficium* transformant un échec thérapeutique en intention criminelle. Contemporainement, l’illégal prend la forme de détournements, de marchés parallèles, de produits non standardisés, et de pratiques sans protection institutionnelle ; le risque n’est pas seulement toxique, il est aussi épistémique (absence de traçabilité, de qualité, de diagnostic différentiel) et juridique (qualification pénale, responsabilité, exposition).  
 
-#### Illustrations (requêtes)  
-- `ANSM liste stupéfiants document screenshot`  
-- `Oregon psilocybin services historical photo`  
-- `TGA psilocybin MDMA decision document`  
+![Balance de la justice — symbole de la qualification juridique](https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Scale_of_justice.svg/960px-Scale_of_justice.svg.png)  
+La frontière médecine/crime est d’abord une frontière de droit. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Scale_of_justice.svg).  
+
+![Oregon (National Atlas, USA) — exemple de géographie administrative](https://upload.wikimedia.org/wikipedia/commons/e/e4/Map_of_Oregon_NA.png)  
+Carte (National Atlas, domaine public US). Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Map_of_Oregon_NA.png).  
+
+![Psilocybe cubensis — champignon à psilocybine](https://upload.wikimedia.org/wikipedia/commons/0/02/Psilocybe_Cubensis_2.JPG)  
+Figure devenue objet de requalification institutionnelle. Source : [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Psilocybe_Cubensis_2.JPG).  
 
 ---
 
-## 7. Ce Jardin : l’expérience de la frontière  
+## Ce Jardin : l’expérience de la frontière  
 
 Dans ce cadre, la “sorcière” n’est qu’une figure parmi d’autres, et une monographie correcte doit faire apparaître tout un spectre : magicien(ne)s urbain(e)s, devins, guérisseurs, sages-femmes, apothicaires clandestins, chamans, prêtres-médecins, médecins humanistes, démonologues, experts judiciaires, pharmaciens, régulateurs.  
 
@@ -696,4 +719,3 @@ Ces espèces poussent naturellement dans la commune ou à ses abords immédiats.
 *Document de travail — version 6*
 *Saint-Hilaire-Cusson-la-Valmitte, 900 m, Plateau du Forez*
 *Hortus simplicium / Hortus pharmacologicus*
-
