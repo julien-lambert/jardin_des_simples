@@ -240,7 +240,7 @@ pre{
 
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
 
-  /* Topbar fixée */
+  /* Topbar fixée (iOS safe) */
   .masthead{
     position: fixed !important;
     top: 0 !important;
@@ -258,8 +258,11 @@ pre{
     padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
   }
 
-  /* Sidebar : n’occupe pas de place => supprime la “barre épaisse” */
-  .sidebar{
+  /* IMPORTANT : supprimer la "2e barre" (la sidebar ne doit plus occuper le flux) */
+  aside.sidebar,
+  .sidebar__right,
+  .sidebar__left,
+  .sidebar {
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
@@ -269,18 +272,25 @@ pre{
     overflow: visible !important;
   }
 
-  /* Bouton Toggle dans la topbar, à droite */
-  .sidebar .nav__title{
+  /* Bouton Toggle Menu : intégré à droite dans la topbar */
+  aside.sidebar .nav__title,
+  .sidebar__right .nav__title,
+  .sidebar__left .nav__title,
+  .sidebar .nav__title,
+  aside.sidebar label,
+  .sidebar__right label,
+  .sidebar__left label {
     position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 6px) !important; /* remonte vers la capsule */
+    top: calc(env(safe-area-inset-top, 0px) + 6px) !important;
     right: 12px !important;
+    left: auto !important;
     z-index: 100000 !important;
 
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
 
-    padding: .38rem .62rem !important;
+    padding: .36rem .62rem !important;
     border-radius: 12px !important;
     border: 1px solid rgba(0,0,0,.14) !important;
     background: rgba(251,248,242,.85) !important;
@@ -292,13 +302,16 @@ pre{
     text-transform: none !important;
   }
 
-  /* évite que le titre passe dessous */
+  /* Laisse de la place au bouton à droite du titre */
   .masthead__title{
-    padding-right: 96px !important;
+    padding-right: 120px !important;
   }
 
-  /* Dropdown plein-largeur sous la topbar */
-  .sidebar nav{
+  /* Dropdown menu : plein-largeur sous la topbar */
+  aside.sidebar nav,
+  .sidebar__right nav,
+  .sidebar__left nav,
+  .sidebar nav {
     position: fixed !important;
     top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
     left: 0 !important;
@@ -313,26 +326,38 @@ pre{
     max-height: 70vh !important;
     overflow: auto !important;
     -webkit-overflow-scrolling: touch;
+
+    display: block !important; /* fallback: si pas de checkbox, le menu reste visible */
   }
 
-  /* Fermé/ouvert si checkbox présent */
-  .sidebar input[type="checkbox"] ~ nav{
+  /* Si le thème utilise un checkbox pour ouvrir/fermer : fermer par défaut puis ouvrir quand checked */
+  aside.sidebar input[type="checkbox"] ~ nav,
+  .sidebar__right input[type="checkbox"] ~ nav,
+  .sidebar__left input[type="checkbox"] ~ nav,
+  .sidebar input[type="checkbox"] ~ nav {
     display: none !important;
   }
-  .sidebar input[type="checkbox"]:checked ~ nav{
+
+  aside.sidebar input[type="checkbox"]:checked ~ nav,
+  .sidebar__right input[type="checkbox"]:checked ~ nav,
+  .sidebar__left input[type="checkbox"]:checked ~ nav,
+  .sidebar input[type="checkbox"]:checked ~ nav {
     display: block !important;
   }
 
-  /* Si pas de checkbox (rare), ne jamais perdre le menu */
-  .sidebar:not(:has(input[type="checkbox"])) nav{
-    display: block !important;
-  }
-
-  .sidebar nav a{
+  /* Liens : confort tactile */
+  aside.sidebar nav a,
+  .sidebar__right nav a,
+  .sidebar__left nav a,
+  .sidebar nav a {
     padding: .45rem .25rem .45rem .65rem !important;
     border-left: 2px solid transparent;
   }
-  .sidebar nav a:hover{
+
+  aside.sidebar nav a:hover,
+  .sidebar__right nav a:hover,
+  .sidebar__left nav a:hover,
+  .sidebar nav a:hover {
     border-left-color: var(--toxic);
   }
 }
