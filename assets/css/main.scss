@@ -280,3 +280,50 @@ blockquote{
     }
   }
 }
+
+/* =========================
+   Fallback iPhone: bouton Menu flottant
+   ========================= */
+
+.floating-menu { display: none; }
+
+@media (max-width: 1024px) {
+  .floating-menu {
+    display: inline-flex !important;
+    position: fixed !important;
+    right: 14px !important;
+    bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
+    z-index: 999999 !important;
+
+    align-items: center;
+    gap: .5rem;
+
+    background: rgba(243, 239, 230, .96) !important;
+    border: 1px solid rgba(0,0,0,.18) !important;
+    border-radius: 999px !important;
+    padding: .65rem .9rem !important;
+
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    font-size: .85rem !important;
+
+    color: #171717 !important;
+    text-decoration: none !important;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.18) !important;
+  }
+
+  .floating-menu:active {
+    transform: scale(.98);
+  }
+}
+
+/* petit pictogramme optionnel */
+@media (max-width: 1024px) {
+  .floating-menu::before {
+    content: "☰";
+    font-size: 1rem;
+    opacity: .85;
+  }
+}
