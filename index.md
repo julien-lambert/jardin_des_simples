@@ -12,15 +12,6 @@ Saint-Hilaire-Cusson-la-Valmitte — 900 m — Plateau du Forez
 Un *hortus pharmacologique* — médecine, poison, sorcellerie
 {: .page__lead}
 
----
-<details class="tocbox">
-  <summary>Sommaire</summary>
-
-* 1
-{:toc}
-
-</details>
-
 ## LE SITE  
 
 Commune : Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, en bordure est du Parc naturel régional Livradois-Forez.  
@@ -105,7 +96,7 @@ Mise en scène médiévale du prestige salernitain. Source : [Wikimedia Commons]
 
 ---
 
-## La criminalisation du savoir et l’invention du *Veneficium*  
+### La criminalisation du savoir et l’invention du *Veneficium*  
 
 Le XVIe siècle marque une cristallisation conceptuelle : Paracelse formule *dosis sola facit venenum*, donnant à l’université une maxime qui rend dicible ce que les pratiques vernaculaires savaient déjà empiriquement. Mais c’est aussi le siècle où la frontière magie/sorcellerie devient une machine politico-judiciaire, et où l’Europe élabore une littérature démonologique et inquisitoriale.  
 
@@ -131,7 +122,7 @@ Affaire des Poisons : portrait diffusé (fonds Gallica/BnF). Source : [Wikimedia
 
 ---
 
-## La pharmacologie moderne : la mesure de l’ambivalence  
+### La pharmacologie moderne : la mesure de l’ambivalence  
 
 Le passage à la “science dure” ne détruit pas l’ambivalence ; il la rend mesurable, industrialisable et donc plus fortement régulée. Le XVIIIe et le XIXe siècles sont déterminants : la pharmacologie se déplace d’un monde de plantes variables vers un monde d’entités isolées, purifiées et dosables.  
 
@@ -155,7 +146,7 @@ Ergot du seigle : sclérote de *Claviceps purpurea*. Source : [Wikimedia Commons
 
 ---
 
-## Enthéogènes, cultes et psychonautes : la plante comme sacrement  
+### Enthéogènes, cultes et psychonautes : la plante comme sacrement  
 
 L’Antiquité ne faisait pas que tolérer la modification de conscience, elle l’institutionnalisait au plus haut niveau de l’État. Les Mystères d’Éleusis, culte initiatique majeur de la Grèce antique, reposaient sur l’ingestion du *kykeôn*. La nature exacte de ce breuvage demeure discutée, mais une hypothèse célèbre — notamment dans le sillage de Wasson, Hofmann et Ruck — propose un rôle d’alcaloïdes dérivés de l’ergot. Quoi qu’il en soit, le point structurant est clair : l’Occident ancien a pu placer au cœur de son dispositif religieux une expérience d’altération ritualisée, encadrée, interprétée, et politiquement centrale.  
 
@@ -178,7 +169,7 @@ Echinopsis pachanoi (macro). Source : [Wikimedia Commons](https://commons.wikime
 
 ---
 
-## Listes, interdits et Renaissance psychédélique  
+### Listes, interdits et Renaissance psychédélique  
 
 Le monde contemporain rend la frontière médecine/crime littérale et consultable : elle prend la forme de listes. En France, le Code de la santé publique encadre les “plantes, substances ou préparations vénéneuses” classées comme stupéfiants ou psychotropes ou inscrites sur listes I et II par décision de l’ANSM. L’ANSM publie des listes consolidées, mises à jour, qui actent le classement des stupéfiants et des psychotropes, et renvoient aux arrêtés et décisions correspondants.  
 
@@ -197,7 +188,7 @@ Figure devenue objet de requalification institutionnelle. Source : [Wikimedia Co
 
 ---
 
-## Ce Jardin : l’expérience de la frontière  
+### Ce Jardin : l’expérience de la frontière  
 
 Dans ce cadre, la “sorcière” n’est qu’une figure parmi d’autres, et une monographie correcte doit faire apparaître tout un spectre : magicien(ne)s urbain(e)s, devins, guérisseurs, sages-femmes, apothicaires clandestins, chamans, prêtres-médecins, médecins humanistes, démonologues, experts judiciaires, pharmaciens, régulateurs.  
 
