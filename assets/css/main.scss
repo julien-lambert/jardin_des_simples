@@ -246,17 +246,11 @@ pre{
 }
 
 /* =========================================================
-   iPhone / iPad (tactile) : "Toggle Menu" dans la topbar, dropdown dessous
-   IMPORTANT : on ne déplace PAS la sidebar en “carton flottant”.
-   On ne fixe QUE:
-   - le header (masthead)
-   - le bouton toggle (nav__title) à droite dans la barre
-   - le panneau nav en dropdown plein large sous la barre
+   iPhone (tactile) — Toggle Menu DANS la topbar + dropdown dessous
    ========================================================= */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
 
-@media (max-width: 768px) and (hover: none) and (pointer: coarse){
-
-  /* Header fixé (iOS safe) */
+  /* 1) Topbar fixée */
   .masthead{
     position: fixed !important;
     top: 0 !important;
@@ -269,49 +263,54 @@ pre{
     border-bottom: 1px solid rgba(0,0,0,.12) !important;
   }
 
-  /* Décale la page sous le header */
+  /* 2) Décale la page sous la topbar (une seule fois) */
   body{
     padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
   }
 
-  /* Sidebar neutre (pas de carte, pas de shadow) */
+  /* 3) IMPORTANT : la sidebar ne doit plus créer une “barre” dans le flux */
   .sidebar{
-    background: transparent !important;
-    border: 0 !important;
-    box-shadow: none !important;
+    height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible !important; /* pour que le dropdown puisse exister */
   }
 
-  /* Bouton "Toggle Menu" : intégré en haut à droite (style iOS léger) */
+  /* 4) Le bouton Toggle : intégré à droite DANS la topbar */
   .sidebar .nav__title{
     position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 8px) !important;
-    right: 12px !important;
-    z-index: 100000 !important;
 
+    /* remonte légèrement vers la capsule, mais safe */
+    top: calc(env(safe-area-inset-top, 0px) + 6px) !important;
+    right: 12px !important;
+
+    z-index: 100000 !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
 
-    padding: .45rem .7rem !important;
+    padding: .38rem .62rem !important;
     border-radius: 12px !important;
-    border: 1px solid rgba(0,0,0,.16) !important;
-    background: rgba(251,248,242,.92) !important;
-    box-shadow: 0 8px 20px rgba(0,0,0,.10) !important;
+    border: 1px solid rgba(0,0,0,.14) !important;
+    background: rgba(251,248,242,.85) !important;
 
     font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
-    font-size: .85rem !important;
-    letter-spacing: .2px !important;
+    font-size: .82rem !important;
+    letter-spacing: .15px !important;
     text-transform: none !important;
+
+    box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
   }
 
-  /* évite que le titre du site passe sous le bouton */
+  /* laisse de la place au bouton à droite du titre */
   .masthead__title{
-    padding-right: 92px !important;
+    padding-right: 96px !important;
   }
 
-  /* Dropdown plein large sous la barre */
+  /* 5) Le menu déroulant : dropdown plein-largeur sous la topbar */
   .sidebar nav{
     position: fixed !important;
     top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
@@ -329,27 +328,28 @@ pre{
     -webkit-overflow-scrolling: touch;
   }
 
-  /* --- Gestion ouverture/fermeture robuste ---
-     Si Minimal Mistakes a un checkbox, on ferme par défaut et on ouvre quand checked.
-     Si pas de checkbox (cas rare), on laisse le menu visible (ne jamais perdre le menu).
-  */
+  /* 6) Gestion ouverture/fermeture (si le checkbox existe) */
   .sidebar input[type="checkbox"] ~ nav{
-    display: none !important;  /* fermé par défaut uniquement si checkbox présent */
+    display: none !important;
   }
   .sidebar input[type="checkbox"]:checked ~ nav{
     display: block !important;
   }
 
-  /* Liens plus confortables au doigt */
+  /* si jamais ton HTML n’a pas de checkbox, on ne casse pas le menu */
+  .sidebar:not(:has(input[type="checkbox"])) nav{
+    display: block !important;
+  }
+
+  /* liens confortables */
   .sidebar nav a{
     padding: .45rem .25rem .45rem .65rem !important;
     border-left: 2px solid transparent;
   }
-  .sidebar nav a:active{
-    background: rgba(29,122,80,.08);
+  .sidebar nav a:hover{
+    border-left-color: var(--toxic);
   }
 }
-
 /* =========================================================
    Option : TOC (si tu le réactives un jour)
    On le garde sobre, pas “carton”.
