@@ -9,7 +9,7 @@
    Minimal Mistakes + peau claire "parchemin"
    Objectifs :
    - Mac/desktop : header sticky + sidebar en vraie colonne gauche (pas de carte)
-   - iPhone : header fixé + bouton "Toggle Menu" intégré à droite dans la barre,
+   - iPhone : header fixé + bouton "Toggle Menu" intégré à droite DANS la barre,
              menu déroulant plein-largeur sous la barre (style iOS, léger)
    - Tables : pas de débordement sur Mac ; scroll horizontal sur mobile
    ========================================================= */
@@ -25,7 +25,6 @@
   --muted: #5b5b5b;
 
   --rule:  rgba(0,0,0,.14);
-  --rule2: rgba(0,0,0,.10);
   --shadow: rgba(0,0,0,.10);
 
   --toxic: #1d7a50;      /* vert bouteille */
@@ -178,7 +177,7 @@ pre{
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-    white-space: nowrap; /* garde une grille lisible */
+    white-space: nowrap;
   }
   .page__content th,
   .page__content td{
@@ -186,7 +185,6 @@ pre{
     overflow-wrap: normal;
     word-break: normal;
   }
-  /* Première colonne sticky (optionnel mais utile) */
   .page__content table th:first-child,
   .page__content table td:first-child{
     position: sticky;
@@ -201,19 +199,11 @@ pre{
    ========================================================= */
 
 .sidebar{
-  /* base neutre, on stylise ensuite selon device */
   background: transparent;
   border: 0;
   border-radius: 0;
   box-shadow: none;
   padding: 0;
-}
-
-.sidebar .nav__title{
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  letter-spacing: .2px;
-  font-size: .9rem;
-  color: var(--ink);
 }
 
 .sidebar a{
@@ -230,7 +220,7 @@ pre{
   border-left-color: var(--toxic);
 }
 
-/* Desktop : vraie colonne, menu visible, pas de boîte */
+/* Desktop : nav en colonne, Toggle caché */
 @media (min-width: 769px){
   .sidebar nav{
     border-left: 1px solid var(--rule);
@@ -238,8 +228,6 @@ pre{
     margin-top: .5rem;
     background: transparent;
   }
-
-  /* Sur desktop, on n’affiche pas "Toggle Menu" */
   .sidebar .nav__title{
     display: none !important;
   }
@@ -247,10 +235,12 @@ pre{
 
 /* =========================================================
    iPhone (tactile) — Toggle Menu DANS la topbar + dropdown dessous
+   (Résout ton problème : plus de “deux barres”)
    ========================================================= */
+
 @media (max-width: 768px) and (hover: none) and (pointer: coarse) {
 
-  /* 1) Topbar fixée */
+  /* Topbar fixée */
   .masthead{
     position: fixed !important;
     top: 0 !important;
@@ -263,12 +253,12 @@ pre{
     border-bottom: 1px solid rgba(0,0,0,.12) !important;
   }
 
-  /* 2) Décale la page sous la topbar (une seule fois) */
+  /* Décale la page sous la topbar */
   body{
     padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
   }
 
-  /* 3) IMPORTANT : la sidebar ne doit plus créer une “barre” dans le flux */
+  /* Sidebar : n’occupe pas de place => supprime la “barre épaisse” */
   .sidebar{
     height: 0 !important;
     padding: 0 !important;
@@ -276,18 +266,16 @@ pre{
     border: 0 !important;
     background: transparent !important;
     box-shadow: none !important;
-    overflow: visible !important; /* pour que le dropdown puisse exister */
+    overflow: visible !important;
   }
 
-  /* 4) Le bouton Toggle : intégré à droite DANS la topbar */
+  /* Bouton Toggle dans la topbar, à droite */
   .sidebar .nav__title{
     position: fixed !important;
-
-    /* remonte légèrement vers la capsule, mais safe */
-    top: calc(env(safe-area-inset-top, 0px) + 6px) !important;
+    top: calc(env(safe-area-inset-top, 0px) + 6px) !important; /* remonte vers la capsule */
     right: 12px !important;
-
     z-index: 100000 !important;
+
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -296,21 +284,20 @@ pre{
     border-radius: 12px !important;
     border: 1px solid rgba(0,0,0,.14) !important;
     background: rgba(251,248,242,.85) !important;
+    box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
 
     font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
     font-size: .82rem !important;
     letter-spacing: .15px !important;
     text-transform: none !important;
-
-    box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
   }
 
-  /* laisse de la place au bouton à droite du titre */
+  /* évite que le titre passe dessous */
   .masthead__title{
     padding-right: 96px !important;
   }
 
-  /* 5) Le menu déroulant : dropdown plein-largeur sous la topbar */
+  /* Dropdown plein-largeur sous la topbar */
   .sidebar nav{
     position: fixed !important;
     top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
@@ -328,7 +315,7 @@ pre{
     -webkit-overflow-scrolling: touch;
   }
 
-  /* 6) Gestion ouverture/fermeture (si le checkbox existe) */
+  /* Fermé/ouvert si checkbox présent */
   .sidebar input[type="checkbox"] ~ nav{
     display: none !important;
   }
@@ -336,12 +323,11 @@ pre{
     display: block !important;
   }
 
-  /* si jamais ton HTML n’a pas de checkbox, on ne casse pas le menu */
+  /* Si pas de checkbox (rare), ne jamais perdre le menu */
   .sidebar:not(:has(input[type="checkbox"])) nav{
     display: block !important;
   }
 
-  /* liens confortables */
   .sidebar nav a{
     padding: .45rem .25rem .45rem .65rem !important;
     border-left: 2px solid transparent;
@@ -349,19 +335,4 @@ pre{
   .sidebar nav a:hover{
     border-left-color: var(--toxic);
   }
-}
-/* =========================================================
-   Option : TOC (si tu le réactives un jour)
-   On le garde sobre, pas “carton”.
-   ========================================================= */
-
-.toc{
-  background: transparent;
-  border: 0;
-  box-shadow: none;
-  padding: 0;
-}
-
-.toc .nav__title{
-  display: none;
 }
