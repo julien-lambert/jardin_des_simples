@@ -28,6 +28,15 @@
   --masthead-h: 56px;
 }
 
+
+@media (max-width: 63.9375em){
+  /* Sur iPhone : on utilise le menu du haut (main:) -> pas de sidebar */
+  .sidebar,
+  .sidebar__right,
+  .sidebar__left{
+    display: none !important;
+  }
+}
 /* =========================================================
    TYPO / PAGE
    ========================================================= */
