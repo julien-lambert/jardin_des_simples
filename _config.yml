@@ -28,6 +28,6 @@ defaults:
         nav: "docs"
 
       # TOC (droite) — activé par défaut
-      toc: true
-      toc_sticky: true
+      toc: False
+      toc_sticky: False
       toc_levels: 2..3
