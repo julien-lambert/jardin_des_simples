@@ -322,6 +322,77 @@ pre{
 }
 
 /* =========================================================
-   MARKER DEBUG (pour vérifier qu’on charge BIEN ce fichier)
+   HARD FIX — iPhone: Toggle Menu visible + dans la barre
+   Cible exacte: <nav class="nav__list"><label for="ac-toc">
    ========================================================= */
-:root{ --HORTUS_MARKER_20260221: 1; }
+
+@media (max-width: 63.9375em){
+
+  /* barre fixée */
+  .masthead{
+    position: fixed !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    z-index: 99999 !important;
+  }
+  body{
+    padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
+  }
+
+  /* laisse de la place au bouton à droite */
+  .greedy-nav a.site-title{
+    padding-right: 120px !important;
+  }
+
+  /* LE bouton : on le force visible quoi qu’il arrive */
+  nav.nav__list > label[for="ac-toc"]{
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+
+    position: fixed !important;
+    top: calc(env(safe-area-inset-top, 0px) + 8px) !important;
+    right: 10px !important;
+    left: auto !important;
+
+    z-index: 100000 !important;
+
+    padding: .30rem .55rem !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(0,0,0,.14) !important;
+    background: rgba(251,248,242,.90) !important;
+    box-shadow: 0 6px 14px rgba(0,0,0,.10) !important;
+
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
+    font-size: .82rem !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+  }
+
+  /* le conteneur sidebar ne doit pas créer une “deuxième barre” */
+  aside.sidebar, .sidebar{
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* le panneau menu quand il s’ouvre */
+  nav.nav__list > ul.nav__items{
+    position: fixed !important;
+    top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99998 !important;
+
+    background: rgba(251,248,242,.98) !important;
+    border-bottom: 1px solid rgba(0,0,0,.12) !important;
+    box-shadow: 0 18px 40px rgba(0,0,0,.12) !important;
+
+    padding: .8rem 1rem !important;
+    max-height: 70vh !important;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+}
