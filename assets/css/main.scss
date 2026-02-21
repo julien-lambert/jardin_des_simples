@@ -1,0 +1,102 @@
+---
+---
+
+@import "minimal-mistakes";
+
+/* HORTUS PHARMACOLOGICUS — grimoire médiéval × autopsie chirurgicale */
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root{
+  --bg: #121212;
+  --bg2: #171717;
+  --text: #dcdcdc;
+  --muted: #a9a9a9;
+  --ink: #e7e2d9;
+
+  --accent: #4ade80;
+  --blood:  #991b1b;
+
+  --rule: #2a2a2a;
+  --tableHead: #141414;
+  --tableRowHover: #1d1d1d;
+}
+
+body{ background: var(--bg); color: var(--text); }
+
+.page__content{
+  font-family: "EB Garamond", ui-serif, Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+h1,h2,h3,h4{
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.2px;
+  color: var(--ink);
+}
+
+a{ color: var(--accent); }
+a:hover{ color: #7cf7aa; }
+
+hr{ border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+
+/* Images: cap width + center by default */
+.page__content img{
+  display: block;
+  margin: 1.1rem auto;
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--rule);
+}
+
+/* Tables */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8rem 0;
+  font-size: 0.95rem;
+}
+th{
+  background: var(--tableHead);
+  color: var(--ink);
+  padding: 12px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+td{
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+tr:hover{ background: var(--tableRowHover); }
+
+/* Optional: grid + carousel helpers */
+.img-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1.2rem 0;
+}
+.img-grid img{
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.carousel{
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 2px 14px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel > *{ flex: 0 0 auto; scroll-snap-align: start; }
+.carousel img{
+  width: 260px;
+  height: 170px;
+  object-fit: cover;
+}

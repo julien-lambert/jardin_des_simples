@@ -1,254 +1,19 @@
 ---
-layout: default
-title: Jardin des simples
-toc_levels: 2..4
+title: "Jardin des Simples"
+layout: single
+permalink: /
+toc: true
+toc_sticky: true
+toc_label: "Sommaire"
+toc_levels: 2..3
+classes: wide
 ---
-# JARDIN DES SIMPLES  
 Saint-Hilaire-Cusson-la-Valmitte — 900 m — Plateau du Forez  
-Un *hortus pharmacologique* — médecine, poison, sorcellerie  
+Un *hortus pharmacologique* — médecine, poison, sorcellerie
+{: .page__lead}
 
 ---
 
-## SOMMAIRE
-{: .no_toc }
-
-<div id="toc" class="toc"></div>
-
-<style>
-/* TOC (automatique, déroulant) */
-#toc .toc-collapsible { margin: 0.5rem 0 1rem; }
-#toc details { margin: 0.25rem 0; }
-#toc summary { cursor: pointer; }
-#toc ul { margin: 0.35rem 0 0.5rem 1.2rem; padding-left: 1rem; }
-
-/* Sections repliables (H2) */
-details.section { margin: 0.75rem 0 1.25rem; padding: 0.25rem 0; }
-details.section > summary { cursor: pointer; }
-details.section > summary > h2 { display: inline; margin: 0; }
-
-/* Carrousels d’images (par section) */
-.section-carousel { margin-top: 0.75rem; }
-.section-carousel .carousel-title { font-weight: 600; margin: 0.25rem 0 0.5rem; }
-.section-carousel .carousel {
-  display: flex;
-  gap: 0.75rem;
-  overflow-x: auto;
-  padding: 0.25rem 0 0.5rem;
-  scroll-snap-type: x mandatory;
-}
-.section-carousel .carousel-item {
-  flex: 0 0 auto;
-  width: 260px;
-  scroll-snap-align: start;
-}
-.section-carousel .carousel-item img.thumb {
-  width: 260px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-.section-carousel .carousel-item .caption {
-  font-size: 0.85em;
-  line-height: 1.2;
-  margin-top: 0.35rem;
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const tocRoot = document.getElementById('toc');
-  const main =
-    document.querySelector('main') ||
-    document.querySelector('.page-content') ||
-    document.body;
-
-  if (!main || !tocRoot) return;
-
-  const slugify = (s) => s
-    .toLowerCase()
-    .trim()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s-]/g, '')
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
-
-  // --- 1) Sections repliables automatiques (H2) ---
-  const h2s = Array.from(main.querySelectorAll('h2'))
-    .filter(h => !h.classList.contains('no_toc'))
-    .filter(h => !tocRoot.contains(h));
-
-  for (const h2 of h2s) {
-    if (!h2.id) h2.id = slugify(h2.textContent);
-
-    // Ne pas rewrap si déjà dans un <details.section>
-    if (h2.closest('details.section')) continue;
-
-    const parent = h2.parentNode;
-    const details = document.createElement('details');
-    details.className = 'section';
-    details.open = true;
-
-    const summary = document.createElement('summary');
-    summary.className = 'section-summary';
-
-    parent.insertBefore(details, h2);
-    summary.appendChild(h2);
-    details.appendChild(summary);
-
-    // Déplace tout jusqu’au prochain H2 (sibling dans le parent)
-    let sib = details.nextSibling;
-    while (sib && !(sib.nodeType === 1 && sib.tagName === 'H2')) {
-      const next = sib.nextSibling;
-      details.appendChild(sib);
-      sib = next;
-    }
-  }
-
-  // --- 2) Sommaire automatique déroulant (H2 visibles, H3 en sous-menu) ---
-  const sections = Array.from(main.querySelectorAll('details.section'));
-  const container = document.createElement('div');
-  container.className = 'toc-collapsible';
-
-  for (const sec of sections) {
-    const h2 = sec.querySelector('summary h2');
-    if (!h2) continue;
-
-    const tocItem = document.createElement('details');
-    tocItem.className = 'toc-item';
-
-    const tocSummary = document.createElement('summary');
-    tocSummary.textContent = h2.textContent;
-    tocItem.appendChild(tocSummary);
-
-    const ul = document.createElement('ul');
-
-    // Lien vers la section (H2)
-    const li0 = document.createElement('li');
-    const a0 = document.createElement('a');
-    a0.href = '#' + h2.id;
-    a0.textContent = 'Aller à la section';
-    li0.appendChild(a0);
-    ul.appendChild(li0);
-
-    // Sous-sections (H3) à l’intérieur de cette section
-    const h3s = Array.from(sec.querySelectorAll('h3'))
-      .filter(h => !h.classList.contains('no_toc'));
-
-    for (const h3 of h3s) {
-      if (!h3.id) h3.id = slugify(h3.textContent);
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = '#' + h3.id;
-      a.textContent = h3.textContent;
-      li.appendChild(a);
-      ul.appendChild(li);
-    }
-
-    tocItem.appendChild(ul);
-    container.appendChild(tocItem);
-  }
-
-  tocRoot.innerHTML = '';
-  tocRoot.appendChild(container);
-
-  // --- 3) Carrousel d’images automatique en fin de section ---
-  const isCaptionPara = (p) => {
-    if (!p || p.tagName !== 'P') return false;
-    const t = (p.textContent || '').trim();
-    return /\bSource\b|Wikimedia|commons\.wikimedia\.org/i.test(t);
-  };
-
-  for (const sec of sections) {
-    const imgParas = Array.from(sec.querySelectorAll('p'))
-      .filter(p => p.firstElementChild && p.firstElementChild.tagName === 'IMG' && (p.textContent || '').trim() === '');
-
-    if (!imgParas.length) continue;
-
-    const carouselWrap = document.createElement('div');
-    carouselWrap.className = 'section-carousel';
-
-    const title = document.createElement('div');
-    title.className = 'carousel-title';
-    title.textContent = 'Iconographie';
-    carouselWrap.appendChild(title);
-
-    const carousel = document.createElement('div');
-    carousel.className = 'carousel';
-
-    for (const pImg of imgParas) {
-      const img = pImg.querySelector('img');
-      if (!img) continue;
-
-      // Caption: paragraphe suivant si détecté
-      let caption = null;
-      const nextP = pImg.nextElementSibling;
-      if (isCaptionPara(nextP)) caption = nextP;
-
-      const src = img.getAttribute('src');
-      const alt = img.getAttribute('alt') || '';
-
-      const item = document.createElement('div');
-      item.className = 'carousel-item';
-
-      const link = document.createElement('a');
-      link.href = src;
-      link.target = '_blank';
-      link.rel = 'noopener';
-
-      const thumb = document.createElement('img');
-      thumb.className = 'thumb';
-      thumb.src = src;
-      thumb.alt = alt;
-
-      link.appendChild(thumb);
-      item.appendChild(link);
-
-      const cap = document.createElement('div');
-      cap.className = 'caption';
-      cap.innerHTML = caption ? caption.innerHTML : (alt || '');
-      item.appendChild(cap);
-
-      carousel.appendChild(item);
-
-      // Supprime le bloc original (image + caption)
-      pImg.remove();
-      if (caption) caption.remove();
-    }
-
-    carouselWrap.appendChild(carousel);
-    sec.appendChild(carouselWrap);
-  }
-
-  // --- 4) Ouvre automatiquement la section correspondant au hash (TOC + section) ---
-  const openForHash = () => {
-    const hash = decodeURIComponent(window.location.hash || '');
-    if (!hash) return;
-    const targetId = hash.startsWith('#') ? hash.slice(1) : hash;
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    const section = target.closest('details.section');
-    if (section) section.open = true;
-
-    const h2 = section ? section.querySelector('summary h2') : null;
-    if (h2) {
-      const tocLink = tocRoot.querySelector('a[href="#' + h2.id + '"]');
-      if (tocLink) {
-        const tocDetails = tocLink.closest('details');
-        if (tocDetails) tocDetails.open = true;
-      }
-    }
-  };
-
-  openForHash();
-  window.addEventListener('hashchange', openForHash);
-});
-</script>
-
----
-
-## LE SITE
 ## LE SITE  
 
 Commune : Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, en bordure est du Parc naturel régional Livradois-Forez.  
@@ -285,7 +50,7 @@ Plan de Saint-Gall (tradition carolingienne, reprise graphique par Viollet-le-Du
 
 ---
 
-#### Des origines antiques au dispositif monastique
+## Des origines antiques au dispositif monastique  
 
 L’Antiquité grecque fournit une scène originelle où “médecine”, “rite” et “poison” ne sont pas encore séparés. D’un côté, la mythologie met en place une généalogie du savoir thérapeutique : Chiron, centaure éducateur et guérisseur, enseigne l’art de soigner à Asclépios, qui deviendra figure divine du soin. Cette filiation raconte une vérité anthropologique durable : la médecine s’inscrit dans une tradition de transmission, pas dans une “découverte” isolée.  
 
@@ -312,7 +77,7 @@ Logique carolingienne de la liste et de l’utilité : prescrire des cultures, d
 
 ---
 
-#### De l’abbaye à l’université : le basculement des juridictions du soin
+## De l’abbaye à l’université : le basculement des juridictions du soin  
 
 Ce cadre monastique permet de comprendre l’ambivalence magie/sorcellerie sans caricature. Dans les abbayes, des gestes aujourd’hui rangés sous “symbolique” — prière, bénédiction, herbes protectrices, fumigations — coexistent avec une thérapeutique matérielle. L’ensemble forme une épistémologie cohérente où corps, esprit, monde et plante appartiennent à un même tissu d’influences. Ce n’est pas une naïveté, c’est une ontologie pratique : la guérison est un fait à la fois physiologique et social.  
 
@@ -333,7 +98,7 @@ Mise en scène médiévale du prestige salernitain. Source : [Wikimedia Commons]
 
 ---
 
-#### La criminalisation du savoir et l’invention du *Veneficium*
+## La criminalisation du savoir et l’invention du *Veneficium*  
 
 Le XVIe siècle marque une cristallisation conceptuelle : Paracelse formule *dosis sola facit venenum*, donnant à l’université une maxime qui rend dicible ce que les pratiques vernaculaires savaient déjà empiriquement. Mais c’est aussi le siècle où la frontière magie/sorcellerie devient une machine politico-judiciaire, et où l’Europe élabore une littérature démonologique et inquisitoriale.  
 
@@ -359,7 +124,7 @@ Affaire des Poisons : portrait diffusé (fonds Gallica/BnF). Source : [Wikimedia
 
 ---
 
-#### La pharmacologie moderne : la mesure de l’ambivalence
+## La pharmacologie moderne : la mesure de l’ambivalence  
 
 Le passage à la “science dure” ne détruit pas l’ambivalence ; il la rend mesurable, industrialisable et donc plus fortement régulée. Le XVIIIe et le XIXe siècles sont déterminants : la pharmacologie se déplace d’un monde de plantes variables vers un monde d’entités isolées, purifiées et dosables.  
 
@@ -383,7 +148,7 @@ Ergot du seigle : sclérote de *Claviceps purpurea*. Source : [Wikimedia Commons
 
 ---
 
-#### Enthéogènes, cultes et psychonautes : la plante comme sacrement
+## Enthéogènes, cultes et psychonautes : la plante comme sacrement  
 
 L’Antiquité ne faisait pas que tolérer la modification de conscience, elle l’institutionnalisait au plus haut niveau de l’État. Les Mystères d’Éleusis, culte initiatique majeur de la Grèce antique, reposaient sur l’ingestion du *kykeôn*. La nature exacte de ce breuvage demeure discutée, mais une hypothèse célèbre — notamment dans le sillage de Wasson, Hofmann et Ruck — propose un rôle d’alcaloïdes dérivés de l’ergot. Quoi qu’il en soit, le point structurant est clair : l’Occident ancien a pu placer au cœur de son dispositif religieux une expérience d’altération ritualisée, encadrée, interprétée, et politiquement centrale.  
 
@@ -406,7 +171,7 @@ Echinopsis pachanoi (macro). Source : [Wikimedia Commons](https://commons.wikime
 
 ---
 
-#### Listes, interdits et Renaissance psychédélique
+## Listes, interdits et Renaissance psychédélique  
 
 Le monde contemporain rend la frontière médecine/crime littérale et consultable : elle prend la forme de listes. En France, le Code de la santé publique encadre les “plantes, substances ou préparations vénéneuses” classées comme stupéfiants ou psychotropes ou inscrites sur listes I et II par décision de l’ANSM. L’ANSM publie des listes consolidées, mises à jour, qui actent le classement des stupéfiants et des psychotropes, et renvoient aux arrêtés et décisions correspondants.  
 
@@ -425,7 +190,7 @@ Figure devenue objet de requalification institutionnelle. Source : [Wikimedia Co
 
 ---
 
-#### Ce Jardin : l’expérience de la frontière
+## Ce Jardin : l’expérience de la frontière  
 
 Dans ce cadre, la “sorcière” n’est qu’une figure parmi d’autres, et une monographie correcte doit faire apparaître tout un spectre : magicien(ne)s urbain(e)s, devins, guérisseurs, sages-femmes, apothicaires clandestins, chamans, prêtres-médecins, médecins humanistes, démonologues, experts judiciaires, pharmaciens, régulateurs.  
 
@@ -476,7 +241,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *GABAergique / sérotoninergique / anticholinergique / opioïde / cognition / enthéogènes*
 
-#### Sédatifs & anxiolytiques — mécanisme GABAergique {: .no_toc }
+#### Sédatifs & anxiolytiques — mécanisme GABAergique
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -490,7 +255,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Laitue vireuse ⚠️|*Lactuca virosa* L.|Astéracées|Lactucine (sesquiterpène)|sédatif, antalgique|GABAergique et opioïde léger → hallucinations légères en excès 🫶|🪴|
 |Cataire|*Nepeta cataria* L.|Lamiacées|Népétalactone|sédatif léger (humain) ; euphorie intense (chat)|GABAergique → sédatif léger (humain) ; euphorie intense (chat)|🏔️🪴|
 
-#### Antidépresseurs — mécanisme monoaminergique {: .no_toc }
+#### Antidépresseurs — mécanisme monoaminergique
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -499,7 +264,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Avoine cultivée|*Avena sativa* L.|Poacées|Avénanthramides|asthénie nerveuse|Monoaminergique léger → sans toxicité ⚡|🪴|
 |Fève des marais ⚠️|*Vicia faba* L.|Fabacées|L-DOPA|précurseur direct, Parkinson|Dopaminergique → favisme (déficit G6PD)|🪴|
 
-#### Stimulants cognitifs & toniques nerveux {: .no_toc }
+#### Stimulants cognitifs & toniques nerveux
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -512,11 +277,8 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Absinthe ⚠️|*Artemisia absinthium* L.|Astéracées|Thuyone, absinthine|amer digestif|Antagoniste GABA → convulsions à dose élevée 🛡️⚡|🏔️🪴|
 |Petite pervenche ⚠️|*Vinca minor* L.|Apocynacées|Vincamine (alcaloïde indolique)|Fatigue, vigilance, cognition|Vasodilatateur cérébral → troubles neurologiques à forte dose. Plante des cimetières médiévaux|🏔️🪴|
 |Acore odorant ⚠️|*Acorus calamus* L.|Acoracées|Asarone (phénylpropanoïde)|Fatigue, vigilance, cognition|Stimulant digestif antique → hallucinogène léger, présent dans des onguents de combat médiévaux — neurotoxique|🏔️🪴|
-|Coca (feuilles) ⚠️|*Erythroxylum coca* Lam.|Érythroxylacées|Cocaïne (alcaloïde)|stimulant traditionnel andin ; anesthésique local (historique)|Inhibiteur recapture DA/NA → tachycardie, HTA, vasoconstriction ; risque arythmies 💓|🏠|
-|Khat / Qat ⚠️|*Catha edulis* (Vahl) Endl.|Célastracées|Cathinone, cathine (phénylpropylamines)|stimulant traditionnel (Corne de l’Afrique / Arabie)|Sympathomimétique → insomnie, HTA, risque cardio-neuro 💓|🏠|
-|Tutu (coriarie arborescente) ☠️|*Coriaria arborea* Lindsay|Coriariacées|Tutin, coriamyrtine|Poison (miel contaminé, NZ) / non thérapeutique|Antagonisme GABA → convulsions, délire, coma 🧠|🏠|
 
-#### Anticholinergiques — alcaloïdes tropaniques {: .no_toc }
+#### Anticholinergiques — alcaloïdes tropaniques
 
 *Les “plantes des sorcières” — pommade à voler, sabbat, anesthésie chirurgicale*
 
@@ -534,7 +296,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Morelle douce-amère ⚠️|*Solanum dulcamara* L.|Solanacées|Solanine, solamargine (glycoalcaloïdes)|usage dermatologique|Glycoalcaloïde → troubles digestifs et neurologiques 🌸|🪴|
 |Morelle noire (baies immatures) ☠️|*Solanum nigrum* L.|Solanacées|Solanine|Spasmolyse / mydriase (usage médical historique) ; poison|Glycoalcaloïde → neurotoxique — confusion fréquente avec baies comestibles ⚠️ enfants|🪴|
 
-#### Hallucinogènes & enthéogènes — alcaloïdes tryptaminiques, lysergiques, mescaliniques {: .no_toc }
+#### Hallucinogènes & enthéogènes — alcaloïdes tryptaminiques, lysergiques, mescaliniques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -553,7 +315,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Hétérosides cardiotoniques / alcaloïdes des canaux ioniques*
 
-#### Hétérosides cardiotoniques {: .no_toc }
+#### Hétérosides cardiotoniques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -568,7 +330,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Hellébore fétide ☠️|*Helleborus foetidus* L.|Renonculacées|Héléborine|“soigne la folie par exorcisme”|Hétéroside → purgatif ultra-violent, arrêt cardiaque. Odeur caractéristique|🏔️🪴|
 |Laurier-rose ☠️|*Nerium oleander* L.|Apocynacées|Oléandrine (hétéroside cardiaque)|bloc de conduction|Hétéroside cardiotonique → ingestion accidentelle = urgence|❄️|
 
-#### Alcaloïdes des canaux ioniques {: .no_toc }
+#### Alcaloïdes des canaux ioniques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -580,7 +342,6 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Vératre vert ⚠️|*Veratrum viride* Aiton|Mélanthiacées|Vératridine|antihypertenseur historique américain|Ouverture canaux Na⁺ → marge thérapeutique étroite|❄️|
 |Vératre noir ☠️|*Veratrum nigrum* L.|Mélanthiacées|Protovératrine|variante rare, fleurs sombres|Ouverture canaux Na⁺ → même toxicité que V. album|🏔️🪴|
 |If commun ☠️|*Taxus baccata* L.|Taxacées|Taxines ; paclitaxel (feuilles)|toutes parties toxiques sauf arille rouge|Canaux Na⁺/Ca²⁺ → arythmies, arrêt cardiaque → paclitaxel (Taxol) : anticancéreux majeur ⚠️ chiens|🏔️🪴|
-|If du Pacifique ☠️|*Taxus brevifolia* Nutt.|Taxacées|Taxines ; paclitaxel (écorce, aiguilles)|source historique du paclitaxel (Taxol)|Même spectre que l’if européen → arythmies, arrêt cardiaque|🏔️🪴|
 |Gelsémier ☠️|*Gelsemium sempervirens* (L.) W.T.Aiton|Gelsémiacées|Gelsémine (alcaloïde indolique)|sédatif neural historique|Canaux Na⁺ → paralysie respiratoire. Confondu avec le chèvrefeuille|❄️|
 |Œnanthe safranée ☠️|*Oenanthe crocata* L.|Apiacées|Œnanthotoxine (polyacétylène)|Poison (non thérapeutique)|Antagonisme GABA → convulsivant violent, arrêt cardiaque. Laisse un “sourire sardonique” sur le cadavre. Sève orange caractéristique|🪴|
 |Laurier-cerise ☠️|*Prunus laurocerasus* L.|Rosacées|Prunaside (hétéroside cyanogène)|Poison (non thérapeutique)|Libération de cyanure d’hydrogène → histotoxique, arrêt respiratoire cellulaire|🏔️🪴|
@@ -594,7 +355,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Salicylates / alcaloïdes opioïdes / lactones sesquiterpéniques / colchicine*
 
-#### Antalgiques légers & antipyrétiques — salicylates et lactones {: .no_toc }
+#### Antalgiques légers & antipyrétiques — salicylates et lactones
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -609,7 +370,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Actée à grappes noires ⚠️|*Actaea racemosa* L.|Renonculacées|Triterpènes glycosidiques|Douleur légère, fièvre|Douleurs de l’accouchement (médecine amérindienne) → hépatotoxique en surdosage ⚡|🏔️🪴|
 |Scutellaire du Baïkal|*Scutellaria baicalensis* Georgi|Lamiacées|Baïcaline, wogonine (flavonoïdes)|GABAergique modéré|Anti-inflammatoire, antiviral → bonne tolérance|🏔️🪴|
 
-#### Analgésiques centraux — alcaloïdes opioïdes {: .no_toc }
+#### Analgésiques centraux — alcaloïdes opioïdes
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -626,7 +387,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Coumarines / salicylates / flavonoïdes / tanins*
 
-#### Hémostatiques & coagulants — tanins et vitamine K {: .no_toc }
+#### Hémostatiques & coagulants — tanins et vitamine K
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -638,7 +399,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Renouée bistorte ⚠️|*Persicaria bistorta* (L.) Samp. (syn. *Polygonum bistorta* L.)|Polygonacées|Tanins, acide gallique|anti-hémorragique|Astringent fort → irritation digestive en excès|🏔️🪴|
 |Saponaire officinale ⚠️|*Saponaria officinalis* L.|Caryophyllacées|Saponines triterpéniques|Saignements mineurs / coagulation ; hémorroïdes (trad.)|Expectorant antique, détersif → hémolyse si passage direct dans le sang|🏔️🪴|
 
-#### Fluidifiants & antiagrégants — coumarines et flavonoïdes {: .no_toc }
+#### Fluidifiants & antiagrégants — coumarines et flavonoïdes
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -655,7 +416,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Mucilages / alcaloïdes bronchodilatateurs / huiles essentielles sécrétolytiques*
 
-#### Adoucissants & expectorants — mucilages {: .no_toc }
+#### Adoucissants & expectorants — mucilages
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -665,7 +426,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Rossolis à feuilles rondes|*Drosera rotundifolia* L.|Droséracées|Naphtoquinones (plumbagin)|Toux, irritation bronchique (émollient/expectorant)|Antitussif spasmodique → irritation rénale en excès|🏔️🪴|
 |Tussilage ⚠️|*Tussilago farfara* L.|Astéracées|Mucilages ; alcaloïdes pyrrolizidiniques|Toux, irritation bronchique (émollient/expectorant)|Adoucissant → usage prolongé déconseillé (alcaloïdes hépatotoxiques) 🫀|🏔️🪴|
 
-#### Antiseptiques respiratoires — huiles essentielles phénoliques {: .no_toc }
+#### Antiseptiques respiratoires — huiles essentielles phénoliques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -676,7 +437,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Marrube blanc ⚠️|*Marrubium vulgare* L.|Lamiacées|Marrubiine (diterpène)|bronchite chronique|Diterpénique → arythmies légères en excès 💓|🪴|
 |Grindélie ⚠️|*Grindelia robusta* Nutt.|Astéracées|Résines diterpéniques|asthme spasmodique|Résine → irritation rénale en excès|❄️|
 
-#### Bronchodilatateurs — alcaloïdes sympathomimétiques {: .no_toc }
+#### Bronchodilatateurs — alcaloïdes sympathomimétiques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -690,7 +451,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Iridoïdes amers / alcaloïdes isoquinoléiques / cucurbitacines / anthraquinones*
 
-#### Amers & toniques digestifs — iridoïdes et sesquiterpènes {: .no_toc }
+#### Amers & toniques digestifs — iridoïdes et sesquiterpènes
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -701,7 +462,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Armoise commune ⚠️|*Artemisia vulgaris* L.|Astéracées|Thuyone (cétone), sesquiterpènes|amer digestif, emménagogue|Cétone → antagoniste GABA à dose élevée 🛡️⚡|🏔️🪴|
 |Trèfle d’eau ⚠️|*Menyanthes trifoliata* L.|Ményanthacées|Sécoiridoïdes|antiscorbutique des tourbières|Amer absolu → vomitif à forte dose|🏔️🪴|
 
-#### Antispasmodiques & antiparasitaires digestifs {: .no_toc }
+#### Antispasmodiques & antiparasitaires digestifs
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -709,16 +470,13 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Courge (graines)|*Cucurbita pepo* L.|Cucurbitacées|Cucurbitine (acide aminé)|ténia|Antiparasitaire → sans toxicité 🛡️|🪴|
 |Grenadier (écorce racine) ⚠️|*Punica granatum* L.|Lythriacées|Pelletiérine (alcaloïde pipéridinique)|ténia|Anthelminthique → convulsions, mort en excès. Fruit comestible 🛡️|❄️|
 |Charbon végétal (Bouleau)|*Betula* spp.|Bétulacées|Carbone activé|antidote de première intention|Adsorbant → sans toxicité 🫀|🏔️🪴|
-|Kosso (Hagenia) ⚠️|*Hagenia abyssinica* (Bruce) J.F.Gmel.|Rosacées|Kosins (phloroglucinols)|anthelminthique historique (ténia)|Irritant digestif → purge, nausées ; hépatotoxique possible en abus|🏠|
 
-#### Purgatifs & drastiques {: .no_toc }
+#### Purgatifs & drastiques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
 |Ricin commun ☠️|*Ricinus communis* L.|Euphorbiacées|Ricine (lectine, graines) ; acide ricinoléique (huile)|huile pressée à froid : purgatif (ricine détruite)|Toxine ribosomale → graines entières : toxine létale à faible quantité. Arme chimique (affaire Georgi Markov, 1978) ⚠️ enfants et animaux. Semer en intérieur mars, pleine terre fin mai|🌱|
 |Rhubarbe palmée ⚠️|*Rheum palmatum* L.|Polygonacées|Anthraquinones (émodine, rhéine)|purgatif drastique, “chaleurs toxiques” en médecine chinoise|Anthraquinone → déshydratation sévère|🏔️🪴|
-|Bourdaine ⚠️|*Frangula alnus* Mill.|Rhamnacées|Anthraquinones (frangulines)|constipation (purgatif doux, écorce maturée)|Anthraquinone → coliques, déséquilibre électrolytique en excès|🏔️🪴|
-|Nerprun purgatif ⚠️|*Rhamnus cathartica* L.|Rhamnacées|Anthraquinones (émodine, rhamnoxanthone)|purgatif drastique|Anthraquinone → purge violente, déshydratation|🏔️🪴|
 |Podophylle pelté ☠️|*Podophyllum peltatum* L.|Berbéridacées|Podophyllotoxine (lignan)|purgatif amérindien|Mitotoxique → base des anticancéreux étoposide et téniposide|🏔️🪴|
 |Podophylle de l’Himalaya ☠️|*Podophyllum hexandrum* Royle|Berbéridacées|Podophyllotoxine|purgatif ayurvédique extrême|Mitotoxique → destruction cellulaire|🏔️🪴|
 |Bryone dioïque ☠️|*Bryonia dioica* Jacq.|Cucurbitacées|Cucurbitacines (triterpènes)|purgatif drastique|Triterpénique → hémorragies digestives. “Mandragore du pauvre”|🏔️🪴|
@@ -731,8 +489,6 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Hièble ☠️|*Sambucus ebulus* L.|Adoxacées|Sambunigrine (hétéroside cyanogène)|Poison (danger aigu) / non thérapeutique|Cyanogène → purgatif violent → confusion mortelle documentée avec sureau commun comestible ⚠️ enfants|🪴|
 |Symphorine ⚠️|*Symphoricarpos albus* (L.) S.F.Blake|Caprifoliacées|Alcaloïdes isoquinoléiques|Purgatif (usage médical historique) ; poison|“Baies de fantôme” (folklore médiéval) → vomitif puissant, irritation gastrique|🏔️🪴|
 |Troène d’Europe ☠️|*Ligustrum vulgare* L.|Oléacées|Ligustrine (glucoside iridoïde)|astringent|Glucoside → diarrhées sanglantes, collapsus|🏔️🪴|
-|Lierre grimpant ⚠️|*Hedera helix* L.|Araliacées|Hédérine, saponines|expectorant (usage externe) ; baies toxiques|Saponines → vomissements, diarrhées ; contact : dermatite possible 🌸|🏔️🪴|
-|Houx commun ☠️|*Ilex aquifolium* L.|Aquifoliacées|Saponines triterpéniques|baies toxiques (vomitif)|Saponines → gastro-entérite violente, bradycardie possible (enfant) 💓|🏔️🪴|
 
 -----
 
@@ -757,7 +513,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Arbutine / terpènes / coumarines / acides aristolochiques*
 
-#### Antiseptiques urinaires {: .no_toc }
+#### Antiseptiques urinaires
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -768,7 +524,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Capucine (graines) ⚠️|*Tropaeolum majus* L.|Tropéolacées|Benzyl-isothiocyanate|antiseptique urinaire et respiratoire|Isothiocyanate → irritation rénale en excès 🫁|🪴|
 |Genévrier commun ⚠️|*Juniperus communis* L.|Cupressacées|Terpinène-4-ol|diurétique, antiseptique|Terpénique → usage prolongé : néphrotoxique|🏔️🪴|
 
-#### Toxiques rénaux {: .no_toc }
+#### Toxiques rénaux
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -785,7 +541,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Coumarines phototoxiques / oxalates / daphnétoxines / latex*
 
-#### Cicatrisants & protecteurs {: .no_toc }
+#### Cicatrisants & protecteurs
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -793,14 +549,13 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Grand plantain|*Plantago major* L.|Plantaginacées|Aucuboside (iridoïde), mucilages|plaies, piqûres|Adoucissant, anti-inflammatoire → sans toxicité 🩸|🏔️🪴|
 |Lavande vraie ⚠️|*Lavandula angustifolia* Mill.|Lamiacées|Linalol (monoterpène)|antiseptique, cicatrisant|Terpénique → HE pure : neurotoxique 🛡️|❄️|
 
-#### Kératolytiques, caustiques & phototoxiques {: .no_toc }
+#### Kératolytiques, caustiques & phototoxiques
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
 |Chélidoine ⚠️|*Chelidonium majus* L.|Papavéracées|Chélidonine (suc jaune)|kératolytique, verrues (application locale)|Alcaloïde → caustique pour les muqueuses 🌿|🏔️🪴|
 |Euphorbe ésule rouge ⚠️|*Euphorbia peplus* L.|Euphorbiacées|Esters diterpéniques (ingénol)|kératolytique, kératoses actiniques|Diterpénique → caustique muqueux|🪴|
 |Euphorbe des jardins ⚠️|*Euphorbia lathyris* L.|Euphorbiacées|Latex diterpénique|taupe-répulsif traditionnel|Diterpénique → brûlures cutanées et oculaires|🪴|
-|Euphorbe résinifère ☠️|*Euphorbia resinifera* O.Berg|Euphorbiacées|Résinifératoxine (diterpène)|latex caustique ; modèle neurobiologique de la douleur|Agoniste TRPV1 ultra-puissant → brûlures, cécité si contact. Irritant majeur|🏠|
 |Fraxinelle (Buisson ardent) ⚠️|*Dictamnus albus* L.|Rutacées|Furocoumarines, huiles volatiles|Verrues/callosités (externe) ; phototoxicité/caustique|Coumarine phototoxique extrême → brûlures au 3e degré sur peau humide + soleil. Dégage des vapeurs inflammables|🏔️🪴|
 |Rue officinale ☠️ ⚠️|*Ruta graveolens* L.|Rutacées|Furocoumarines (bergaptène, xanthoxine)|Verrues/callosités (externe) ; phototoxicité/caustique|Coumarine phototoxique → brûlures solaires sévères + utérotonique, abortif à dose élevée. Dans les *Causae et Curae* d’Hildegarde (remède) et dans les procès du XVe s. (preuve d’un crime) 🛡️⚡|🪴|
 |Arum tacheté ⚠️|*Arum maculatum* L.|Aracées|Oxalates de calcium (raphides)|Verrues/callosités (externe) ; phototoxicité/caustique|Mécanique + chimique → brûlures immédiates bouche et gorge. Baies orange attractives. Racine comestible cuite ⚠️ enfants|🏔️🪴|
@@ -816,7 +571,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Phénols / isothiocyanates / pyréthrines / alcaloïdes*
 
-#### Antibactériens & antifongiques — phénols et terpènes {: .no_toc }
+#### Antibactériens & antifongiques — phénols et terpènes
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -831,17 +586,15 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Tanaisie commune ⚠️|*Tanacetum vulgare* L.|Astéracées|Thuyone, camphre (cétones terpéniques)|vermifuge, antifongique, emménagogue|Cétone → neurotoxique à dose élevée ⚡|🏔️🪴|
 |Souci officinal|*Calendula officinalis* L.|Astéracées|Triterpènes, sesquiterpènes|antiseptique cutané léger 🌸|Terpénique → antiseptique cutané léger 🌸|🪴|
 
-#### Antiparasitaires {: .no_toc }
+#### Antiparasitaires
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
 |Armoise commune ⚠️|*Artemisia vulgaris* L.|Astéracées|Thuyone, sesquiterpènes|vermifuge léger|Cétone → neurotoxique 🌿⚡|🏔️🪴|
 |Absinthe ⚠️|*Artemisia absinthium* L.|Astéracées|Thuyone, absinthine|vermifuge, antiparasitaire|Cétone → antagoniste GABA 🧠|🏔️🪴|
-|Armoise annuelle ⚠️|*Artemisia annua* L.|Astéracées|Artémisinine (endoperoxyde sesquiterpénique)|antipaludique majeur (histoire + modèle thérapeutique)|Endoperoxyde → bien toléré aux doses usuelles ; extraits concentrés : neurotoxicité potentielle|🌱|
-|Quinquina (quinine) ⚠️|*Cinchona officinalis* L.|Rubiacées|Quinine, quinidine (alcaloïdes quinoliniques)|antipaludique historique ; antiarythmique (quinidine) 💓|“Cinchonisme” (acouphènes, nausées) ; troubles du rythme à forte dose 💓|🏠|
 |Chénopode vermifuge ⚠️|*Dysphania ambrosioides* (L.) Mosyakin & Clemants (syn. *Chenopodium ambrosioides*)|Amaranthacées|Ascaridol (endoperoxyde)|anthelminthique puissant|Terpénique → neurotoxique, hépatotoxique|🪴|
 
-#### Insecticides & répulsifs {: .no_toc }
+#### Insecticides & répulsifs
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -856,7 +609,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 
 *Guanidines / phytoestrogènes / alcaloïdes sympathomimétiques / glycosides iodés / rituels*
 
-#### Régulation glycémique {: .no_toc }
+#### Régulation glycémique
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -865,7 +618,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Mûrier blanc (feuilles) ⚠️|*Morus alba* L.|Moracées|DNJ (iminosucre)|hypoglycémie si associé à antidiabétiques|Inhibiteur α-glucosidase → hypoglycémie si associé à antidiabétiques|🪴|
 |Fenugrec ⚠️|*Trigonella foenum-graecum* L.|Fabacées|4-hydroxyisoleucine|hypoglycémie par interactions|Insulinotrope → hypoglycémie par interactions|🪴|
 
-#### Stimulants, adaptogènes & plantes rituelles {: .no_toc }
+#### Stimulants, adaptogènes & plantes rituelles
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -874,10 +627,8 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Rhodiola|*Rhodiola rosea* L.|Crassulacées|Salidroside, rosavine|fatigue, stress|Adaptogène → contre-indiqué bipolaire|🏔️🪴|
 |Ashwagandha ⚠️|*Withania somnifera* (L.) Dunal|Solanacées|Withanolides (stéroïdes lactones)|anxiété, fatigue|Cortisol-modulant → hépatotoxique rapporté à dose élevée|❄️ ⚠️ protéger si gel intense|
 |Théier ⚠️|*Camellia sinensis* (L.) Kuntze|Théacées|Caféine, L-théanine, catéchines|vigilance|Xanthine → hépatotoxique paradoxal (suppléments concentrés) 🫀|❄️|
-|Maté ⚠️|*Ilex paraguariensis* A.St.-Hil.|Aquifoliacées|Caféine, théobromine (xanthines)|endurance|Xanthine → tachycardie à dose élevée|🏠|
+|Maté ⚠️|*Ilex paraguariensis* A.St.-Hil.|Aquifoliacées|Caféine, théobromine (xanthines)|endurance|Xanthine → tachycardie à dose élevée|🪴 *(résiste à –8°C)*|
 |Azalée pontique ☠️|*Rhododendron luteum* Sweet|Éricacées|Grayanotoxines (diterpènes)|“miel fou” (Xénophon, 401 av. J.-C.) — première arme chimique végétale documentée|Ouverture canaux Na⁺ → bradycardie, paralysie, hallucinations 🧠💓|🏔️🪴|
-|Rhododendron ferrugineux ☠️|*Rhododendron ferrugineum* L.|Éricacées|Grayanotoxines (diterpènes)|miel toxique possible ; plante alpine emblématique|Bradycardie, hypotension, troubles neuro (grayanotoxines) 🧠💓|🏔️🪴|
-|Kalmia à larges feuilles ☠️|*Kalmia latifolia* L.|Éricacées|Grayanotoxines|poison de bétail (Amérique du Nord) ; miel toxique (local)|Bradycardie, salivation, convulsions à dose élevée 🧠💓|🪴|
 |Pivoine officinale ⚠️|*Paeonia officinalis* L.|Paéoniacées|Péoniflorine (monoterpène)|antispasmodique, sédatif. Collier anti-démons médiéval|GABAergique → neurotoxique si graines ingérées 🧠|🏔️🪴|
 |Sceau-de-Salomon ⚠️|*Polygonatum multiflorum* (L.) All.|Asparagacées|Saponines stéroïdiennes|baies toxiques (troubles cardiaques, digestifs) 💓|Magie de la signature médiévale (répare les os cassés) → baies toxiques (troubles cardiaques, digestifs) 💓|🏔️🪴|
 |Lycopode en massue ⚠️|*Lycopodium clavatum* L.|Lycopodiacées|Alcaloïdes (lycopodine)|Tonicité / adaptogène ; rituel (selon)|“Poudre de sorcière” — spores projetées au feu : boule de feu spectaculaire → toxique si ingéré|🏔️🪴|
@@ -886,7 +637,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Tabac cultivé ⚠️|*Nicotiana tabacum* L.|Solanacées|Nicotine|stimulant adrénergique|Agoniste nicotinique → addictif, cancérigène 🛡️|🪴|
 |Éphédra commun ☠️|*Ephedra distachya* L.|Éphédracées|Éphédrine|stimulant puissant|Adrénergique → arythmies, AVC 🫁|🪴|
 
-#### Aphrodisiaques & vasodilatateurs pelviens {: .no_toc }
+#### Aphrodisiaques & vasodilatateurs pelviens
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
@@ -895,7 +646,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Tribule terrestre ⚠️|*Tribulus terrestris* L.|Zygophyllacées|Protodioscine (saponine)|Libido / vasodilatation pelvienne (trad.)|Aphrodisiaque ayurvédique → photosensibilisation hépatique chez les ruminants|🌱|
 |Damiana ⚠️|*Turnera diffusa* Willd. ex Schult.|Passifloracées|Apigénine, damianine (flavonoïdes)|Libido / vasodilatation pelvienne (trad.)|Aphrodisiaque aztèque, euphorisant léger, vasodilatateur pelvien → laxatif en surdosage|🏠|
 
-#### Hormones féminines & emménagogues {: .no_toc }
+#### Hormones féminines & emménagogues
 
 *Les “plantes des femmes” : remède dans un herbier monastique, crime dans un acte de procès*
 
@@ -912,7 +663,7 @@ _Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites e
 |Menthe pouliot ☠️|*Mentha pulegium* L.|Lamiacées|Pulgone|abortif toxique|Cétone → hépatotoxique, mort 🛡️|🪴|
 |Capselle bourse-à-pasteur|*Capsella bursa-pastoris* (L.) Medik.|Brassicacées|Amines vasoactives|hémorragies utérines|Vasoconstricteur → contre-indiqué grossesse 🩸|🏔️🪴|
 
-#### Thyroïde & axe HPA {: .no_toc }
+#### Thyroïde & axe HPA
 
 |Nom vernaculaire|Nom scientifique|Famille|Principe actif|Utilisation|Effet — continuum dose|Culture|
 |---|---|---|---|---|---|---|
