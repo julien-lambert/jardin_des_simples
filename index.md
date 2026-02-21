@@ -15,23 +15,55 @@ Un *hortus pharmacologique* — médecine, poison, sorcellerie
 <div id="toc" class="toc"></div>
 
 <style>
+/* TOC (automatique, déroulant) */
 #toc .toc-collapsible { margin: 0.5rem 0 1rem; }
 #toc details { margin: 0.25rem 0; }
-#toc summary { cursor: pointer; list-style: none; }
-#toc summary::-webkit-details-marker { display: none; }
-#toc summary a { text-decoration: none; }
+#toc summary { cursor: pointer; }
 #toc ul { margin: 0.35rem 0 0.5rem 1.2rem; padding-left: 1rem; }
+
+/* Sections repliables (H2) */
+details.section { margin: 0.75rem 0 1.25rem; padding: 0.25rem 0; }
+details.section > summary { cursor: pointer; }
+details.section > summary > h2 { display: inline; margin: 0; }
+
+/* Carrousels d’images (par section) */
+.section-carousel { margin-top: 0.75rem; }
+.section-carousel .carousel-title { font-weight: 600; margin: 0.25rem 0 0.5rem; }
+.section-carousel .carousel {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.5rem;
+  scroll-snap-type: x mandatory;
+}
+.section-carousel .carousel-item {
+  flex: 0 0 auto;
+  width: 260px;
+  scroll-snap-align: start;
+}
+.section-carousel .carousel-item img.thumb {
+  width: 260px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+.section-carousel .carousel-item .caption {
+  font-size: 0.85em;
+  line-height: 1.2;
+  margin-top: 0.35rem;
+}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const tocRoot = document.getElementById('toc');
-  if (!tocRoot) return;
-
   const main =
     document.querySelector('main') ||
     document.querySelector('.page-content') ||
     document.body;
+
+  if (!main || !tocRoot) return;
 
   const slugify = (s) => s
     .toLowerCase()
@@ -41,77 +73,182 @@ document.addEventListener('DOMContentLoaded', () => {
     .replace(/\s+/g, '-')
     .replace(/-+/g, '-');
 
-  const headings = Array.from(main.querySelectorAll('h2, h3'))
+  // --- 1) Sections repliables automatiques (H2) ---
+  const h2s = Array.from(main.querySelectorAll('h2'))
     .filter(h => !h.classList.contains('no_toc'))
     .filter(h => !tocRoot.contains(h));
 
-  const sections = [];
-  let current = null;
+  for (const h2 of h2s) {
+    if (!h2.id) h2.id = slugify(h2.textContent);
 
-  for (const h of headings) {
-    if (!h.id) h.id = slugify(h.textContent);
-    if (h.tagName === 'H2') {
-      current = { h2: h, h3: [] };
-      sections.push(current);
-    } else if (h.tagName === 'H3') {
-      if (!current) continue;
-      current.h3.push(h);
+    // Ne pas rewrap si déjà dans un <details.section>
+    if (h2.closest('details.section')) continue;
+
+    const parent = h2.parentNode;
+    const details = document.createElement('details');
+    details.className = 'section';
+    details.open = true;
+
+    const summary = document.createElement('summary');
+    summary.className = 'section-summary';
+
+    parent.insertBefore(details, h2);
+    summary.appendChild(h2);
+    details.appendChild(summary);
+
+    // Déplace tout jusqu’au prochain H2 (sibling dans le parent)
+    let sib = details.nextSibling;
+    while (sib && !(sib.nodeType === 1 && sib.tagName === 'H2')) {
+      const next = sib.nextSibling;
+      details.appendChild(sib);
+      sib = next;
     }
   }
 
+  // --- 2) Sommaire automatique déroulant (H2 visibles, H3 en sous-menu) ---
+  const sections = Array.from(main.querySelectorAll('details.section'));
   const container = document.createElement('div');
   container.className = 'toc-collapsible';
 
   for (const sec of sections) {
-    const details = document.createElement('details');
-    details.className = 'toc-section';
+    const h2 = sec.querySelector('summary h2');
+    if (!h2) continue;
 
-    const summary = document.createElement('summary');
-    const a2 = document.createElement('a');
-    a2.href = '#' + sec.h2.id;
-    a2.textContent = sec.h2.textContent;
-    summary.appendChild(a2);
-    details.appendChild(summary);
+    const tocItem = document.createElement('details');
+    tocItem.className = 'toc-item';
 
-    if (sec.h3.length) {
-      const ul = document.createElement('ul');
-      for (const h3 of sec.h3) {
-        const li = document.createElement('li');
-        const a3 = document.createElement('a');
-        a3.href = '#' + h3.id;
-        a3.textContent = h3.textContent;
-        li.appendChild(a3);
-        ul.appendChild(li);
-      }
-      details.appendChild(ul);
+    const tocSummary = document.createElement('summary');
+    tocSummary.textContent = h2.textContent;
+    tocItem.appendChild(tocSummary);
+
+    const ul = document.createElement('ul');
+
+    // Lien vers la section (H2)
+    const li0 = document.createElement('li');
+    const a0 = document.createElement('a');
+    a0.href = '#' + h2.id;
+    a0.textContent = 'Aller à la section';
+    li0.appendChild(a0);
+    ul.appendChild(li0);
+
+    // Sous-sections (H3) à l’intérieur de cette section
+    const h3s = Array.from(sec.querySelectorAll('h3'))
+      .filter(h => !h.classList.contains('no_toc'));
+
+    for (const h3 of h3s) {
+      if (!h3.id) h3.id = slugify(h3.textContent);
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = '#' + h3.id;
+      a.textContent = h3.textContent;
+      li.appendChild(a);
+      ul.appendChild(li);
     }
 
-    container.appendChild(details);
+    tocItem.appendChild(ul);
+    container.appendChild(tocItem);
   }
 
   tocRoot.innerHTML = '';
   tocRoot.appendChild(container);
 
-  // Ouvre automatiquement la section correspondant au hash actuel (si présent)
-  const hash = decodeURIComponent(window.location.hash || '');
-  if (hash) {
+  // --- 3) Carrousel d’images automatique en fin de section ---
+  const isCaptionPara = (p) => {
+    if (!p || p.tagName !== 'P') return false;
+    const t = (p.textContent || '').trim();
+    return /\bSource\b|Wikimedia|commons\.wikimedia\.org/i.test(t);
+  };
+
+  for (const sec of sections) {
+    const imgParas = Array.from(sec.querySelectorAll('p'))
+      .filter(p => p.firstElementChild && p.firstElementChild.tagName === 'IMG' && (p.textContent || '').trim() === '');
+
+    if (!imgParas.length) continue;
+
+    const carouselWrap = document.createElement('div');
+    carouselWrap.className = 'section-carousel';
+
+    const title = document.createElement('div');
+    title.className = 'carousel-title';
+    title.textContent = 'Iconographie';
+    carouselWrap.appendChild(title);
+
+    const carousel = document.createElement('div');
+    carousel.className = 'carousel';
+
+    for (const pImg of imgParas) {
+      const img = pImg.querySelector('img');
+      if (!img) continue;
+
+      // Caption: paragraphe suivant si détecté
+      let caption = null;
+      const nextP = pImg.nextElementSibling;
+      if (isCaptionPara(nextP)) caption = nextP;
+
+      const src = img.getAttribute('src');
+      const alt = img.getAttribute('alt') || '';
+
+      const item = document.createElement('div');
+      item.className = 'carousel-item';
+
+      const link = document.createElement('a');
+      link.href = src;
+      link.target = '_blank';
+      link.rel = 'noopener';
+
+      const thumb = document.createElement('img');
+      thumb.className = 'thumb';
+      thumb.src = src;
+      thumb.alt = alt;
+
+      link.appendChild(thumb);
+      item.appendChild(link);
+
+      const cap = document.createElement('div');
+      cap.className = 'caption';
+      cap.innerHTML = caption ? caption.innerHTML : (alt || '');
+      item.appendChild(cap);
+
+      carousel.appendChild(item);
+
+      // Supprime le bloc original (image + caption)
+      pImg.remove();
+      if (caption) caption.remove();
+    }
+
+    carouselWrap.appendChild(carousel);
+    sec.appendChild(carouselWrap);
+  }
+
+  // --- 4) Ouvre automatiquement la section correspondant au hash (TOC + section) ---
+  const openForHash = () => {
+    const hash = decodeURIComponent(window.location.hash || '');
+    if (!hash) return;
     const targetId = hash.startsWith('#') ? hash.slice(1) : hash;
     const target = document.getElementById(targetId);
-    if (target) {
-      // Cherche le H2 précédent (ou lui-même)
-      let cur = target;
-      while (cur && cur.tagName !== 'H2') cur = cur.previousElementSibling;
-      if (cur && cur.id) {
-        const link = tocRoot.querySelector('summary a[href="#' + cur.id + '"]');
-        if (link) link.closest('details').open = true;
+    if (!target) return;
+
+    const section = target.closest('details.section');
+    if (section) section.open = true;
+
+    const h2 = section ? section.querySelector('summary h2') : null;
+    if (h2) {
+      const tocLink = tocRoot.querySelector('a[href="#' + h2.id + '"]');
+      if (tocLink) {
+        const tocDetails = tocLink.closest('details');
+        if (tocDetails) tocDetails.open = true;
       }
     }
-  }
+  };
+
+  openForHash();
+  window.addEventListener('hashchange', openForHash);
 });
 </script>
 
 ---
 
+## LE SITE
 ## LE SITE  
 
 Commune : Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, en bordure est du Parc naturel régional Livradois-Forez.  
