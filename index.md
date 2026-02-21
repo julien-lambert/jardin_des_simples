@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Jardin des simples
+toc_levels: 2..4
 ---
 # JARDIN DES SIMPLES  
 Saint-Hilaire-Cusson-la-Valmitte — 900 m — Plateau du Forez  
@@ -8,91 +9,14 @@ Un *hortus pharmacologique* — médecine, poison, sorcellerie
 
 ---
 
-
 ## SOMMAIRE
 {: .no_toc }
 
-<div class="toc-collapsible">
-<details>
-<summary><a href="#le-site">LE SITE</a></summary>
-
-<ul>
-  <li><a href="#ce-que-le-site-permet-naturellement">Ce que le site permet naturellement</a></li>
-</ul>
-</details>
-
-<details>
-<summary><a href="#introduction">INTRODUCTION</a></summary>
-
-<ul>
-  <li><a href="#monographie-douverture-jardin-des-simples">Monographie d’ouverture — Jardin des simples</a>
-    <details>
-      <summary>Sections</summary>
-      <ul>
-        <li><a href="#des-origines-antiques-au-dispositif-monastique">Des origines antiques au dispositif monastique</a></li>
-        <li><a href="#de-labbaye-a-luniversite-le-basculement-des-juridictions-du-soin">De l’abbaye à l’université : le basculement des juridictions du soin</a></li>
-        <li><a href="#la-criminalisation-du-savoir-et-linvention-du-veneficium">La criminalisation du savoir et l’invention du *Veneficium*</a></li>
-        <li><a href="#la-pharmacologie-moderne-la-mesure-de-lambivalence">La pharmacologie moderne : la mesure de l’ambivalence</a></li>
-        <li><a href="#entheogenes-cultes-et-psychonautes-la-plante-comme-sacrement">Enthéogènes, cultes et psychonautes : la plante comme sacrement</a></li>
-        <li><a href="#listes-interdits-et-renaissance-psychedelique">Listes, interdits et Renaissance psychédélique</a></li>
-        <li><a href="#ce-jardin-lexperience-de-la-frontiere">Ce Jardin : l’expérience de la frontière</a></li>
-      </ul>
-    </details>
-  </li>
-</ul>
-</details>
-
-<details>
-<summary><a href="#legende">LÉGENDE</a></summary>
-</details>
-
-<details>
-<summary><a href="#les-plantes">LES PLANTES</a></summary>
-
-<ul>
-  <li><a href="#systeme-nerveux">🧠 SYSTÈME NERVEUX</a></li>
-  <li><a href="#cœur-conduction">💓 CŒUR & CONDUCTION</a></li>
-  <li><a href="#douleur-fievre">🫶 DOULEUR & FIÈVRE</a></li>
-  <li><a href="#sang-circulation">🩸 SANG & CIRCULATION</a></li>
-  <li><a href="#respiration">🫁 RESPIRATION</a></li>
-  <li><a href="#digestion">🌿 DIGESTION</a></li>
-  <li><a href="#foie-bile">🫀 FOIE & BILE</a></li>
-  <li><a href="#rein-voies-urinaires">💧 REIN & VOIES URINAIRES</a></li>
-  <li><a href="#peau-muqueuses">🌸 PEAU & MUQUEUSES</a></li>
-  <li><a href="#anti-infectieux-parasites">🛡️ ANTI-INFECTIEUX & PARASITES</a></li>
-  <li><a href="#metabolisme-hormones">⚡ MÉTABOLISME & HORMONES</a></li>
-</ul>
-</details>
-
-<details>
-<summary><a href="#plantes-remarquables-du-site">PLANTES REMARQUABLES DU SITE</a></summary>
-</details>
-
-<details>
-<summary><a href="#geometrie">GÉOMÉTRIE</a></summary>
-
-<ul>
-  <li><a href="#forme-generale">Forme générale</a></li>
-  <li><a href="#decoupage-en-massifs">Découpage en massifs</a></li>
-  <li><a href="#regle-de-gabarit">Règle de gabarit</a></li>
-  <li><a href="#affectation-des-fonctions-physiologiques-les-11-emplacements">Affectation des fonctions physiologiques (les 11 emplacements)</a></li>
-  <li><a href="#placement-des-plantes-citees-exemples-concrets">Placement des plantes citées (exemples concrets)</a></li>
-</ul>
-</details>
-
-<details>
-<summary><a href="#signaletique-prevention">SIGNALÉTIQUE & PRÉVENTION</a></summary>
-
-<ul>
-  <li><a href="#trois-niveaux-sans-hierarchie-morale">Trois niveaux (sans hiérarchie morale)</a></li>
-  <li><a href="#panneaux-especes-prioritaires">Panneaux espèces prioritaires</a></li>
-  <li><a href="#texte-dentree">Texte d’entrée</a></li>
-</ul>
-</details>
-
-</div>
+* TOC
+{:toc}
 
 ---
+
 ## LE SITE  
 
 Commune : Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, en bordure est du Parc naturel régional Livradois-Forez.  
