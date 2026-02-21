@@ -405,3 +405,31 @@ pre{
     -webkit-overflow-scrolling: touch;
   }
 }
+/* ===== Menu mobile : ne pas "délaver" le header quand ouvert ===== */
+.greedy-nav__toggle.close:before{
+  opacity: 0 !important;        /* enlève l’overlay blanc/translucide */
+  pointer-events: none !important;
+}
+
+/* garde le header au-dessus de tout et opaque */
+.masthead{
+  z-index: 100000 !important;
+}
+.masthead__inner-wrap,
+.greedy-nav,
+.greedy-nav a,
+.greedy-nav .site-title{
+  opacity: 1 !important;
+}
+
+/* ===== Ancres : décale le scroll pour ne pas cacher les titres ===== */
+html{
+  scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 72px);
+}
+
+/* pour toutes les ancres sur titres */
+.page__content h2,
+.page__content h3,
+.page__content h4{
+  scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 72px);
+}
