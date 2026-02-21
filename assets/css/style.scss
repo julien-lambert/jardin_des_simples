@@ -1,157 +1,158 @@
 ---
+# front matter requis pour que Jekyll compile le SCSS
 ---
 
-/* ======================================================
-   JARDIN DES SIMPLES — édition papier / herbier imprimé
-   Lisible, léger, long texte
-   ====================================================== */
+@import "minimal-mistakes";
+
+/* =========================
+   HORTUS PHARMACOLOGICUS
+   Grimoire médiéval × rapport d’autopsie
+   ========================= */
 
 :root{
-  --paper:#f5f2ea;
-  --paper2:#ede8dc;
-  --ink:#2b2a27;
-  --ink-soft:#4a4843;
-  --ink-faint:#8a867c;
-  --accent:#6b7a57;
-  --border:#d9d2c4;
-  --table-head:#e6e1d5;
+  --bg: #121212;
+  --bg2: #171717;
+  --text: #dcdcdc;
+  --muted: #a9a9a9;
+  --ink: #e7e2d9;
 
-  --serif:"EB Garamond", Georgia, "Times New Roman", serif;
-  --display:"IM Fell English", Georgia, serif;
-  --mono:"Source Code Pro", monospace;
+  --accent: #4ade80;   /* vert bouteille toxique */
+  --blood:  #991b1b;   /* rouge sang séché */
+
+  --rule: #2a2a2a;
+  --tableHead: #141414;
+  --tableRowHover: #1d1d1d;
 }
 
-html,body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--serif);
-  line-height:1.7;
-  font-size:19px;
+body{
+  background: var(--bg);
+  color: var(--text);
+  font-feature-settings: "liga" 1, "kern" 1;
 }
 
-/* largeur lecture confortable */
+/* Typo : texte “herbier”, titres “labo” */
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap");
 
-.main{
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 40px 24px 80px;
-}
-
-/* titre site */
-
-.site-header{
-  border-bottom:1px solid var(--border);
-  margin-bottom:34px;
-  padding-bottom:14px;
-}
-
-.site-title{
-  font-family:var(--display);
-  font-size:30px;
-  letter-spacing:.3px;
-}
-
-.site-tagline{
-  color:var(--ink-faint);
-  font-size:14px;
-  margin-top:3px;
-}
-
-/* corps texte */
-
-.prose{
-  background:var(--paper);
+.page__content{
+  font-family: "EB Garamond", ui-serif, Georgia, serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
 }
 
 h1,h2,h3,h4{
-  font-family:var(--display);
-  font-weight:400;
-  color:#1f1e1b;
-  margin-top:1.6em;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.2px;
+  color: var(--ink);
 }
 
-h1{font-size:44px;margin-top:.2em}
-h2{font-size:30px}
-h3{font-size:24px}
-h4{font-size:20px;color:var(--ink-soft)}
-
-p{
-  margin:.9em 0;
-}
-
-strong{color:#1f1e1b}
-em{color:var(--ink-soft)}
+a{ color: var(--accent); }
+a:hover{ color: #7cf7aa; }
 
 hr{
-  border:none;
-  border-top:1px solid var(--border);
-  margin:1.8em 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
 }
 
-/* citations */
-
-blockquote{
-  border-left:3px solid var(--accent);
-  padding-left:14px;
-  margin:1.4em 0;
-  color:var(--ink-soft);
-  font-style:italic;
+/* Blocs de code */
+pre, code{
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
-
-/* code discret */
-
-code{
-  font-family:var(--mono);
-  background:var(--paper2);
-  padding:.15em .4em;
-  border-radius:4px;
-  font-size:.9em;
-}
-
 pre{
-  background:var(--paper2);
-  padding:14px 16px;
-  border-radius:6px;
-  overflow:auto;
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem;
+  overflow: auto;
 }
 
-/* listes */
-
-ul,ol{padding-left:1.3em}
-li{margin:.35em 0}
-
-/* TABLEAUX — important pour toi */
-
+/* Tableaux : lisibles + “chirurgical” */
 table{
-  width:100%;
-  border-collapse:collapse;
-  margin:1.2em 0;
-  font-size:.95em;
-
-  display:block;
-  overflow-x:auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.8rem 0;
+  font-size: 0.95rem;
+  background: transparent;
 }
-
-thead th{
-  background:var(--table-head);
-  text-align:left;
-  font-weight:600;
+th{
+  background: var(--tableHead);
+  color: var(--ink);
+  padding: 12px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+  position: sticky;
+  top: 0; /* utile sur tables longues */
 }
-
-th,td{
-  padding:8px 10px;
-  border:1px solid var(--border);
-  vertical-align:top;
+td{
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
 }
+tr:hover{ background: var(--tableRowHover); }
 
-tbody tr:nth-child(even){
-  background:rgba(0,0,0,.03);
-}
-
-/* images */
-
+/* Images : taille uniforme + centrage */
 img{
-  max-width:100%;
-  margin:1.2em 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.figure{
+  margin: 1.5rem 0;
+  text-align: center;
+}
+.figure img{
+  width: 100%;
+  max-width: 720px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+}
+.figure figcaption{
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* Grille d’images (au lieu d’énormes images empilées) */
+.img-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin: 1.2rem 0;
+}
+.img-grid img{
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+}
+
+/* “Carrousel” sans JS (scroll horizontal + snap) */
+.carousel{
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 8px 2px 14px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel > *{
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+.carousel img{
+  width: 260px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+}
+
+/* Petits accents “autopsie” */
+blockquote{
+  border-left: 3px solid var(--blood);
+  padding-left: 1rem;
+  color: var(--ink);
 }
