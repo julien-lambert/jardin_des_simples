@@ -21,8 +21,13 @@ defaults:
     values:
       layout: single
       classes: wide
+      author_profile: false
+
+      # Sidebar navigation (gauche)
+      sidebar:
+        nav: "docs"
+
+      # TOC (droite) — activé par défaut
       toc: true
       toc_sticky: true
       toc_levels: 2..3
-      header:
-        overlay_filter: 0.85
