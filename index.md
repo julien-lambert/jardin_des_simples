@@ -12,8 +12,103 @@ Un *hortus pharmacologique* — médecine, poison, sorcellerie
 ## SOMMAIRE
 {: .no_toc }
 
-* TOC
-{:toc}
+<div id="toc" class="toc"></div>
+
+<style>
+#toc .toc-collapsible { margin: 0.5rem 0 1rem; }
+#toc details { margin: 0.25rem 0; }
+#toc summary { cursor: pointer; list-style: none; }
+#toc summary::-webkit-details-marker { display: none; }
+#toc summary a { text-decoration: none; }
+#toc ul { margin: 0.35rem 0 0.5rem 1.2rem; padding-left: 1rem; }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const tocRoot = document.getElementById('toc');
+  if (!tocRoot) return;
+
+  const main =
+    document.querySelector('main') ||
+    document.querySelector('.page-content') ||
+    document.body;
+
+  const slugify = (s) => s
+    .toLowerCase()
+    .trim()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+
+  const headings = Array.from(main.querySelectorAll('h2, h3'))
+    .filter(h => !h.classList.contains('no_toc'))
+    .filter(h => !tocRoot.contains(h));
+
+  const sections = [];
+  let current = null;
+
+  for (const h of headings) {
+    if (!h.id) h.id = slugify(h.textContent);
+    if (h.tagName === 'H2') {
+      current = { h2: h, h3: [] };
+      sections.push(current);
+    } else if (h.tagName === 'H3') {
+      if (!current) continue;
+      current.h3.push(h);
+    }
+  }
+
+  const container = document.createElement('div');
+  container.className = 'toc-collapsible';
+
+  for (const sec of sections) {
+    const details = document.createElement('details');
+    details.className = 'toc-section';
+
+    const summary = document.createElement('summary');
+    const a2 = document.createElement('a');
+    a2.href = '#' + sec.h2.id;
+    a2.textContent = sec.h2.textContent;
+    summary.appendChild(a2);
+    details.appendChild(summary);
+
+    if (sec.h3.length) {
+      const ul = document.createElement('ul');
+      for (const h3 of sec.h3) {
+        const li = document.createElement('li');
+        const a3 = document.createElement('a');
+        a3.href = '#' + h3.id;
+        a3.textContent = h3.textContent;
+        li.appendChild(a3);
+        ul.appendChild(li);
+      }
+      details.appendChild(ul);
+    }
+
+    container.appendChild(details);
+  }
+
+  tocRoot.innerHTML = '';
+  tocRoot.appendChild(container);
+
+  // Ouvre automatiquement la section correspondant au hash actuel (si présent)
+  const hash = decodeURIComponent(window.location.hash || '');
+  if (hash) {
+    const targetId = hash.startsWith('#') ? hash.slice(1) : hash;
+    const target = document.getElementById(targetId);
+    if (target) {
+      // Cherche le H2 précédent (ou lui-même)
+      let cur = target;
+      while (cur && cur.tagName !== 'H2') cur = cur.previousElementSibling;
+      if (cur && cur.id) {
+        const link = tocRoot.querySelector('summary a[href="#' + cur.id + '"]');
+        if (link) link.closest('details').open = true;
+      }
+    }
+  }
+});
+</script>
 
 ---
 
