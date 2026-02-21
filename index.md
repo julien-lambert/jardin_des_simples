@@ -1,4 +1,6 @@
 ---
+sidebar:
+  nav: "docs"
 title: "Jardin des Simples"
 layout: single
 permalink: /
