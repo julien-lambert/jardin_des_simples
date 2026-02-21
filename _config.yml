@@ -24,3 +24,5 @@ defaults:
       toc: true
       toc_sticky: true
       toc_levels: 2..3
+      header:
+        overlay_filter: 0.85
