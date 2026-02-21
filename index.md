@@ -2,148 +2,174 @@
 layout: default
 title: Jardin des simples
 ---
+# JARDIN DES SIMPLES  
+Saint-Hilaire-Cusson-la-Valmitte — 900 m — Plateau du Forez  
+Un *hortus pharmacologique* — médecine, poison, sorcellerie  
 
-# JARDIN DES SIMPLES
+---
 
-## Saint-Hilaire-Cusson-la-Valmitte — 900 m — Plateau du Forez
+## LE SITE  
 
-### Un hortus pharmacologicus — médecine, poison, sorcellerie
+Commune : Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, en bordure est du Parc naturel régional Livradois-Forez.  
+Climat : montagnard. Température annuelle moyenne : 8,4 °C. Enneigement hivernal régulier. Gel possible d’octobre à avril.  
 
------
+### Ce que le site permet naturellement  
 
-## LE SITE
+- **Plein air** : objectif de fiabilité ~ −15/−20 °C (toutes espèces vraiment rustiques)  
+- **Serre froide** : non chauffée, gel possible mais amorti (méditerranéennes, quelques exotiques)  
+- **Abri hors gel** : +2 à +5 °C, avec sous-classe tempéré/chaud pour les tropicaux  
+- **Avantage exceptionnel** : l’altitude permet des espèces montagnardes difficiles ailleurs — aconit, vérâtre, gentiane jaune, parisette, arnica, colchique — elles sont ici chez elles  
 
-**Commune :** Saint-Hilaire-Cusson-la-Valmitte (42380), plateau boisé aux confins de la Loire, bordure est du Parc naturel régional Livradois-Forez.
+Flore native remarquable du plateau : aconit napel, aconit tue-loup, vérâtre blanc, parisette à quatre feuilles, colchique d’automne, gentiane jaune, bois-joli, digitale pourpre, belladone, grande ciguë (haies), bryone dioïque (haies), airelle rouge, callune, serpolet, actée en épi.  
 
-**Climat :** Montagnard. Température annuelle moyenne : 8,4°C. Enneigement hivernal régulier. Gel possible d’octobre à avril.
+---
 
-**Ce que le site permet naturellement :**
-— 🪴 Plein air : objectif de fiabilité –15/–20°C (toutes espèces vraiment rustiques)
-— ❄️ Serre froide : non chauffée, gel possible mais amorti — espèces méditerranéennes, quelques exotiques tempérés
-— 🏠 Abri hors gel : +2 à +5°C minimum — tropicaux et espèces sensibles
-— Avantage exceptionnel : l’altitude permet les espèces montagnardes impossibles à basse altitude — aconit, vératre, gentiane jaune, parisette, arnica, colchique — elles sont ici chez elles
+## INTRODUCTION  
 
-**Flore native remarquable du plateau :** aconit napel, aconit tue-loup, vératre blanc, parisette à quatre feuilles, colchique d’automne, gentiane jaune, bois-joli, digitale pourpre, belladone, grande ciguë (haies), bryone dioïque (haies), airelle rouge, callune, serpolet, actée en épi.
+### Monographie d’ouverture — Jardin des simples  
+*(Historique, anthropologique, pharmacologique, juridique)*  
 
------
+Un “jardin des simples” n’est pas un jardin de plantes “simples” au sens d’inoffensives, mais un dispositif de connaissance : un lieu où la nature est tenue constante, tandis que changent les catégories humaines qui la qualifient. Le mot *simplex* désigne d’abord, dans la langue des pharmacopées médiévales et renaissantes, une matière médicinale “non composée”, prise isolément avant la recette et l’antidotaire ; il ne dit rien de sa moralité ni de son danger. Cette neutralité lexicale est déjà une thèse : la frontière remède/poison n’est pas ontologique, elle est relationnelle (dose, voie, durée, terrain), et la frontière médecine/crime n’est pas naturelle, elle est institutionnelle (licence, monopole, tribunal, réglementation). Tout le propos du jardin des simples consiste à rendre visible une mécanique de bascule : les mêmes plantes, parfois les mêmes gestes, parfois les mêmes effets, changent d’étiquette quand changent les régimes d’autorité.  
 
-## INTRODUCTION
+Quatre ambivalences structurent ce champ, et elles se recouvrent partiellement sans jamais coïncider parfaitement :  
+- L’ambivalence **remède/poison** relève de la pharmacologie et de la toxicologie.  
+- L’ambivalence **magie/sorcellerie** relève de la reconnaissance culturelle, du récit et de la peur.  
+- L’ambivalence **médecine/crime** relève du droit, des professions et des polices de l’usage.  
+- L’ambivalence **savoir populaire/savoir institué** relève de la sociologie des pouvoirs (qui a le droit de dire, de vendre, de prescrire, de nommer).  
 
-### Médecine, poison, sorcellerie — une frontière inventée
+Déplier l’histoire des simples, c’est suivre ces axes sur la longue durée, depuis l’Antiquité jusqu’aux listes contemporaines des substances vénéneuses.  
 
------
+### Illustrations (requêtes)  
+- `Asclepius statue Epidaurus Archaeological Museum`  
+- `Plan of Saint Gall monastery plan 820 830`  
+- `Hildegard of Bingen Physica manuscript illumination`  
+- `Malleus Maleficarum woodcut witches`  
 
-### 1. Le jardin des simples : une pharmacopée sans morale
+---
 
-L’*hortus simplicium* — le jardin des simples — tient son nom du terme *medicamentum simplex* : un remède constitué d’une seule substance végétale, par opposition aux préparations composées de la médecine savante. Le mot *simplex* ne signifie pas “sans danger”. Il signifie “non mélangé”. Dès l’étymologie, la plante médicinale et la plante toxique occupent le même espace conceptuel.
+## 1. Des origines antiques au dispositif monastique  
 
-Le *Capitulare de villis vel curtis imperii* (fin VIIIe–début IXe siècle, vraisemblablement après 800) n’est pas un traité de botanique : c’est un texte d’administration domaniale qui prescrit, entre autres, une logique de catalogue utilitaire — alimentaire, médicinale, symbolique. Son chapitre le plus célèbre énumère des plantes “à cultiver” dans les domaines royaux. Cette grammaire du listage irrigue ensuite les jardins monastiques et l’imaginaire savant médiéval. Le document place côte à côte la sauge, le fenouil, la rue, la tanaisie, le pavot et le cresson. Aucune hiérarchie morale. Un outil de soin, classé par propriété : *calefacit* (il réchauffe), *purgat* (il purge), *sedat* (il apaise), *vulnerat* (il blesse).
+L’Antiquité grecque fournit une scène originelle où “médecine”, “rite” et “poison” ne sont pas encore séparés. D’un côté, la mythologie met en place une généalogie du savoir thérapeutique : Chiron, centaure éducateur et guérisseur, enseigne l’art de soigner à Asclépios, qui deviendra figure divine du soin. Cette filiation raconte une vérité anthropologique durable : la médecine s’inscrit dans une tradition de transmission, pas dans une “découverte” isolée.  
 
-Ce classement par propriété physiologique — exactement celui de ce jardin — est l’organisation naturelle d’une pensée médicale qui n’a pas encore inventé la frontière entre remède et poison. Dans ce jardin, un coin était souvent réservé aux “plantes de femmes” liées aux maux exclusivement féminins, telles l’armoise, la mélisse ou la rue. Ces plantes — dont plusieurs étaient des emménagogues et des abortifs connus — coexistaient sans scandale avec la menthe, la sauge et le tilleul.
+De l’autre côté, les sanctuaires d’Asclépios organisent une thérapeutique rituelle où le soin passe par le corps, l’espace, le symbole : la pratique d’incubation (*enkoimesis*), sommeil dans un lieu sacré visant l’apparition d’un rêve guérisseur, est documentée comme le cœur de nombreux *Asklepieia*. Elle montre que l’efficacité médicale n’est pas réductible à un principe actif, mais qu’elle peut être aussi une technologie de contexte, une architecture de l’attention et de l’attente — ce que les sciences contemporaines recodent en termes d’effets contextuels et de placebo, sans pour autant annuler la dimension culturelle du dispositif.  
 
-Le mot “drogue” lui-même est instructif. Apparu en français vers le XIVe siècle, il viendrait de l’ancien néerlandais *droge* — “chose sèche” — désignant les plantes et racines séchées pour conservation, via l’univers des drogueries et des épices. Une drogue, à l’origine, c’est simplement une plante mise à sécher pour l’hiver. Ni vice, ni crime, ni transgression. La charge morale et criminelle est tardive, socialement et politiquement construite.
+Dans la langue même, le signe est ambigu : *pharmakon* peut signifier remède ou poison, et cette indécidabilité n’est pas un accident sémantique ; elle exprime la continuité d’un domaine où l’on manipule des puissances, dont l’évaluation dépend du but et du seuil. L’Antiquité grecque connaît même un *pharmakos*, bouc émissaire rituel, montrant que le vocabulaire du remède et du poison touche aussi à la purification sociale : la communauté peut “traiter” sa peur par expulsion symbolique.  
 
------
+La période tardo-antique et carolingienne, puis le Moyen Âge latin, déplacent la scène vers deux dispositifs majeurs : le texte et le jardin.  
 
-### 2. La chaîne de transmission : comment un savoir voyage et change de statut
+Le texte d’abord : l’héritage de Dioscoride (*De Materia Medica*, vers 70) structure pendant des siècles une pharmacologie descriptive, empirique, classée par propriétés et usages, sans hiérarchie morale. Mais cette histoire n’est pas une simple chaîne grec → latin : elle passe par la grande recomposition arabo-musulmane, où la matière médicale est traduite, commentée, augmentée. Rhazès, Avicenne et Ibn al-Baytar jouent un rôle de systématisation et de compilation, puis ces corpus ré-entrent en latin via Tolède et Salerne, en même temps que changent les noms, les identifications, et surtout les cadres d’autorité.  
 
-Comprendre ce jardin demande de suivre les plantes à travers les institutions — parce que c’est en traversant les institutions qu’elles changent de statut, pas en changeant de composition chimique.
+Le jardin ensuite : l’administration carolingienne pense déjà en “liste” et en utilité. Le *Capitulare de villis* (fin VIIIe–début IXe siècle) prescrit des plantes à cultiver ; l’acte politique fabrique un répertoire en juxtaposant sans scrupule le nourricier, le médicinal, l’aromatique, parfois le dangereux, dans une logique de gestion et de subsistance.  
 
-**Dioscoride et la *Materia Medica* (Ier siècle apr. J.-C.)**
-Le médecin grec Pedanius Dioscoride rédige vers 70 apr. J.-C. sa *De Materia Medica* : cinq livres décrivant environ 600 plantes, leurs préparations, leurs usages thérapeutiques. L’ouvrage est empirique, organisé par propriété, sans morale. Il deviendra la référence pharmaceutique principale de l’Occident et du monde arabe pendant quinze siècles — non pas parce qu’il est infaillible, mais parce qu’il est copié, traduit, annoté, transmis. Chaque copie est une interprétation. Chaque traduction déplace quelque chose.
+Cette logique se retrouve dans l’idéal monastique : le Plan de Saint-Gall (vers 820–830) représente un complexe bénédictin où figure un jardin médicinal associé à l’infirmerie, avec des planches nommées. Il ne s'agit pas seulement d’horticulture, mais d’une mise en ordre du soin par l’espace. Dans la même veine, Walafrid Strabo (IXe siècle) écrit l’*Hortulus*, poème de jardin monastique : la plante y est à la fois objet technique, objet médicinal et objet contemplatif, ce qui rappelle qu’un jardin de simples n’est jamais uniquement pharmacologique ; il est aussi un régime de sens.  
 
-**Le monde arabo-musulman médiéval : Rhazès, Avicenne, Ibn al-Baytar**
-Entre le IXe et le XIIIe siècle, la pharmacologie connaît sa systématisation la plus rigoureuse dans le monde arabo-musulman. Rhazès (al-Rāzī, 854–925) pose des bases cliniques et thérapeutiques fondées sur l’observation ; Avicenne (Ibn Sīnā, 980–1037) compile son *Kitāb al-Qānūn fī al-Ṭibb* (*Canon de la médecine*), synthèse de la médecine grecque, indienne et arabe qui deviendra le manuel des universités européennes ; Ibn al-Baytar (1197–1248) produit la plus grande compilation de simples de l’époque médiévale, décrivant plus de 1400 plantes. Par les foyers de traduction de Tolède et Salerne, une part de cette rationalité ré-entre en latin — mais dans ce mouvement de traduction, les plantes changent de nom, parfois d’identité botanique, et toujours de contexte institutionnel. Une même espèce peut figurer dans le *Canon* comme remède documenté et dans un procès de sorcellerie deux siècles plus tard comme preuve de maléfice.
+#### Illustrations (requêtes)  
+- `Chiron teaching Asclepius ancient vase`  
+- `Asclepius Epidaurus votive relief`  
+- `Plan of Saint Gall infirmary physic garden`  
+- `Walafrid Strabo Hortulus manuscript`  
 
-**Hildegarde de Bingen et les *Causae et Curae* (XIIe siècle)**
-Hildegarde de Bingen (1098–1179), abbesse bénédictine, rédige entre 1150 et 1160 ses *Causae et Curae* et sa *Physica* — la synthèse médicale monastique la plus complète de l’époque. Elle y décrit des centaines de plantes avec leurs usages thérapeutiques, en vernaculaire rhénan autant qu’en latin. Elle intègre sans discontinuité la rue (*Ruta graveolens*) comme régulateur du cycle féminin, l’armoise comme emménagogue, la mandragore comme anesthésiant. Ces usages, dans le cadre de l’abbaye, sont des soins. La même Hildegarde sera canonisée en 2012. Les mêmes plantes seront, dans un autre cadre institutionnel, les preuves d’un crime.
+---
 
-**Le *Circa Instans* et la pharmacie universitaire (XIIe–XIIIe siècles)**
-Rédigé à Salerne vers 1150, le *Circa Instans* systématise les savoirs des apothicaires. C’est le premier pont entre le savoir empirique des herboristes et la médecine institutionnelle naissante. C’est aussi le moment où les apothicaires commencent à être réglementés, licenciés, contrôlés. Le savoir sur les plantes entre dans un régime de propriété institutionnelle.
+## 2. De l’abbaye à l’université : le basculement des juridictions du soin  
 
-**L’université et l’exclusion (XIIIe–XVe siècles)**
-À partir de l’an 1200, se créent les premières universités de médecine. Ces institutions organisent l’accès au soin : il est interdit de soigner sans en sortir. Les femmes en sont exclues d’office. Les guérisseuses empiriques continuent à soigner — parfois avec une efficacité supérieure à celle des diplômés. Mais elles le font sans autorité institutionnelle. Ce qui les rend réinterprétables comme transgressives.
+Ce cadre monastique permet de comprendre l’ambivalence magie/sorcellerie sans caricature. Dans les abbayes, des gestes aujourd’hui rangés sous “symbolique” — prière, bénédiction, herbes protectrices, fumigations — coexistent avec une thérapeutique matérielle. L’ensemble forme une épistémologie cohérente où corps, esprit, monde et plante appartiennent à un même tissu d’influences. Ce n’est pas une naïveté, c’est une ontologie pratique : la guérison est un fait à la fois physiologique et social.  
 
------
+Hildegarde de Bingen (XIIe siècle) est emblématique : ses *Causae et Curae* et sa *Physica* décrivent des centaines de plantes et intègrent sans discontinuité des usages gynécologiques (emménagogues), sédatifs, anesthésiants ; dans l’abbaye, ce sont des soins. Or, c’est exactement ici que commence la grande divergence institutionnelle : un même savoir, lorsqu’il sort du cadre protecteur, peut être requalifié. L’histoire des simples est donc inséparable de l’histoire des juridictions du soin.  
 
-### 3. La dose : cristallisation tardive d’un savoir empirique plus ancien
+Salerne (XIIe siècle) cristallise un tournant : le *Circa Instans* (attribué à Matthaeus Platearius) systématise la littérature proto-universitaire et apothicaire. La matière médicale devient un objet d’enseignement, de standardisation et de contrôle, et le savoir sur les plantes entre dans un régime de propriété institutionnelle.  
 
-Au XVIe siècle, Paracelse (Philippus Aureolus Theophrastus Bombastus von Hohenheim, 1493–1541) formule ce qui deviendra l’un des principes fondateurs de la pharmacologie moderne :
+C’est aussi, autour de Salerne, que se déploie une tradition gynécologique médiévale (la *Trotula*, compendium de médecine des femmes), qui atteste l’existence d’un savoir spécifique, fortement transmis et traduit, où la régulation du cycle, la fertilité et la grossesse sont des objets médicaux centraux. Cette zone concentre les forces explosives de l’ambivalence : ce que l’on nomme “soin” (régulation, accouchement, interruption) peut être nommé “crime” selon la norme juridique ; et, dans un autre registre, “maleficium” ou “sorcellerie” quand l’acte est attribué à une puissance illégitime. Autrement dit, l’avortement est un exemple où les quatre ambivalences se superposent : physiologie (effet utérin), morale sociale, droit, et statut de celle ou celui qui agit.  
 
-> *« Dosis sola facit venenum. »*
-> *C’est la dose qui fait le poison.*
+#### Illustrations (requêtes)  
+- `Hildegard of Bingen Physica manuscript folio`  
+- `Trotula manuscript Salerno`  
+- `Salerno medical school medieval illustration`  
 
-Cette formulation est une cristallisation, pas une invention. Elle met en mots ce que les empiriques — herboristes, sages-femmes, apothicaires de terrain — pratiquaient depuis des siècles sans le théoriser. Ce qu’il apporte, c’est le cadre conceptuel qui permet à ce savoir d’entrer dans l’université.
+---
 
-La digitale pourpre (*Digitalis purpurea*), qui pousse spontanément sur le plateau du Forez, en est l’illustration directe. Ses glycosides cardiotoniques inhibent la Na⁺/K⁺-ATPase, ce qui élève le calcium intracellulaire et produit une inotropie positive : à dose finement contrôlée, cela sauve des cœurs. La fenêtre thérapeutique est étroite — à peine au-dessus, cela les arrête. La même chimie, le même tissu, deux issues opposées. Ce n’est pas Paracelse qui a créé cette réalité. C’est lui qui l’a nommée.
+## 3. La criminalisation du savoir et l’invention du *Veneficium*  
 
-Ce que Paracelse formule en latin, les empiriques le savaient et le pratiquaient depuis des siècles. Elles n’avaient pas les mots de la pharmacologie, mais elles avaient une connaissance fine des doses, des préparations, des saisons, des interactions. Une pharmacopée orale transmise de femme en femme, dans les langues vernaculaires, hors des textes latins des universités. C’est précisément ce savoir — efficace, pratique, empiriquement vérifié — qui a failli les tuer.
+Le XVIe siècle marque une cristallisation conceptuelle : Paracelse formule *dosis sola facit venenum*, donnant à l’université une maxime qui rend dicible ce que les pratiques vernaculaires savaient déjà empiriquement. Mais c’est aussi le siècle où la frontière magie/sorcellerie devient une machine politico-judiciaire, et où l’Europe élabore une littérature démonologique et inquisitoriale.  
 
------
+Le *Malleus Maleficarum* (1486/1487) n’est pas seulement un texte religieux : c’est un manuel de qualification du crime, une technologie discursive qui féminise l’accusation et fournit des cadres d’interprétation pour transformer des pratiques de soin, des savoirs domestiques et des conflits sociaux en dossiers pénaux.  
 
-### 4. *Veneficium* : quand l’herbe devient crime
+Dans cet espace, la notion latine de *veneficium* est cruciale : *venenum* désigne poison, philtre et médicament ; la langue elle-même porte la continuité poison/sortilège/soin. En Languedoc, la “venefica” devient “pousonniere” et les “pousoueras” apparaissent d’abord comme “erboleras”, guérisseuses. Le glissement — guérisseuse → empoisonneuse, herboriste → sorcière — relève d’une construction juridique et politique, plus que d’une botanique.  
 
-En latin, *venenum* désigne indistinctement le poison, le philtre magique et le médicament. La même racine donne *veneficium* — l’empoisonnement par sortilège — et *venefica* — l’empoisonneuse. La *venefica* latine, à la double acception d’empoisonneuse et faiseuse de maléfices, devient en Languedoc la “pousonniere” dont les mixtures comprennent les ingrédients habituels, à base d’herbes et d’animaux venimeux.
+La France fournit un épisode tardif et spectaculaire où poison et occultisme se mêlent au plus haut niveau social : l’Affaire des Poisons (années 1670–1680) associe “poudres”, poisons, messes noires et réseaux de devineresses dans l’imaginaire et l’instruction, révélant une continuité entre demande sociale (héritage, pouvoir, désir) et marché clandestin des substances.  
 
-La contiguïté entre poisons et sortilèges est entretenue par une longue tradition juridique. Les “pousoueras” — les empoisonneuses — sont d’abord des “erboleras”, des guérisseuses, telle Catherine Coteric qui prépare un emplâtre d’herbes pour une femme piétinée par un revenant. Ce glissement — de guérisseuse à empoisonneuse, d’herboriste à sorcière — n’est pas une évolution naturelle des croyances. C’est une construction juridique, institutionnelle et politique. Les procès de sorcellerie dans le Midi de la France présentent dès le début du XVe siècle un caractère féminin du crime et une importance du *veneficium*. Le crime est presque toujours féminin. La plante, presque toujours la preuve.
+L’intérêt d’une monographie sérieuse est de refuser l’explication unique (“superstition”) et de montrer les conflits internes de la rationalité moderne. Un point d’érudition décisif est la controverse entre Jean Wier (Weyer), médecin humaniste, et Jean Bodin : Wier propose dès le XVIe siècle une naturalisation du *maleficium* et une critique des démonologues, distinguant la sorcière comme malade de l’empoisonneur criminel ; Bodin, au contraire, combat cette lecture et renforce l’appareil répressif. Cette dispute montre que “médecine vs sorcellerie” n’est pas l’opposition d’un âge obscur et d’un âge rationnel : c’est une lutte de définitions à l’intérieur même de la modernité.  
 
-La même rue (*Ruta graveolens*) figure dans les *Causae et Curae* d’Hildegarde comme emménagogue féminin et dans les actes de procès comme élément à charge. La même tanaisie (*Tanacetum vulgare*), le même persil en graines, la même menthe pouliot. Ce sont exactement les mêmes plantes, les mêmes préparations, les mêmes usages. Ce qui a changé, c’est la main qui les tient et l’institution qui la juge.
+#### Illustrations (requêtes)  
+- `Malleus Maleficarum woodcut`  
+- `Affaire des poisons La Voisin engraving`  
+- `Jean Wier De praestigiis daemonum title page`  
+- `Jean Bodin Demonomanie des sorciers title page`  
 
------
+---
 
-### 5. Les plantes des sabbats : une pharmacologie du délire
+## 4. La pharmacologie moderne : la mesure de l’ambivalence  
 
-La “pommade à voler” — l’onguent appliqué sur le corps pour se rendre au sabbat — est l’une des curiosités les mieux documentées de la pharmacologie historique. Des textes du XVe siècle en donnent les formulations convergentes : graisse animale, belladone (*Atropa belladonna*), jusquiame (*Hyoscyamus niger*), datura (*Datura stramonium*), mandragore (*Mandragora officinarum*).
+Le passage à la “science dure” ne détruit pas l’ambivalence ; il la rend mesurable, industrialisable et donc plus fortement régulée. Le XVIIIe et le XIXe siècles sont déterminants : la pharmacologie se déplace d’un monde de plantes variables vers un monde d’entités isolées, purifiées et dosables.  
 
-Ce que ces textes décrivent sans le savoir, c’est une pharmacologie transcutanée des alcaloïdes tropaniques — L-hyoscyamine, atropine, scopolamine. Ces molécules sont liposolubles. Appliquées en pommade grasse sur les muqueuses — aisselles, plis inguinaux — elles passent dans la circulation sanguine sans transit hépatique, produisant une absorption rapide et des effets intenses : sensation de vol, hallucinations de métamorphose, amnésie partielle — le sabbat tel que les accusés le décrivent sous torture.
+La digitale, étudiée par Withering (1785), est un exemple canonique : efficacité cardiovasculaire et marge thérapeutique étroite, un même continuum d’effets pouvant mener du soin au danger selon l’exposition. La morphine, alcaloïde isolé de l’opium, illustre l’ambivalence institutionnelle moderne : médicament essentiel pour la douleur et certaines dyspnées réfractaires, et simultanément substance strictement contrôlée, car la puissance thérapeutique et la puissance d’abus sont deux faces d’une même propriété pharmacologique.  
 
-Ce n’est pas de la magie. C’est de la biochimie. Et les femmes qui préparaient ces onguents avaient découvert empiriquement quelque chose que la pharmacologie a mis des siècles à formaliser : la voie d’administration transcutanée des alcaloïdes.
+La cocaïne est un autre exemple instructif précisément parce qu’elle est naturelle et qu’elle traverse la frontière : alcaloïde de la coca, elle reste utilisée en médecine (notamment en oto-rhino-laryngologie comme anesthésique local et vasoconstricteur), tout en étant un stupéfiant emblématique du marché illégal ; le même nom peut apparaître dans un bloc opératoire et dans un dossier pénal.  
 
-La jusquiame figure dans des textes babyloniens, dans le Papyrus Ebers (vers 1550 av. J.-C.), dans le Corpus Hippocraticum. Elle a traversé quarante siècles de médecine en restant la même plante avec les mêmes effets. Ce qui a varié, c’est le nom qu’on lui donnait : remède, sortilège, sacrament, ou poison.
+L’ergot du seigle (*Claviceps purpurea*) porte une ambivalence encore plus “historique”, car il relie catastrophe alimentaire et médecine. L’ergotisme, appelé “feu de Saint Antoine”, a marqué l’Europe médiévale ; il fut pris dans des interprétations religieuses et parfois démonologiques, tandis que des ordres hospitaliers prenaient en charge les victimes. Plus tard, la chimie des alcaloïdes de l’ergot deviendra la matrice de médicaments (utérotoniques, antimigraineux), montrant comment une même source naturelle peut être fléau et ressource selon l’encadrement et la standardisation.  
 
------
+#### Illustrations (requêtes)  
+- `William Withering 1785 foxglove title page`  
+- `Digitalis purpurea botanical illustration`  
+- `St Anthony fire ergotism medieval painting`  
+- `Claviceps purpurea ergot sclerotia photo`  
 
-### 6. La frontière des mots : médicament, drogue, poison
+---
 
-La distinction moderne entre “médicament” et “drogue” ne repose sur aucun critère biochimique. La morphine est un médicament essentiel selon l’OMS et un stupéfiant étroitement contrôlé. La colchicine — alcaloïde du colchique qui pousse dans les prairies de ce plateau — traite la goutte depuis le IXe siècle. La kétamine, anesthésique dissociatif, est devenue en 2019 le premier antidépresseur à action rapide approuvé pour les dépressions sévères résistantes. Ces reclassifications ne sont pas des découvertes scientifiques : ce sont des décisions collectives sur ce qu’une molécule a le droit d’être.
+## 5. Enthéogènes, cultes et psychonautes : la plante comme sacrement  
 
-De la même façon, la distinction entre “plante médicinale” et “plante de sorcière” n’a jamais été une frontière botanique. Au Moyen Âge, la fonction magique était inextricable de l’aspect médicinal des plantes : purificatrices, protectrices, sacrées, divinatoires, hallucinogènes. Cette indistinction n’était pas de la naïveté. C’était une épistémologie cohérente, dans laquelle le corps, l’esprit, le cosmos et la plante étaient compris comme des systèmes en interaction — ce que les neurosciences contemporaines retrouvent, par d’autres voies, dans les études sur le placebo, la méditation, et les effets contextuels des traitements.
+L’Antiquité ne faisait pas que tolérer la modification de conscience, elle l’institutionnalisait au plus haut niveau de l’État. Les Mystères d’Éleusis, culte initiatique majeur de la Grèce antique, reposaient sur l’ingestion du *kykeôn*. La nature exacte de ce breuvage demeure discutée, mais une hypothèse célèbre — notamment dans le sillage de Wasson, Hofmann et Ruck — propose un rôle d’alcaloïdes dérivés de l’ergot. Quoi qu’il en soit, le point structurant est clair : l’Occident ancien a pu placer au cœur de son dispositif religieux une expérience d’altération ritualisée, encadrée, interprétée, et politiquement centrale.  
 
------
+Quand l’hégémonie chrétienne a écrasé ces pratiques, le savoir n’a pas disparu : il est entré dans la clandestinité, puis dans l’archive judiciaire. Les récits de sabbat — souvent arrachés sous contrainte et moulés dans les cadres inquisitoriaux — peuvent aussi se lire comme la collision violente entre des effets pharmacologiques (notamment ceux des Solanacées tropaniques) et une machine de qualification pénale qui impose son interprétation.  
 
-### 7. Note sur les chiffres
+Cette guerre de qualification se lit jusque dans les noms populaires des plantes : champ de bataille théologique, où l’on conjure, diabolise, neutralise. Le millepertuis devient “Chasse-diable” et “Herbe de la Saint-Jean”. La digitale est tiraillée entre “Gant de Notre-Dame” et “Doigt du Diable”. Le datura est “Herbe du Diable”, la belladone porte l’ombre des Parques, et l’Europe se peuple de “Sceaux de Salomon” et d’“Herbes aux sorciers”. Nommer la plante, c’est déjà choisir un camp.  
 
-Les panneaux publics de ce jardin ne comportent pas de chiffres de toxicité. Cette décision est délibérée : un seuil quantifié protège et arme simultanément. Les formulations retenues pour la signalétique publique sont : *marge thérapeutique étroite*, *ingestion accidentelle = urgence*, *faible quantité potentiellement grave*. Ces formulations déclenchent les bons comportements sans quantifier.
+À l’autre bout du monde, l’ethnobotanique et le chamanisme montrent comment des sociétés gèrent cette puissance d’altération sans sombrer dans la prohibition : elles l’encadrent. Elles ne séparent pas le “médicament”, le “rite” et la “cosmologie”. Les chamans d’Amazonie avec l’ayahuasca ou des Andes avec le San Pedro produisent des cadres d’usage où l’efficacité se joue autant dans la substance que dans le protocole social, le chant (*ícaros*) et la régulation du risque. Le rite est le garde-fou : une technologie de l’esprit.  
 
-Les données de pharmacocinétique, doses létales estimées et seuils précis figurent dans le **protocole interne** de ce document, destiné aux médiateurs scientifiques. Ils ne sont pas affichés.
+Aujourd’hui, l’histoire boucle la boucle avec la figure du psychonaute. Ces explorateurs modernes de la conscience ont délaissé le terme moralisateur de “drogue” pour forger celui d’“enthéogène” — ce qui “engendre le divin en soi”. Qu’il s’agisse de l’initié grec, de la paysannerie européenne, du chaman amazonien ou du psychonaute contemporain, la démarche structurelle reste la même : mobiliser la biochimie du vivant pour fracturer l’évidence de la conscience. La seule différence, c’est l’étiquette que la société décide de coller sur l’expérience.  
 
------
+#### Illustrations (requêtes)  
+- `Eleusinian mysteries initiation vase painting`  
+- `kykeon Eleusis depiction`  
+- `ayahuasca ceremony photo`  
+- `Echinopsis pachanoi San Pedro cactus`  
 
-### 8. Ce jardin
+---
 
-Ce jardin est un *hortus simplicium* — un jardin des simples — dans la tradition directe des jardins monastiques médiévaux. Il organise les plantes par effet physiologique, exactement comme le *Capitulaire de Villis*, le *Circa Instans*, la *Physica* d’Hildegarde — sans hiérarchie morale entre remède et poison.
+## 6. Listes, interdits et Renaissance psychédélique  
 
-Il donne à voir la frontière médecine/poison/sorcellerie pour ce qu’elle est : une frontière sociale, pas une frontière chimique. Une frontière qui s’est déplacée à chaque fois qu’une institution a changé — université, tribunal, pharmacopée nationale, convention internationale.
+Le monde contemporain rend la frontière médecine/crime littérale et consultable : elle prend la forme de listes. En France, le Code de la santé publique encadre les “plantes, substances ou préparations vénéneuses” classées comme stupéfiants ou psychotropes ou inscrites sur listes I et II par décision de l’ANSM. L’ANSM publie des listes consolidées, mises à jour, qui actent le classement des stupéfiants et des psychotropes, et renvoient aux arrêtés et décisions correspondants.  
 
-La plante, elle, est restée la même.
+Ce point est essentiel pour une monographie : l’ambivalence n’est pas seulement un concept, elle est un mécanisme administratif. Le même composé peut être, dans un pays, objet de recherche clinique, et, dans un autre, objet de police. La “renaissance psychédélique” n’est intelligible qu’ainsi : requalification institutionnelle, plus que découverte chimique.  
 
-> *C’est la même molécule.*
-> *C’est la même main.*
-> *Ce qui a changé, c’est le siècle, l’institution, et le statut de celle qui la tient.*
+L’“usage illégal” ne relève donc pas d’un sensationnalisme, mais d’une sociologie des marchés et des interdits. Historiquement, les interdits fabriquent des zones grises : poudres d’héritage, philtres vendus clandestinement, accusations de *veneficium* transformant un échec thérapeutique en intention criminelle. Contemporainement, l’illégal prend la forme de détournements, de marchés parallèles, de produits non standardisés, et de pratiques sans protection institutionnelle ; le risque n’est pas seulement toxique, il est aussi épistémique (absence de traçabilité, de qualité, de diagnostic différentiel) et juridique (qualification pénale, responsabilité, exposition).  
 
------
+#### Illustrations (requêtes)  
+- `ANSM liste stupéfiants document screenshot`  
+- `Oregon psilocybin services historical photo`  
+- `TGA psilocybin MDMA decision document`  
 
-## NOTE NOMENCLATURALE
+---
 
-Les noms scientifiques suivent la nomenclature APG IV et le référentiel *Plants of the World Online* (Kew). La colonne “Nom scientifique” contient le nom actuellement accepté ; les synonymes courants sont indiqués entre parenthèses pour éviter toute confusion avec les sources historiques et pharmacologiques.
+## 7. Ce Jardin : l’expérience de la frontière  
 
-Principales mises à jour :
+Dans ce cadre, la “sorcière” n’est qu’une figure parmi d’autres, et une monographie correcte doit faire apparaître tout un spectre : magicien(ne)s urbain(e)s, devins, guérisseurs, sages-femmes, apothicaires clandestins, chamans, prêtres-médecins, médecins humanistes, démonologues, experts judiciaires, pharmaciens, régulateurs.  
 
-- *Salvia rosmarinus* Spenn. (syn. *Rosmarinus officinalis* L.) — Lamiacées-Salvioïdées
-- *Dysphania ambrosioides* (L.) Mosyakin & Clemants (syn. *Chenopodium ambrosioides* L.) — Amaranthacées
-- *Persicaria bistorta* (L.) Samp. (syn. *Polygonum bistorta* L.) — Polygonacées
-- *Drimia maritima* (L.) Stearn (syn. *Urginea maritima*) — Asparagacées
-- *Verbascum thapsus* L. — reclassé en Plantaginacées (APG IV, ex-Scrophulariacées)
+Chiron et Asclépios rappellent une origine mythico-religieuse du soin ; les jardins monastiques et Hildegarde rappellent une tradition chrétienne savante du simple ; Salerne et le *Circa Instans* rappellent la naissance d’une pharmacie normée ; Wier et Bodin rappellent la lutte interne de la modernité sur la qualification du *maleficium* ; l’Affaire des Poisons rappelle la circulation clandestine des substances dans les sociétés d’Ancien Régime ; la morphine, la cocaïne, l’ergot et la digitale rappellent l’ambivalence pharmacologique moderne ; les listes rappellent la matérialisation administrative du statut ; l’ayahuasca et les cadres contemporains rappellent que la frontière médecine/crime n’est pas fixe, mais négociée, au présent. Tout cela converge vers une idée simple : l’objet “plante” n’existe jamais seul ; il existe dans un régime d’usage, de preuve, de récit et de droit.  
+
+La note méthodologique sur les chiffres reste alors pleinement justifiée : la signalétique publique n’affiche pas de seuils quantifiés, parce qu’un nombre est simultanément information de prudence et information opératoire. L’espace public vise des formulations qualitatives déclenchant les bons comportements, tandis que les données fines (pharmacocinétique, seuils, interactions) restent dans un protocole interne destiné à l’encadrement scientifique.  
+
+Ce jardin, enfin, peut se définir rigoureusement comme un *hortus simplicium* au sens historique : héritier de la liste carolingienne, des jardins monastiques, des compilations salernitaines, des savoirs vernaculaires souvent féminins, et des régulations modernes. Il ne cherche pas à purifier le végétal en “bon” et “mauvais”, mais à montrer comment les sociétés, elles, fabriquent sans cesse ces catégories — et comment ces catégories, une fois fabriquées, produisent des effets réels : soin, exclusion, criminalisation, marché clandestin, ou retour institutionnel.  
 
 -----
 
