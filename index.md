@@ -2,8 +2,8 @@
 title: "Jardin des Simples"
 layout: single
 permalink: /
-toc: true
-toc_sticky: true
+toc: false
+toc_sticky: false
 toc_label: "Sommaire"
 toc_levels: 2..3
 classes: wide
