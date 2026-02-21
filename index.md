@@ -209,14 +209,16 @@ Ce jardin, enfin, peut se définir rigoureusement comme un *hortus simplicium* a
 💧 Rein & voies urinaires — arbutine, terpènes, acides aristolochiques
 🌸 Peau & muqueuses — coumarines phototoxiques, oxalates, daphnétoxines, latex
 🛡️ Anti-infectieux & parasites — phénols, isothiocyanates, pyréthrines, alcaloïdes
-⚡ Métabolisme & hormones — guanidines, phytoestrogènes, withanolides, glycosides iodés
+⚡ Métabolisme & hormones — guanidines, phytoestrogènes, withanolides, glycosides iodés, alcaloïdes antimitotiques (colchicine)
 
-**Rusticité**
-🏔️ Native ou parfaitement adaptée au site (900 m)
-🪴 Plein air — rustique à –15/–20°C
-❄️ Serre froide — non chauffée, gel amorti
-🏠 Abri hors gel — +2 à +5°C minimum
+**Rusticité & culture (pictos combinables)**
+🏔️ Très rustique / compatible plateau (900 m) — hiver dehors possible
+🪴 Plein air / pleine terre — en place dans le jardin
+❄️ Serre froide — hivernage sous abri non chauffé (généralement en pot)
+🏠 Abri hors gel — hivernage hors gel +2 à +5°C (généralement en pot)
 🌱 Annuelle — ressemer chaque année
+
+_Règle pratique : les espèces notées ❄️ ou 🏠 peuvent être conduites en grands pots intégrés aux massifs l’été, puis déplacées à l’abri pour l’hiver._
 
 **Signalétique**
 ☠️ Toxique grave — ingestion accidentelle = urgence médicale
@@ -705,6 +707,8 @@ Les chemins dessinent l’étoile ; les massifs remplissent les “alvéoles” 
 - **Triangles internes** : plantes moyennes à hautes (hauteur humaine / grandes hampes).
 - **Intertriangles externes** : plantes basses (tapis, landes, aromatiques, rosettes).
 
+Dans chaque massif, la plantation suit un dégradé radial : **fond de massif (côté centre) = totem(s)**, **milieu = plantes moyennes**, **bord de chemin = plantes basses**. Cette règle maintient la lisibilité des chemins (le dessin) et évite que le végétal “mange” la géométrie.
+
 -----
 
 ### Affectation des fonctions physiologiques (les 11 emplacements)
@@ -751,7 +755,7 @@ Les chemins dessinent l’étoile ; les massifs remplissent les “alvéoles” 
 - **Totem** : arnica
 - **Option estivale (annuelle)** : pavot somnifère
 
-#### ⚡ Métabolisme & hormones — Triangle interne (moyen)
+#### ⚡ Métabolisme & hormones — guanidines, phytoestrogènes, withanolides, glycosides iodés, alcaloïdes antimitotiques (colchicine)
 - **Totem** : colchique
 - **Complément (mi-ombre possible)** : sceau-de-Salomon
 
