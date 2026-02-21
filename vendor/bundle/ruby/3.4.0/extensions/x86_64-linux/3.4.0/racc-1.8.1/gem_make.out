@@ -1,0 +1,18 @@
+current directory: /workspaces/jardin_des_simples/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+/usr/local/rvm/rubies/ruby-3.4.7/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /workspaces/jardin_des_simples/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260221-10652-q66wjz sitelibdir\=./.gem.20260221-10652-q66wjz clean
+
+current directory: /workspaces/jardin_des_simples/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260221-10652-q66wjz sitelibdir\=./.gem.20260221-10652-q66wjz
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /workspaces/jardin_des_simples/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260221-10652-q66wjz sitelibdir\=./.gem.20260221-10652-q66wjz install
+/usr/bin/install -m 0755 cparse.so ./.gem.20260221-10652-q66wjz/racc
+
+current directory: /workspaces/jardin_des_simples/vendor/bundle/ruby/3.4.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20260221-10652-q66wjz sitelibdir\=./.gem.20260221-10652-q66wjz clean
