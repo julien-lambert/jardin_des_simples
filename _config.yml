@@ -1,9 +1,26 @@
-title: Jardin des simples
-tagline: Hortus pharmacologique — botanique, chimie, histoire
-description: Jardin des simples — notes botaniques, pharmacologiques et historiques.
-theme: minima
+title: Jardin des Simples
+description: "Médecine, poison, sorcellerie — Plateau du Forez"
+url: "https://<TON-USER>.github.io"
+baseurl: ""
+
+remote_theme: "mmistakes/minimal-mistakes"
+
+plugins:
+  - jekyll-include-cache
+
+# Skin sombre (base) — ensuite on surcharge en CSS
+minimal_mistakes_skin: "dark"
+
 markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-plugins: []
+
+# Pour que tes pages Markdown aient un layout cohérent
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: single
+      toc: true
+      toc_sticky: true
