@@ -8,6 +8,10 @@ toc_label: "Sommaire"
 toc_levels: 2..3
 classes: wide
 ---
+
+<a class="floating-menu" href="#site-nav">Menu</a>
+
+
 Saint-Hilaire-Cusson-la-Valmitte — 900 m — Plateau du Forez  
 Un *hortus pharmacologique* — médecine, poison, sorcellerie
 {: .page__lead}
