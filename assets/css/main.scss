@@ -288,75 +288,68 @@ blockquote{
 .floating-menu { display: none; }
 
 /* =========================
-   iPhone / Mobile — MENU ALWAYS ACCESSIBLE
+   iPhone: Sidebar nav du thème = fixed à droite
+   (Titre "Jardin des Simples" + Toggle Menu +/–)
    ========================= */
+
 @media (max-width: 1024px) {
-  @supports (-webkit-touch-callout: none) {
 
-    /* 1) Fixe le header complet (plus fiable que #site-nav seul) */
-    .masthead {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      z-index: 999999 !important;
-      background: rgba(243,239,230,.96) !important;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,.12) !important;
-      transform: translateZ(0); /* hack iOS */
-    }
+  /* On transforme la sidebar en widget flottant */
+  .sidebar {
+    position: fixed !important;
+    top: calc(env(safe-area-inset-top, 0px) + 10px) !important;
+    right: 12px !important;
+    left: auto !important;
 
-    /* 2) Réserve l’espace sous la barre */
-    body {
-      padding-top: calc(env(safe-area-inset-top, 0px) + 64px) !important;
-    }
+    width: min(88vw, 340px) !important;
+    max-height: calc(100vh - env(safe-area-inset-top, 0px) - 20px) !important;
 
-    /* 3) Toggle menu bien “tap-friendly” */
-    .greedy-nav__toggle {
-      border: 1px solid rgba(0,0,0,.18);
-      border-radius: 10px;
-      padding: .45rem .6rem;
-      background: rgba(255,255,255,.65);
-    }
+    z-index: 999999 !important;
 
-    /* 4) Fallback: bouton Menu flottant (toujours visible) */
-    .floating-menu {
-      position: fixed !important;
-      right: 14px !important;
-      bottom: calc(14px + env(safe-area-inset-bottom, 0px)) !important;
-      z-index: 999999 !important;
-
-      display: inline-flex !important;
-      align-items: center;
-      gap: .5rem;
-
-      background: rgba(243,239,230,.96) !important;
-      border: 1px solid rgba(0,0,0,.18) !important;
-      border-radius: 999px !important;
-      padding: .65rem .9rem !important;
-
-      font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
-      text-transform: uppercase;
-      letter-spacing: .2px;
-      font-size: .85rem !important;
-
-      color: #171717 !important;
-      text-decoration: none !important;
-
-      box-shadow: 0 12px 30px rgba(0,0,0,.18) !important;
-    }
-
-    .floating-menu::before { content: "☰"; opacity: .85; }
-    .floating-menu:active { transform: scale(.98); }
+    /* on enlève le “bloc” de sidebar qui bouffe la page */
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
   }
-}
 
-/* petit pictogramme optionnel */
-@media (max-width: 1024px) {
-  .floating-menu::before {
-    content: "☰";
-    font-size: 1rem;
-    opacity: .85;
+  /* Le titre/bouton du thème : en pastille (toujours visible) */
+  .sidebar .nav__title {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    margin: 0 !important;
+    padding: .65rem .85rem !important;
+
+    border: 1px solid rgba(0,0,0,.18) !important;
+    border-radius: 999px !important;
+    background: rgba(243,239,230,.96) !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.18) !important;
+
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
+    text-transform: uppercase !important;
+    letter-spacing: .2px !important;
+    font-size: .85rem !important;
+  }
+
+  /* Le panneau déroulant (la liste) : en carte sous la pastille */
+  .sidebar nav {
+    margin-top: 10px !important;
+    padding: .8rem .9rem !important;
+
+    background: rgba(251,248,242,.98) !important;
+    border: 1px solid rgba(0,0,0,.12) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 30px rgba(0,0,0,.12) !important;
+
+    max-height: 65vh !important;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* IMPORTANT: on neutralise le sticky/colonnes du layout sur mobile */
+  .page__inner-wrap, .page__content {
+    max-width: 100% !important;
   }
 }
