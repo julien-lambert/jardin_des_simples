@@ -234,17 +234,13 @@ blockquote{
     margin-top: 1rem;
   }
 }
-/* =========================
-   MOBILE: masthead sticky
-   ========================= */
 
 /* =========================
-   iPhone: menu always accessible
+   MOBILE — NAV FIXED (iPhone safe)
    ========================= */
-
 @media (max-width: 768px) {
 
-  /* 1) Force la nav du thème (id réel) à flotter */
+  /* Nav réelle du thème */
   #site-nav {
     position: fixed !important;
     top: 0 !important;
@@ -257,12 +253,12 @@ blockquote{
     border-bottom: 1px solid rgba(0,0,0,.12);
   }
 
-  /* 2) Reserve l’espace sous la barre (sinon le contenu passe dessous) */
+  /* Réserve l’espace sous la nav */
   body {
-    padding-top: 64px !important; /* ajuste 56–72px si besoin */
+    padding-top: 64px !important;
   }
 
-  /* 3) Rend le toggle/hamburger plus “tap-friendly” */
+  /* Toggle plus visible */
   #site-nav .greedy-nav__toggle {
     border: 1px solid rgba(0,0,0,.18);
     border-radius: 10px;
