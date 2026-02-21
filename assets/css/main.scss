@@ -262,3 +262,36 @@ blockquote{
     background: rgba(255,255,255,.55);
   }
 }
+
+/* =========================
+   iOS SAFE: masthead floating (fixed)
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Barre du haut toujours visible (iPhone safe) */
+  .masthead {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+    background: rgba(243, 239, 230, 0.94) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+
+  /* Évite que le contenu passe sous la barre */
+  .initial-content {
+    padding-top: 4.2rem !important; /* ajuste si besoin (3.6–4.6rem) */
+  }
+
+  /* Bouton menu plus visible */
+  .greedy-nav__toggle {
+    border: 1px solid rgba(0,0,0,.16);
+    border-radius: 10px;
+    padding: .4rem .55rem;
+    background: rgba(255,255,255,.55);
+  }
+}
