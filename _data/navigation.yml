@@ -1,3 +1,18 @@
-main:
+docs:
   - title: "Accueil"
     url: /
+
+  - title: "Le site"
+    url: /#le-site
+
+  - title: "Introduction"
+    url: /#introduction
+
+  - title: "Légende"
+    url: /#legende
+
+  - title: "Les plantes"
+    url: /#les-plantes
+
+  - title: "Géométrie"
+    url: /#geometrie
