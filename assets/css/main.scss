@@ -238,60 +238,35 @@ blockquote{
    MOBILE: masthead sticky
    ========================= */
 
-@media (max-width: 768px) {
-  /* barre du haut toujours visible */
-  .masthead {
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    background: rgba(243, 239, 230, 0.94); /* adapte à ton skin clair */
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,.12);
-  }
-
-  /* évite que le contenu passe sous la barre */
-  .initial-content {
-    padding-top: 0.5rem;
-  }
-
-  /* bouton menu/hamburger plus visible et cliquable */
-  .greedy-nav__toggle {
-    border: 1px solid rgba(0,0,0,.16);
-    border-radius: 10px;
-    padding: .4rem .55rem;
-    background: rgba(255,255,255,.55);
-  }
-}
-
 /* =========================
-   iOS SAFE: masthead floating (fixed)
+   iPhone: menu always accessible
    ========================= */
 
 @media (max-width: 768px) {
 
-  /* Barre du haut toujours visible (iPhone safe) */
-  .masthead {
+  /* 1) Force la nav du thème (id réel) à flotter */
+  #site-nav {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    z-index: 9999 !important;
-    background: rgba(243, 239, 230, 0.94) !important;
+    z-index: 99999 !important;
+    background: rgba(243, 239, 230, 0.96) !important;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(0,0,0,.12);
   }
 
-  /* Évite que le contenu passe sous la barre */
-  .initial-content {
-    padding-top: 4.2rem !important; /* ajuste si besoin (3.6–4.6rem) */
+  /* 2) Reserve l’espace sous la barre (sinon le contenu passe dessous) */
+  body {
+    padding-top: 64px !important; /* ajuste 56–72px si besoin */
   }
 
-  /* Bouton menu plus visible */
-  .greedy-nav__toggle {
-    border: 1px solid rgba(0,0,0,.16);
+  /* 3) Rend le toggle/hamburger plus “tap-friendly” */
+  #site-nav .greedy-nav__toggle {
+    border: 1px solid rgba(0,0,0,.18);
     border-radius: 10px;
-    padding: .4rem .55rem;
-    background: rgba(255,255,255,.55);
+    padding: .45rem .6rem;
+    background: rgba(255,255,255,.6);
   }
 }
