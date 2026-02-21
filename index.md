@@ -1,16 +1,14 @@
 ---
-sidebar:
-  nav: "docs"
 title: "Jardin des Simples"
 layout: single
 permalink: /
+classes: wide
+author_profile: false
+sidebar:
+  nav: "docs"
 toc: false
 toc_sticky: false
-toc_label: "Sommaire"
-toc_levels: 2..3
-classes: wide
 ---
-
 
 <script src="/jardin_des_simples/assets/js/floating-menu.js"></script>
 
