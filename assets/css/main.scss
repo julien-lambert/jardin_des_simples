@@ -5,12 +5,13 @@
 @import "minimal-mistakes";
 
 /* =========================================================
-   JARDIN DES SIMPLES — CSS COMPLET (Minimal Mistakes)
+   JARDIN DES SIMPLES — CSS ENTIER (PROPRE, RESPONSIVE)
+   Minimal Mistakes + peau claire "parchemin"
    Objectifs :
-   - esthétique claire "parchemin / encre" + accents toxiques
-   - responsive propre
-   - sur iPhone : menu (sidebar docs nav) toujours visible à droite
-   - tableaux : pas de débordement sur Mac, scroll horizontal sur mobile
+   - Mac/desktop : header sticky + sidebar en vraie colonne gauche (pas de carte)
+   - iPhone : header fixé + bouton "Toggle Menu" intégré à droite dans la barre,
+             menu déroulant plein-largeur sous la barre (style iOS, léger)
+   - Tables : pas de débordement sur Mac ; scroll horizontal sur mobile
    ========================================================= */
 
 /* ---------- Fonts ---------- */
@@ -32,7 +33,7 @@
 }
 
 /* =========================================================
-   Base
+   Base / Typo
    ========================================================= */
 
 body{
@@ -67,25 +68,10 @@ hr{
   margin: 2rem 0;
 }
 
-/* Largeur de lecture */
+/* Largeur de lecture (desktop) */
 .page__inner-wrap,
 .page__content{
   max-width: 980px;
-}
-
-/* Masthead (barre du haut) */
-.masthead{
-  background: rgba(243,239,230,.88);
-  border-bottom: 1px solid var(--rule);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-.masthead__menu-item a{
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  text-transform: uppercase;
-  letter-spacing: .3px;
-  font-size: .9rem;
 }
 
 /* Intertitres */
@@ -116,7 +102,34 @@ pre{
 }
 
 /* =========================================================
-   Tables — desktop : pas de débordement
+   Masthead (barre du haut)
+   ========================================================= */
+
+.masthead{
+  background: rgba(243,239,230,.88);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.masthead__menu-item a{
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: .3px;
+  font-size: .9rem;
+}
+
+/* Desktop : barre sticky (attachée) */
+@media (min-width: 769px){
+  .masthead{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+}
+
+/* =========================================================
+   Tables — Desktop : pas de débordement (wrap intelligent)
    ========================================================= */
 
 .page__content table{
@@ -131,7 +144,6 @@ pre{
   box-shadow: 0 8px 18px var(--shadow);
 }
 
-/* Th/td : retour à la ligne intelligent pour éviter les tables géantes */
 .page__content th,
 .page__content td{
   white-space: normal !important;
@@ -160,27 +172,47 @@ pre{
   background: rgba(29,122,80,.06);
 }
 
+/* Mobile : scroll horizontal (ne pas écraser les colonnes) */
+@media (max-width: 768px){
+  .page__content table{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap; /* garde une grille lisible */
+  }
+  .page__content th,
+  .page__content td{
+    white-space: nowrap !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  /* Première colonne sticky (optionnel mais utile) */
+  .page__content table th:first-child,
+  .page__content table td:first-child{
+    position: sticky;
+    left: 0;
+    background: var(--paper2);
+    box-shadow: 6px 0 12px rgba(0,0,0,.08);
+  }
+}
+
 /* =========================================================
-   Sidebar / TOC — desktop (propre)
+   Sidebar / Navigation docs — Desktop : colonne gauche (pas une carte)
    ========================================================= */
 
 .sidebar{
-  background: rgba(251, 248, 242, 0.75);
-  border: 1px solid rgba(0,0,0,.12);
-  border-radius: 14px;
-  padding: .85rem .9rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  /* base neutre, on stylise ensuite selon device */
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
 }
 
 .sidebar .nav__title{
   font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  text-transform: uppercase;
   letter-spacing: .2px;
   font-size: .9rem;
-  border-bottom: 1px solid rgba(0,0,0,.12);
-  padding-bottom: .5rem;
-  margin-bottom: .6rem;
-  background: transparent;
   color: var(--ink);
 }
 
@@ -198,130 +230,138 @@ pre{
   border-left-color: var(--toxic);
 }
 
-/* TOC (si activé) */
-.toc{
-  background: rgba(251, 248, 242, 0.75);
-  border: 1px solid rgba(0,0,0,.12);
-  border-radius: 14px;
-  padding: .8rem .9rem;
-  box-shadow: 0 10px 25px rgba(0,0,0,.08);
-}
-
-.toc .nav__title{
-  background: transparent;
-  border-bottom: 1px solid rgba(0,0,0,.12);
-  color: var(--ink);
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  text-transform: uppercase;
-  letter-spacing: .2px;
-}
-
-/* =========================================================
-   Mobile — tables scroll + menu toujours visible à droite
-   ========================================================= */
-
-@media (max-width: 768px){
-
-  /* Tables : scroll horizontal sur mobile (lisibilité colonnes) */
-  .page__content table{
-    display: block;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap; /* garde la grille */
+/* Desktop : vraie colonne, menu visible, pas de boîte */
+@media (min-width: 769px){
+  .sidebar nav{
+    border-left: 1px solid var(--rule);
+    padding: 0 0 0 1rem;
+    margin-top: .5rem;
+    background: transparent;
   }
 
-  .page__content th,
-  .page__content td{
-    white-space: nowrap !important;
-    overflow-wrap: normal;
-    word-break: normal;
-  }
-
-  /* Option : première colonne sticky (utile) */
-  .page__content table th:first-child,
-  .page__content table td:first-child{
-    position: sticky;
-    left: 0;
-    background: var(--paper2);
-    box-shadow: 6px 0 12px rgba(0,0,0,.08);
+  /* Sur desktop, on n’affiche pas "Toggle Menu" */
+  .sidebar .nav__title{
+    display: none !important;
   }
 }
 
 /* =========================================================
-   iPhone/Tablette — MENU DU THÈME FIXE À DROITE
-   (Titre "Jardin des Simples" + Toggle Menu +/– toujours visible)
+   iPhone / iPad (tactile) : "Toggle Menu" dans la topbar, dropdown dessous
+   IMPORTANT : on ne déplace PAS la sidebar en “carton flottant”.
+   On ne fixe QUE:
+   - le header (masthead)
+   - le bouton toggle (nav__title) à droite dans la barre
+   - le panneau nav en dropdown plein large sous la barre
    ========================================================= */
 
-@media (max-width: 1024px){
+@media (max-width: 768px) and (hover: none) and (pointer: coarse){
 
-  /* Sur mobile/tablette, le contenu prend toute la largeur */
-  .page__inner-wrap,
-  .page__content{
-    max-width: 100% !important;
-  }
-
-  /* Sidebar devient un widget flottant à droite */
-  .sidebar{
+  /* Header fixé (iOS safe) */
+  .masthead{
     position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 10px) !important;
-    right: 12px !important;
-    left: auto !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99999 !important;
+    background: rgba(243,239,230,.96) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,.12) !important;
+  }
 
-    width: min(88vw, 340px) !important;
-    z-index: 999999 !important;
+  /* Décale la page sous le header */
+  body{
+    padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
+  }
 
-    /* on enlève la “boîte sidebar” desktop */
-    padding: 0 !important;
+  /* Sidebar neutre (pas de carte, pas de shadow) */
+  .sidebar{
     background: transparent !important;
     border: 0 !important;
-    border-radius: 0 !important;
     box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
   }
 
-  /* Pastille toujours visible (titre + toggle) */
+  /* Bouton "Toggle Menu" : intégré en haut à droite (style iOS léger) */
   .sidebar .nav__title{
-    display: flex !important;
+    position: fixed !important;
+    top: calc(env(safe-area-inset-top, 0px) + 8px) !important;
+    right: 12px !important;
+    z-index: 100000 !important;
+
+    display: inline-flex !important;
     align-items: center !important;
-    justify-content: space-between !important;
+    justify-content: center !important;
 
-    margin: 0 !important;
-    padding: .65rem .85rem !important;
-
-    border: 1px solid rgba(0,0,0,.18) !important;
-    border-radius: 999px !important;
-    background: rgba(243,239,230,.96) !important;
-    box-shadow: 0 12px 30px rgba(0,0,0,.18) !important;
+    padding: .45rem .7rem !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(0,0,0,.16) !important;
+    background: rgba(251,248,242,.92) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,.10) !important;
 
     font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
-    text-transform: uppercase !important;
-    letter-spacing: .2px !important;
     font-size: .85rem !important;
+    letter-spacing: .2px !important;
+    text-transform: none !important;
   }
 
-  /* Panneau nav : toujours accessible (même si toggle capricieux) */
-  .sidebar nav{
-    display: block !important;
+  /* évite que le titre du site passe sous le bouton */
+  .masthead__title{
+    padding-right: 92px !important;
+  }
 
-    margin-top: 10px !important;
-    padding: .8rem .9rem !important;
+  /* Dropdown plein large sous la barre */
+  .sidebar nav{
+    position: fixed !important;
+    top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99998 !important;
 
     background: rgba(251,248,242,.98) !important;
-    border: 1px solid rgba(0,0,0,.12) !important;
-    border-radius: 14px !important;
-    box-shadow: 0 12px 30px rgba(0,0,0,.12) !important;
+    border-bottom: 1px solid rgba(0,0,0,.12) !important;
+    box-shadow: 0 18px 40px rgba(0,0,0,.12) !important;
 
-    max-height: 65vh !important;
+    padding: .8rem 1rem !important;
+    max-height: 70vh !important;
     overflow: auto !important;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Liens plus confortables au doigt */
-  .sidebar nav a{
-    padding: .35rem .15rem .35rem .55rem;
+  /* --- Gestion ouverture/fermeture robuste ---
+     Si Minimal Mistakes a un checkbox, on ferme par défaut et on ouvre quand checked.
+     Si pas de checkbox (cas rare), on laisse le menu visible (ne jamais perdre le menu).
+  */
+  .sidebar input[type="checkbox"] ~ nav{
+    display: none !important;  /* fermé par défaut uniquement si checkbox présent */
+  }
+  .sidebar input[type="checkbox"]:checked ~ nav{
+    display: block !important;
   }
 
-  /* Évite d’écraser le bord droit du texte */
-  .page__content{
-    padding-right: 10px !important;
+  /* Liens plus confortables au doigt */
+  .sidebar nav a{
+    padding: .45rem .25rem .45rem .65rem !important;
+    border-left: 2px solid transparent;
   }
+  .sidebar nav a:active{
+    background: rgba(29,122,80,.08);
+  }
+}
+
+/* =========================================================
+   Option : TOC (si tu le réactives un jour)
+   On le garde sobre, pas “carton”.
+   ========================================================= */
+
+.toc{
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.toc .nav__title{
+  display: none;
 }
