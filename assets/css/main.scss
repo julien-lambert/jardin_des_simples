@@ -1,112 +1,150 @@
 /* =========================
-   PATCH BEAUTY — HORTUS
+   HORTUS — LIGHT SKIN
+   Grimoire clair × Autopsie chirurgicale
    ========================= */
 
-/* Largeur de lecture (évite l’effet “colonne étroite + vide”) */
-.page__content,
-.page__inner-wrap {
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap");
+
+:root{
+  --paper: #f3efe6;      /* parchemin */
+  --paper2:#fbf8f2;      /* page claire */
+  --ink:   #171717;      /* encre */
+  --muted: #5b5b5b;
+
+  --rule:  rgba(0,0,0,.14);
+  --shadow: rgba(0,0,0,.10);
+
+  --toxic: #1d7a50;      /* vert bouteille */
+  --blood: #8b1d1d;      /* rouge séché */
+}
+
+/* Fond général */
+body{
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* Typo */
+.page__content{
+  font-family: "EB Garamond", ui-serif, Georgia, serif;
+  font-size: 1.12rem;
+  line-height: 1.75;
+}
+h1,h2,h3,h4{
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  letter-spacing: .2px;
+  color: var(--ink);
+}
+
+/* Liens “toxiques” */
+a{ color: var(--toxic); }
+a:hover{ color: #0f5e3a; }
+
+/* Largeur de lecture (moins étriqué) */
+.page__inner-wrap, .page__content{
   max-width: 980px;
 }
 
-/* Masthead (barre du haut) : plus discret, moins “site corporate” */
-.masthead {
-  background: rgba(10,10,10,.65);
-  border-bottom: 1px solid #2a2a2a;
+/* Header : clair, discret */
+.masthead{
+  background: rgba(243,239,230,.88);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
 }
-.masthead__menu-item a {
+.masthead__menu-item a{
   font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  letter-spacing: .3px;
   text-transform: uppercase;
+  letter-spacing: .3px;
   font-size: .9rem;
-  opacity: .9;
 }
 
-/* Titres : plus “grimoire” (découpe nette) */
-h2 {
-  border-bottom: 1px solid #2a2a2a;
+/* Intertitres façon “rapport” */
+h2{
+  border-bottom: 1px solid var(--rule);
   padding-bottom: .35rem;
-  margin-top: 2.2rem;
+  margin-top: 2.3rem;
 }
 
-/* TOC : stop le gros pavé gris, on le rend sombre, fin, repliable */
-.toc {
-  background: rgba(18,18,18,.92);
-  border: 1px solid #2a2a2a;
+/* TOC : panneau “fiche” clair, pas admin-gris */
+.toc{
+  background: var(--paper2);
+  border: 1px solid var(--rule);
   border-radius: 14px;
-  box-shadow: 0 12px 30px rgba(0,0,0,.35);
+  box-shadow: 0 10px 25px var(--shadow);
   padding: .75rem .9rem;
 }
-
-/* Titre “Sommaire” */
-.toc .nav__title {
+.toc .nav__title{
   background: transparent;
-  color: #e7e2d9;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
   font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  font-size: .95rem;
   letter-spacing: .3px;
-  padding: .45rem .4rem .6rem;
-  border-bottom: 1px solid #2a2a2a;
-  margin-bottom: .5rem;
 }
-
-/* Liens TOC */
-.toc a {
-  color: #dcdcdc;
+.toc a{
+  color: var(--ink);
   text-decoration: none;
   border-left: 2px solid transparent;
   padding-left: .55rem;
-  display: block;
-  line-height: 1.25;
 }
-.toc a:hover {
-  color: #7cf7aa;
-  border-left-color: #4ade80;
+.toc a:hover{
+  border-left-color: var(--toxic);
+  color: var(--toxic);
 }
 
-/* Replie/déplie le TOC (sans JS) */
-.toc .nav__items {
-  max-height: 280px;
-  overflow: auto;
-}
-.toc:hover .nav__items {
-  max-height: 560px;
-}
-
-/* Typo du texte : légèrement plus grande, plus lisible */
-.page__content {
-  font-size: 1.12rem;
-  line-height: 1.72;
-}
-
-/* Tables : plus “rapport d’autopsie”, moins “markdown brut” */
-table {
-  border: 1px solid #2a2a2a;
+/* Tables : “autopsie” (air + lignes fines) */
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  background: var(--paper2);
+  border: 1px solid var(--rule);
   border-radius: 12px;
   overflow: hidden;
-  background: rgba(18,18,18,.55);
+  box-shadow: 0 8px 18px var(--shadow);
 }
-th {
-  background: #0f0f0f;
-  border-bottom: 1px solid #2a2a2a;
+th{
+  background: rgba(0,0,0,.06);
+  color: var(--ink);
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
   font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
   font-size: .85rem;
-  letter-spacing: .2px;
   text-transform: uppercase;
+  letter-spacing: .2px;
 }
-td {
-  border-bottom: 1px solid #242424;
+td{
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  vertical-align: top;
 }
-tr:hover {
-  background: rgba(255,255,255,.04);
+tr:hover{
+  background: rgba(29,122,80,.06);
 }
 
-/* Images : jamais plein écran, et look cohérent */
-.page__content img {
+/* Blocs de code */
+pre{
+  background: #ffffff;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+/* Images : gabarit uniforme + centrage */
+.page__content img{
   display: block;
   margin: 1.2rem auto;
-  max-width: 820px;
+  max-width: 860px;
   width: 100%;
   border-radius: 14px;
-  border: 1px solid #2a2a2a;
-  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  border: 1px solid var(--rule);
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+/* Citations : trait “sang séché” */
+blockquote{
+  border-left: 3px solid var(--blood);
+  padding-left: 1rem;
+  color: var(--muted);
 }
