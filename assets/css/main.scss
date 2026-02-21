@@ -1,32 +1,35 @@
 ---
 ---
+
 @import "minimal-mistakes";
 
 /* =========================================================
-   JARDIN DES SIMPLES — CSS ENTIER (PROPRE, RESPONSIVE)
-   Minimal Mistakes + peau claire "parchemin"
-   Objectifs :
-   - Mac/desktop : header sticky + sidebar en vraie colonne gauche (pas de carte)
-   - iPhone : header fixé + bouton "Toggle Menu" intégré à droite DANS la barre,
-             menu déroulant plein-largeur sous la barre (style iOS, léger)
-   - Tables : pas de débordement sur Mac ; scroll horizontal sur mobile
+   JARDIN DES SIMPLES — HORTUS LIGHT (Minimal Mistakes)
+   Stratégie UI :
+   - Desktop/Mac : masthead sticky + sidebar gauche en colonne (pas de “carte”)
+   - Mobile/iPhone : masthead FIXED (toujours visible) + UN SEUL MENU :
+       -> le menu du haut (greedy-nav toggle) du thème
+       -> PAS de toggle sidebar (évite le 2e bloc)
+   - Tables : contrôlées sur desktop ; scroll horizontal sur mobile
    ========================================================= */
 
-/* ---------- Fonts ---------- */
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap");
+
+/* Marker debug : permet de vérifier sur main.css */
+:root{ --HORTUS_MARKER_20260221_1413: 1; }
 
 /* ---------- Variables ---------- */
 :root{
-  --paper: #f3efe6;      /* parchemin */
-  --paper2:#fbf8f2;      /* page claire */
-  --ink:   #171717;      /* encre */
+  --paper: #f3efe6;
+  --paper2:#fbf8f2;
+  --ink:   #171717;
   --muted: #5b5b5b;
 
   --rule:  rgba(0,0,0,.14);
   --shadow: rgba(0,0,0,.10);
 
-  --toxic: #1d7a50;      /* vert bouteille */
-  --blood: #8b1d1d;      /* rouge séché */
+  --toxic: #1d7a50;
+  --blood: #8b1d1d;
 }
 
 /* =========================================================
@@ -65,13 +68,12 @@ hr{
   margin: 2rem 0;
 }
 
-/* Largeur de lecture (desktop) */
+/* Largeur de lecture */
 .page__inner-wrap,
 .page__content{
   max-width: 980px;
 }
 
-/* Intertitres */
 h2{
   border-bottom: 1px solid var(--rule);
   padding-bottom: .35rem;
@@ -109,6 +111,7 @@ pre{
   -webkit-backdrop-filter: blur(8px);
 }
 
+/* Typo menu haut */
 .masthead__menu-item a{
   font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
   text-transform: uppercase;
@@ -116,7 +119,7 @@ pre{
   font-size: .9rem;
 }
 
-/* Desktop : barre sticky (attachée) */
+/* Desktop : sticky */
 @media (min-width: 769px){
   .masthead{
     position: sticky;
@@ -125,10 +128,130 @@ pre{
   }
 }
 
+/* Mobile/iPhone : masthead fixed (toujours visible) */
+@media (max-width: 768px){
+  .masthead{
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 99999 !important;
+    background: rgba(243,239,230,.96) !important;
+    border-bottom: 1px solid rgba(0,0,0,.12) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Réserve l’espace sous la barre (safe area iOS) */
+  body{
+    padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
+  }
+}
+
+/* Greedy nav (menu du haut) : look “iOS léger” */
+.greedy-nav{
+  background: transparent;
+}
+
+/* Titre : respire, laisse la place au bouton à droite */
+.greedy-nav a.site-title{
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  letter-spacing: .2px;
+  color: var(--ink);
+}
+
+/* Bouton toggle (hamburger) : discret mais net */
+.greedy-nav__toggle{
+  border: 1px solid rgba(0,0,0,.14);
+  border-radius: 12px;
+  background: rgba(251,248,242,.70);
+  padding: .35rem .55rem;
+}
+
+/* S’assure qu’il est toujours “à droite” et cliquable */
+.greedy-nav{
+  display: flex;
+  align-items: center;
+}
+.greedy-nav .visible-links{
+  justify-content: flex-end;
+}
+.greedy-nav__toggle{
+  margin-left: auto;
+}
+
 /* =========================================================
-   Tables — Desktop : pas de débordement (wrap intelligent)
+   Sidebar (navigation à gauche) — Desktop only
    ========================================================= */
 
+/* Style colonne (pas “carte”) */
+.sidebar{
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.sidebar a{
+  color: var(--ink);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: .55rem;
+  display: block;
+  line-height: 1.3;
+}
+.sidebar a:hover{
+  color: var(--toxic);
+  border-left-color: var(--toxic);
+}
+
+/* Desktop : nav en colonne + on cache le “Toggle Menu” de la sidebar */
+@media (min-width: 769px){
+  .sidebar nav{
+    border-left: 1px solid var(--rule);
+    padding: 0 0 0 1rem;
+    margin-top: .5rem;
+    background: transparent;
+  }
+  /* IMPORTANT : supprime le titre “Toggle Menu” sur desktop */
+  .sidebar .nav__title{
+    display: none !important;
+  }
+}
+
+/* Mobile : on neutralise la sidebar pour éviter le 2e menu */
+@media (max-width: 768px){
+  aside.sidebar,
+  .sidebar{
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   TOC (si tu l’actives encore) — plus joli
+   ========================================================= */
+
+.toc{
+  background: var(--paper2);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  box-shadow: 0 10px 25px var(--shadow);
+}
+
+.toc .nav__title{
+  background: transparent;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  letter-spacing: .2px;
+}
+
+/* =========================================================
+   Tables (plantes) — desktop maîtrisé, mobile scroll
+   ========================================================= */
+
+/* Desktop : éviter “tableau géant” */
 .page__content table{
   width: 100% !important;
   max-width: 100% !important;
@@ -139,6 +262,9 @@ pre{
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 18px var(--shadow);
+
+  /* clé anti-explosion */
+  table-layout: fixed;
 }
 
 .page__content th,
@@ -169,20 +295,23 @@ pre{
   background: rgba(29,122,80,.06);
 }
 
-/* Mobile : scroll horizontal (ne pas écraser les colonnes) */
+/* Mobile : scroll horizontal + première colonne sticky */
 @media (max-width: 768px){
   .page__content table{
     display: block;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     white-space: nowrap;
+    table-layout: auto; /* en mobile, on laisse respirer et on scrolle */
   }
+
   .page__content th,
   .page__content td{
     white-space: nowrap !important;
     overflow-wrap: normal;
     word-break: normal;
   }
+
   .page__content table th:first-child,
   .page__content table td:first-child{
     position: sticky;
@@ -191,173 +320,3 @@ pre{
     box-shadow: 6px 0 12px rgba(0,0,0,.08);
   }
 }
-
-/* =========================================================
-   Sidebar / Navigation docs — Desktop : colonne gauche (pas une carte)
-   ========================================================= */
-
-.sidebar{
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  padding: 0;
-}
-
-.sidebar a{
-  color: var(--ink);
-  text-decoration: none;
-  border-left: 2px solid transparent;
-  padding-left: .55rem;
-  display: block;
-  line-height: 1.3;
-}
-
-.sidebar a:hover{
-  color: var(--toxic);
-  border-left-color: var(--toxic);
-}
-
-/* Desktop : nav en colonne, Toggle caché */
-@media (min-width: 769px){
-  .sidebar nav{
-    border-left: 1px solid var(--rule);
-    padding: 0 0 0 1rem;
-    margin-top: .5rem;
-    background: transparent;
-  }
-  .sidebar .nav__title{
-    display: none !important;
-  }
-}
-
-/* =========================================================
-   iPhone (tactile) — Toggle Menu DANS la topbar + dropdown dessous
-   (Résout ton problème : plus de “deux barres”)
-   ========================================================= */
-
-@media (max-width: 768px) and (hover: none) and (pointer: coarse) {
-
-  /* Topbar fixée (iOS safe) */
-  .masthead{
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 99999 !important;
-    background: rgba(243,239,230,.96) !important;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,.12) !important;
-  }
-
-  /* Décale la page sous la topbar */
-  body{
-    padding-top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
-  }
-
-  /* IMPORTANT : supprimer la "2e barre" (la sidebar ne doit plus occuper le flux) */
-  aside.sidebar,
-  .sidebar__right,
-  .sidebar__left,
-  .sidebar {
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    overflow: visible !important;
-  }
-
-  /* Bouton Toggle Menu : intégré à droite dans la topbar */
-  aside.sidebar .nav__title,
-  .sidebar__right .nav__title,
-  .sidebar__left .nav__title,
-  .sidebar .nav__title,
-  aside.sidebar label,
-  .sidebar__right label,
-  .sidebar__left label {
-    position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 6px) !important;
-    right: 12px !important;
-    left: auto !important;
-    z-index: 100000 !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    padding: .36rem .62rem !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(0,0,0,.14) !important;
-    background: rgba(251,248,242,.85) !important;
-    box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
-
-    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
-    font-size: .82rem !important;
-    letter-spacing: .15px !important;
-    text-transform: none !important;
-  }
-
-  /* Laisse de la place au bouton à droite du titre */
-  .masthead__title{
-    padding-right: 120px !important;
-  }
-
-  /* Dropdown menu : plein-largeur sous la topbar */
-  aside.sidebar nav,
-  .sidebar__right nav,
-  .sidebar__left nav,
-  .sidebar nav {
-    position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 56px) !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 99998 !important;
-
-    background: rgba(251,248,242,.98) !important;
-    border-bottom: 1px solid rgba(0,0,0,.12) !important;
-    box-shadow: 0 18px 40px rgba(0,0,0,.12) !important;
-
-    padding: .8rem 1rem !important;
-    max-height: 70vh !important;
-    overflow: auto !important;
-    -webkit-overflow-scrolling: touch;
-
-    display: block !important; /* fallback: si pas de checkbox, le menu reste visible */
-  }
-
-  /* Si le thème utilise un checkbox pour ouvrir/fermer : fermer par défaut puis ouvrir quand checked */
-  aside.sidebar input[type="checkbox"] ~ nav,
-  .sidebar__right input[type="checkbox"] ~ nav,
-  .sidebar__left input[type="checkbox"] ~ nav,
-  .sidebar input[type="checkbox"] ~ nav {
-    display: none !important;
-  }
-
-  aside.sidebar input[type="checkbox"]:checked ~ nav,
-  .sidebar__right input[type="checkbox"]:checked ~ nav,
-  .sidebar__left input[type="checkbox"]:checked ~ nav,
-  .sidebar input[type="checkbox"]:checked ~ nav {
-    display: block !important;
-  }
-
-  /* Liens : confort tactile */
-  aside.sidebar nav a,
-  .sidebar__right nav a,
-  .sidebar__left nav a,
-  .sidebar nav a {
-    padding: .45rem .25rem .45rem .65rem !important;
-    border-left: 2px solid transparent;
-  }
-
-  aside.sidebar nav a:hover,
-  .sidebar__right nav a:hover,
-  .sidebar__left nav a:hover,
-  .sidebar nav a:hover {
-    border-left-color: var(--toxic);
-  }
-}
-/* HORTUS_MARKER_20260221_1413 */
-:root { --HORTUS_MARKER_20260221_1413: 1; }:root { --HORTUS_MARKER_20260221_1413: 1; }
