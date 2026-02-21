@@ -234,3 +234,31 @@ blockquote{
     margin-top: 1rem;
   }
 }
+/* =========================
+   MOBILE: masthead sticky
+   ========================= */
+
+@media (max-width: 768px) {
+  /* barre du haut toujours visible */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: rgba(243, 239, 230, 0.94); /* adapte à ton skin clair */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,.12);
+  }
+
+  /* évite que le contenu passe sous la barre */
+  .initial-content {
+    padding-top: 0.5rem;
+  }
+
+  /* bouton menu/hamburger plus visible et cliquable */
+  .greedy-nav__toggle {
+    border: 1px solid rgba(0,0,0,.16);
+    border-radius: 10px;
+    padding: .4rem .55rem;
+    background: rgba(255,255,255,.55);
+  }
+}
