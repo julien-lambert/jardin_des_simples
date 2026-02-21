@@ -236,11 +236,26 @@ blockquote{
 }
 
 /* =========================
-   MOBILE — NAV FIXED (iPhone safe)
+   MOBILE (iPhone safe) — un seul bloc
    ========================= */
 @media (max-width: 768px) {
 
-  /* Nav réelle du thème */
+  /* Sidebar : ne pas casser l’empilement */
+  .sidebar {
+    position: relative;
+    padding: 0;
+    margin-top: 1rem;
+  }
+  .sidebar > nav {
+    padding: .85rem .9rem;
+  }
+
+  /* TOC : si tu le gardes, pas trop envahissant */
+  .toc {
+    margin-top: 1rem;
+  }
+
+  /* Nav réelle du thème : toujours accessible */
   #site-nav {
     position: fixed !important;
     top: 0 !important;
@@ -264,5 +279,24 @@ blockquote{
     border-radius: 10px;
     padding: .45rem .6rem;
     background: rgba(255,255,255,.6);
+  }
+
+  /* Bouton Menu flottant (fallback) */
+  .floating-menu {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    z-index: 999999;
+    background: rgba(243,239,230,.95);
+    border: 1px solid rgba(0,0,0,.18);
+    border-radius: 999px;
+    padding: .55rem .85rem;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+    text-transform: uppercase;
+    letter-spacing: .2px;
+    font-size: .85rem;
+    color: #171717;
+    text-decoration: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,.18);
   }
 }
