@@ -1,19 +1,19 @@
 ---
-# Required front matter for GitHub Pages to compile SCSS
+# Jekyll front matter requis pour compiler le SCSS sur GitHub Pages
 ---
 
 @import "minimal-mistakes";
 
 /* =========================================================
-   JARDIN DES SIMPLES — HORTUS LIGHT (PROPRE, RESPONSIVE)
-   Objectifs:
-   - Desktop/Mac: sidebar = vraie colonne gauche (sobre), header sticky
-   - iPhone: header fixed, UN SEUL bouton menu (hamburger) à droite du titre,
-            menu déroulant plein-largeur sous la barre (style iOS)
-   - Tables: lisibles sur Mac (wrap + largeur contrôlée), scroll horizontal si besoin
+   JARDIN DES SIMPLES — CSS ENTIER (PROPRE, RESPONSIVE)
+   Minimal Mistakes + peau claire "parchemin"
+   Objectifs :
+   - Desktop/Mac : header sticky, sidebar en vraie colonne gauche, tables lisibles
+   - iPhone : barre fixe; UN SEUL menu (sidebar) intégré à droite du titre;
+             panneau déroulant plein-largeur sous la barre
+   - Ancres : titres jamais cachés sous la barre fixe
    ========================================================= */
 
-/* ---------- Fonts ---------- */
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap");
 
 /* ---------- Variables ---------- */
@@ -27,11 +27,10 @@
   --toxic: #1d7a50;
   --blood: #8b1d1d;
 
-  /* header heights (approx) */
-  --masthead-h: 56px;
+  --masthead-h: 56px; /* hauteur cible mobile */
 }
 
-/* ---------- Base look ---------- */
+/* ---------- Base ---------- */
 body{
   background: var(--paper);
   color: var(--ink);
@@ -39,7 +38,7 @@ body{
 
 .page__content{
   font-family: "EB Garamond", ui-serif, Georgia, serif;
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   line-height: 1.75;
 }
 
@@ -49,51 +48,27 @@ h1,h2,h3,h4{
   color: var(--ink);
 }
 
+/* Ancres : éviter que les titres passent sous la barre fixe */
+.page__content h2,
+.page__content h3,
+.page__content h4,
+.page__content h5,
+.page__content h6{
+  scroll-margin-top: calc(var(--masthead-h) + 18px);
+}
+
+/* Liens */
 a{ color: var(--toxic); }
 a:hover{ color: #0f5e3a; }
 
-blockquote{
-  border-left: 3px solid var(--blood);
-  padding-left: 1rem;
-  color: var(--muted);
-}
-
-hr{
-  border: 0;
-  border-top: 1px solid var(--rule);
-  margin: 2rem 0;
-}
-
-/* lecture moins étriquée */
-.page__inner-wrap, .page__content{
-  max-width: 980px;
-}
-
-/* ---------- Masthead (header) ---------- */
-.masthead{
-  background: rgba(243,239,230,.92);
+/* Intertitres */
+.page__content h2{
   border-bottom: 1px solid var(--rule);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  padding-bottom: .35rem;
+  margin-top: 2.3rem;
 }
 
-/* desktop: sticky */
-@media (min-width: 64em){
-  .masthead{
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-  }
-}
-
-/* titres header */
-.masthead__menu-item a,
-.greedy-nav a.site-title{
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  letter-spacing: .2px;
-}
-
-/* ---------- Images ---------- */
+/* Images */
 .page__content img{
   display: block;
   margin: 1.2rem auto;
@@ -104,85 +79,52 @@ hr{
   box-shadow: 0 10px 25px var(--shadow);
 }
 
-/* ---------- Code blocks ---------- */
-pre{
-  background: #ffffff;
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 8px 18px var(--shadow);
+/* Citations */
+blockquote{
+  border-left: 3px solid var(--blood);
+  padding-left: 1rem;
+  color: var(--muted);
 }
 
-/* =========================================================
-   TABLES — desktop wrap + mobile scroll
-   ========================================================= */
+/* ---------- Masthead (barre du haut) ---------- */
+.masthead{
+  background: rgba(243,239,230,.92);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
 
-.page__content table{
-  width: 100% !important;
-  max-width: 100% !important;
-  border-collapse: collapse;
-  margin: 1.6rem 0;
-  background: var(--paper2);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 8px 18px var(--shadow);
+/* Desktop: sticky propre */
+@media (min-width: 769px){
+  .masthead{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+}
+
+/* Typo masthead */
+.masthead__menu-item a{
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  text-transform: uppercase;
+  letter-spacing: .3px;
   font-size: .9rem;
 }
 
-/* cells wrap by default (Mac friendly) */
-.page__content th,
-.page__content td{
-  padding: 10px 12px;
-  vertical-align: top;
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-.page__content th{
-  background: rgba(0,0,0,.06);
-  color: var(--ink);
-  text-align: left;
-  border-bottom: 1px solid var(--rule);
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  font-size: .8rem;
-  text-transform: uppercase;
-  letter-spacing: .18px;
-}
-
-.page__content td{
-  border-bottom: 1px solid rgba(0,0,0,.08);
-}
-
-.page__content tr:hover{
-  background: rgba(29,122,80,.06);
-}
-
-/* if table still overflows, allow horizontal scroll (any screen) */
-.page__content table{
-  display: block;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-/* keep header row readable while scrolling horizontally */
-.page__content thead{
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-/* =========================================================
-   SIDEBAR — desktop: vraie colonne gauche (pas une “carte”)
-   ========================================================= */
-
+/* ---------- Sidebar (desktop) ---------- */
+/* On veut une colonne gauche "sobre", pas un gros encadré */
 .sidebar{
   background: transparent;
   border: 0;
   border-radius: 0;
   box-shadow: none;
   padding: 0;
+}
+
+.sidebar nav{
+  border-left: 1px solid var(--rule);
+  padding-left: 1rem;
+  margin-top: .5rem;
 }
 
 .sidebar a{
@@ -199,97 +141,163 @@ pre{
   border-left-color: var(--toxic);
 }
 
-/* Desktop: on cache le titre “Toggle Menu” (inutile) et on laisse la liste en colonne */
-@media (min-width: 64em){
-  .sidebar .nav__title{ display:none !important; }
-  .sidebar nav{
-    border-left: 1px solid var(--rule);
-    padding-left: 1rem;
-    margin-top: .5rem;
+/* Sur desktop, le label "Toggle Menu" n’a aucune utilité : on le masque */
+@media (min-width: 769px){
+  .nav__list label[for="ac-toc"]{
+    display: none !important;
   }
 }
 
-/* =========================================================
-   iPHONE / MOBILE — UN SEUL MENU DANS LA BARRE DU HAUT
-   On utilise le menu de sidebar (nav__list) comme menu principal.
-   ========================================================= */
+/* ---------- Tables (IMPORTANT : Mac + mobile) ---------- */
+/* Stratégie : tables = scroll horizontal propre (plutôt que “3 colonnes écrasées”) */
+.page__content table{
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 
-@media (max-width: 63.9375em) and (hover: none) and (pointer: coarse){
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  background: var(--paper2);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  box-shadow: 0 8px 18px var(--shadow);
+}
 
-  /* Header fixé */
+/* on impose une largeur minimale “doc” pour éviter l’écrasement */
+.page__content table{
+  min-width: 1100px;
+}
+
+.page__content th{
+  background: rgba(0,0,0,.06);
+  color: var(--ink);
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: .85rem;
+  text-transform: uppercase;
+  letter-spacing: .2px;
+  white-space: nowrap;
+}
+
+.page__content td{
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.page__content tr:hover{
+  background: rgba(29,122,80,.06);
+}
+
+/* ---------- MOBILE / iPhone : UN SEUL MENU ---------- */
+/*
+   On :
+   1) fixe la barre du haut,
+   2) supprime le menu greedy-nav (masthead) sur mobile (sinon double système),
+   3) déplace le bouton sidebar (label[for=ac-toc]) DANS la barre, à droite du titre,
+   4) affiche le panneau nav__items sous la barre quand checked.
+*/
+
+@media (max-width: 768px){
+
+  /* Barre fixe */
   .masthead{
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 99999 !important;
+    background: rgba(243,239,230,.96) !important;
+    border-bottom: 1px solid rgba(0,0,0,.12) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
-  /* réserve l’espace sous la barre + safe area */
+  /* Espace sous la barre (safe-area iOS inclus) */
   body{
     padding-top: calc(env(safe-area-inset-top, 0px) + var(--masthead-h)) !important;
   }
 
-  /* On évite le “double bouton” : on tue le toggle du greedy-nav */
-  .greedy-nav__toggle{
+  /* 1) On supprime le menu “haut” du theme sur mobile */
+  .masthead__menu .greedy-nav .visible-links{
     display: none !important;
   }
-
-  /* On garde de la place à droite du titre (pour le hamburger) */
-  .masthead__inner-wrap{
-    padding-right: 64px !important;
+  .masthead__menu .greedy-nav .hidden-links{
+    display: none !important;
+  }
+  .masthead__menu .greedy-nav__toggle{
+    display: none !important;
+  }
+  /* Et on neutralise l’overlay qui rend le titre “transparent” */
+  .greedy-nav__toggle.close:before{
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 
-  /* Le label du menu sidebar = NOTRE bouton hamburger */
-  .nav__list label{
+  /* 2) On “dématérialise” la sidebar : on ne veut pas un gros bloc en haut de page */
+  aside.sidebar, .sidebar{
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  /* 3) On rend le bouton Toggle Menu (label) visible, dans la barre, à droite */
+  .nav__list{
+    position: static !important;
+  }
+
+  .nav__list input#ac-toc{
+    position: fixed !important;
+    /* caché mais accessible */
+    left: -9999px !important;
+    top: -9999px !important;
+  }
+
+  .nav__list label[for="ac-toc"]{
+    position: fixed !important;
+    top: calc(env(safe-area-inset-top, 0px) + 10px) !important;
+    right: 12px !important;
+    z-index: 100000 !important;
+
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
 
-    position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 10px) !important;
-    right: 12px !important;
-    left: auto !important;
-
-    width: 44px !important;
-    height: 34px !important;
-
-    padding: 0 !important;
-    margin: 0 !important;
-
+    padding: .34rem .60rem !important;
     border-radius: 12px !important;
     border: 1px solid rgba(0,0,0,.14) !important;
-    background: rgba(251,248,242,.78) !important;
+    background: rgba(251,248,242,.85) !important;
     box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
 
-    /* on masque le texte “Toggle menu” */
-    font-size: 0 !important;
-    color: transparent !important;
-    z-index: 100000 !important;
-  }
-
-  /* On remplace les pseudo barres +/– du thème par un hamburger propre */
-  .nav__list label::before{
-    content: "☰" !important;
-    font-size: 20px !important;
-    line-height: 1 !important;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
+    font-size: .82rem !important;
+    letter-spacing: .15px !important;
     color: var(--ink) !important;
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    background: transparent !important;
-  }
-  .nav__list label::after{
-    content: "" !important;
-    display: none !important;
+
+    /* look iOS léger */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
 
-  /* Le menu (nav__items) s’ouvre en plein large sous la barre */
+  /* On laisse de la place à droite du titre */
+  .masthead__inner-wrap{
+    padding-right: 110px !important;
+  }
+
+  /* 4) Le panneau menu (nav__items) : sous la barre, plein large */
   .nav__list .nav__items{
     position: fixed !important;
     top: calc(env(safe-area-inset-top, 0px) + var(--masthead-h)) !important;
     left: 0 !important;
     right: 0 !important;
+
     z-index: 99998 !important;
 
     background: rgba(251,248,242,.98) !important;
@@ -297,31 +305,34 @@ pre{
     box-shadow: 0 18px 40px rgba(0,0,0,.12) !important;
 
     padding: .8rem 1rem !important;
-
     max-height: 70vh !important;
     overflow: auto !important;
     -webkit-overflow-scrolling: touch;
 
-    /* état fermé par défaut (le thème gère aussi max-height/opacity) */
+    /* par défaut caché */
+    display: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 
-  /* liens menu plus “tap-friendly” */
+  /* affichage quand checkbox checked */
+  .nav__list input#ac-toc:checked ~ .nav__items{
+    display: block !important;
+  }
+
+  /* liens */
   .nav__list .nav__items a{
-    padding: .55rem .25rem .55rem .65rem !important;
-    border-left: 2px solid transparent;
-    font-size: 1rem;
+    display: block !important;
+    padding: .45rem .25rem .45rem .65rem !important;
+    border-left: 2px solid transparent !important;
+    color: var(--ink) !important;
+    text-decoration: none !important;
   }
   .nav__list .nav__items a:hover{
-    border-left-color: var(--toxic);
-  }
-
-  /* On cache le titre du bloc (si le thème l’affiche) */
-  .nav__title{
-    display: none !important;
+    border-left-color: var(--toxic) !important;
+    color: var(--toxic) !important;
   }
 }
 
-/* =========================================================
-   Marker de debug (pour grep dans main.css)
-   ========================================================= */
+/* ---------- Marker debug ---------- */
 :root{ --HORTUS_MARKER_20260221_1413: 1; }
