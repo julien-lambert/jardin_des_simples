@@ -5,15 +5,16 @@
 @import "minimal-mistakes";
 
 /* =========================================================
-   JARDIN DES SIMPLES — CSS ENTIER (PROPRE, RESPONSIVE)
-   Minimal Mistakes + peau claire "parchemin"
+   JARDIN DES SIMPLES — HORTUS (LIGHT)
    Objectifs :
-   - Desktop/Mac : header sticky, sidebar en vraie colonne gauche, tables lisibles
-   - iPhone : barre fixe; UN SEUL menu (sidebar) intégré à droite du titre;
-             panneau déroulant plein-largeur sous la barre
-   - Ancres : titres jamais cachés sous la barre fixe
+   - Desktop/Mac : header sticky + sidebar colonne gauche (sobre)
+   - iPhone : UNE seule barre sticky, bouton menu à droite DANS la barre,
+              menu déroulant plein-largeur sous la barre (style iOS)
+   - Tables : pas de débordement Mac, scroll horizontal mobile
+   - Ancres : titres non masqués par la barre sticky
    ========================================================= */
 
+/* ---------- Fonts ---------- */
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap");
 
 /* ---------- Variables ---------- */
@@ -27,7 +28,11 @@
   --toxic: #1d7a50;
   --blood: #8b1d1d;
 
-  --masthead-h: 56px; /* hauteur cible mobile */
+  /* hauteur bar mobile (sert aux ancres + top du menu) */
+  --masthead-h: 56px;
+
+  /* marqueur pour grep/debug */
+  --HORTUS_MARKER_20260221_1413: 1;
 }
 
 /* ---------- Base ---------- */
@@ -48,18 +53,56 @@ h1,h2,h3,h4{
   color: var(--ink);
 }
 
-/* Ancres : éviter que les titres passent sous la barre fixe */
-.page__content h2,
-.page__content h3,
-.page__content h4,
-.page__content h5,
-.page__content h6{
-  scroll-margin-top: calc(var(--masthead-h) + 18px);
-}
-
-/* Liens */
 a{ color: var(--toxic); }
 a:hover{ color: #0f5e3a; }
+
+blockquote{
+  border-left: 3px solid var(--blood);
+  padding-left: 1rem;
+  color: var(--muted);
+}
+
+hr{
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+
+/* ---------- Ancres : évite que la barre masque les titres ---------- */
+.page__content h2,
+.page__content h3,
+.page__content h4{
+  scroll-margin-top: calc(env(safe-area-inset-top, 0px) + var(--masthead-h) + 12px);
+}
+
+/* ---------- Header (masthead) ---------- */
+.masthead{
+  background: rgba(243,239,230,.92);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.masthead__menu-item a{
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  letter-spacing: .25px;
+  font-size: .9rem;
+  text-transform: none;
+}
+
+/* Desktop sticky */
+@media (min-width: 769px){
+  .masthead{
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+}
+
+/* ---------- Layout largeur lecture ---------- */
+.page__inner-wrap,
+.page__content{
+  max-width: 980px;
+}
 
 /* Intertitres */
 .page__content h2{
@@ -68,7 +111,7 @@ a:hover{ color: #0f5e3a; }
   margin-top: 2.3rem;
 }
 
-/* Images */
+/* ---------- Images ---------- */
 .page__content img{
   display: block;
   margin: 1.2rem auto;
@@ -79,40 +122,96 @@ a:hover{ color: #0f5e3a; }
   box-shadow: 0 10px 25px var(--shadow);
 }
 
-/* Citations */
-blockquote{
-  border-left: 3px solid var(--blood);
-  padding-left: 1rem;
-  color: var(--muted);
+/* ---------- Code ---------- */
+pre{
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 8px 18px var(--shadow);
 }
 
-/* ---------- Masthead (barre du haut) ---------- */
-.masthead{
-  background: rgba(243,239,230,.92);
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+/* Base tables : jolies + pas de débordement violent */
+.page__content table{
+  width: 100% !important;
+  max-width: 100% !important;
+  border-collapse: collapse;
+  margin: 1.6rem 0;
+  background: var(--paper2);
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 18px var(--shadow);
+}
+
+.page__content th,
+.page__content td{
+  padding: 10px 12px;
+  vertical-align: top;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.page__content th{
+  background: rgba(0,0,0,.06);
+  color: var(--ink);
+  text-align: left;
   border-bottom: 1px solid var(--rule);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  font-size: .85rem;
+  letter-spacing: .2px;
+  text-transform: uppercase;
 }
 
-/* Desktop: sticky propre */
-@media (min-width: 769px){
-  .masthead{
-    position: sticky;
-    top: 0;
-    z-index: 9999;
+.page__content td{
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.page__content tr:hover{
+  background: rgba(29,122,80,.06);
+}
+
+/* Sur écrans “intermédiaires” (MacBook, etc.) : autoriser scroll horizontal si tableau trop large */
+@media (max-width: 1200px){
+  .page__content table{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-/* Typo masthead */
-.masthead__menu-item a{
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  text-transform: uppercase;
-  letter-spacing: .3px;
-  font-size: .9rem;
+/* Mobile : scroll horizontal + première colonne sticky */
+@media (max-width: 768px){
+  .page__content table{
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+  .page__content th,
+  .page__content td{
+    white-space: nowrap !important;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .page__content table th:first-child,
+  .page__content table td:first-child{
+    position: sticky;
+    left: 0;
+    background: var(--paper2);
+    box-shadow: 6px 0 12px rgba(0,0,0,.08);
+  }
 }
 
-/* ---------- Sidebar (desktop) ---------- */
-/* On veut une colonne gauche "sobre", pas un gros encadré */
+/* =========================================================
+   SIDEBAR (desktop) : colonne gauche sobre (pas de “carte”)
+   ========================================================= */
+
 .sidebar{
   background: transparent;
   border: 0;
@@ -121,91 +220,40 @@ blockquote{
   padding: 0;
 }
 
-.sidebar nav{
-  border-left: 1px solid var(--rule);
-  padding-left: 1rem;
-  margin-top: .5rem;
-}
-
 .sidebar a{
   color: var(--ink);
   text-decoration: none;
   border-left: 2px solid transparent;
   padding-left: .55rem;
   display: block;
-  line-height: 1.35;
+  line-height: 1.3;
 }
-
 .sidebar a:hover{
   color: var(--toxic);
   border-left-color: var(--toxic);
 }
 
-/* Sur desktop, le label "Toggle Menu" n’a aucune utilité : on le masque */
 @media (min-width: 769px){
+  .sidebar nav{
+    border-left: 1px solid var(--rule);
+    padding: 0 0 0 1rem;
+    margin-top: .5rem;
+    background: transparent;
+  }
+  /* Sur desktop : on n’affiche pas le “Toggle Menu” (inutile) */
   .nav__list label[for="ac-toc"]{
     display: none !important;
   }
 }
 
-/* ---------- Tables (IMPORTANT : Mac + mobile) ---------- */
-/* Stratégie : tables = scroll horizontal propre (plutôt que “3 colonnes écrasées”) */
-.page__content table{
-  display: block;
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+/* =========================================================
+   MOBILE (iPhone) : UNE seule barre + bouton menu à droite
+   ========================================================= */
 
-  border-collapse: collapse;
-  margin: 1.6rem 0;
-  background: var(--paper2);
-  border: 1px solid var(--rule);
-  border-radius: 12px;
-  box-shadow: 0 8px 18px var(--shadow);
-}
+/* Règle mobile robuste : pointer coarse = vrai téléphone */
+@media (max-width: 768px) and (hover: none) and (pointer: coarse){
 
-/* on impose une largeur minimale “doc” pour éviter l’écrasement */
-.page__content table{
-  min-width: 1100px;
-}
-
-.page__content th{
-  background: rgba(0,0,0,.06);
-  color: var(--ink);
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid var(--rule);
-  font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
-  font-size: .85rem;
-  text-transform: uppercase;
-  letter-spacing: .2px;
-  white-space: nowrap;
-}
-
-.page__content td{
-  padding: 10px 12px;
-  border-bottom: 1px solid rgba(0,0,0,.08);
-  vertical-align: top;
-  white-space: nowrap;
-}
-
-.page__content tr:hover{
-  background: rgba(29,122,80,.06);
-}
-
-/* ---------- MOBILE / iPhone : UN SEUL MENU ---------- */
-/*
-   On :
-   1) fixe la barre du haut,
-   2) supprime le menu greedy-nav (masthead) sur mobile (sinon double système),
-   3) déplace le bouton sidebar (label[for=ac-toc]) DANS la barre, à droite du titre,
-   4) affiche le panneau nav__items sous la barre quand checked.
-*/
-
-@media (max-width: 768px){
-
-  /* Barre fixe */
+  /* Barre fixée */
   .masthead{
     position: fixed !important;
     top: 0 !important;
@@ -214,90 +262,81 @@ blockquote{
     z-index: 99999 !important;
     background: rgba(243,239,230,.96) !important;
     border-bottom: 1px solid rgba(0,0,0,.12) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
   }
 
-  /* Espace sous la barre (safe-area iOS inclus) */
+  /* Espace sous barre */
   body{
     padding-top: calc(env(safe-area-inset-top, 0px) + var(--masthead-h)) !important;
   }
 
-  /* 1) On supprime le menu “haut” du theme sur mobile */
-  .masthead__menu .greedy-nav .visible-links{
-    display: none !important;
-  }
-  .masthead__menu .greedy-nav .hidden-links{
-    display: none !important;
-  }
-  .masthead__menu .greedy-nav__toggle{
-    display: none !important;
-  }
-  /* Et on neutralise l’overlay qui rend le titre “transparent” */
-  .greedy-nav__toggle.close:before{
-    opacity: 0 !important;
-    pointer-events: none !important;
+  /* Empêche l’effet “titre transparent” : on neutralise tout overlay/opacity */
+  .masthead,
+  .masthead *{
+    opacity: 1 !important;
   }
 
-  /* 2) On “dématérialise” la sidebar : on ne veut pas un gros bloc en haut de page */
-  aside.sidebar, .sidebar{
-    margin: 0 !important;
+  /* On “retire” la sidebar du flux, MAIS on garde son label/nav en fixed */
+  aside.sidebar,
+  .sidebar,
+  .sidebar__left,
+  .sidebar__right{
+    height: 0 !important;
     padding: 0 !important;
-    background: transparent !important;
+    margin: 0 !important;
     border: 0 !important;
+    background: transparent !important;
     box-shadow: none !important;
+    overflow: visible !important;
   }
 
-  /* 3) On rend le bouton Toggle Menu (label) visible, dans la barre, à droite */
-  .nav__list{
-    position: static !important;
-  }
-
-  .nav__list input#ac-toc{
-    position: fixed !important;
-    /* caché mais accessible */
-    left: -9999px !important;
-    top: -9999px !important;
-  }
-
+  /* Le label Toggle Menu devient le bouton “☰” dans la barre */
   .nav__list label[for="ac-toc"]{
     position: fixed !important;
-    top: calc(env(safe-area-inset-top, 0px) + 10px) !important;
+    top: calc(env(safe-area-inset-top, 0px) + 8px) !important;
     right: 12px !important;
+    left: auto !important;
     z-index: 100000 !important;
 
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
 
-    padding: .34rem .60rem !important;
+    width: 40px !important;
+    height: 32px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
     border-radius: 12px !important;
     border: 1px solid rgba(0,0,0,.14) !important;
     background: rgba(251,248,242,.85) !important;
     box-shadow: 0 8px 18px rgba(0,0,0,.10) !important;
 
-    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace !important;
-    font-size: .82rem !important;
-    letter-spacing: .15px !important;
-    color: var(--ink) !important;
-
-    /* look iOS léger */
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    font-size: 0 !important; /* cache “Toggle Menu” */
   }
 
-  /* On laisse de la place à droite du titre */
-  .masthead__inner-wrap{
-    padding-right: 110px !important;
+  /* Icône burger */
+  .nav__list label[for="ac-toc"]::before{
+    content: "☰";
+    font-size: 18px;
+    line-height: 1;
+    color: var(--ink);
+    font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
   }
 
-  /* 4) Le panneau menu (nav__items) : sous la barre, plein large */
+  /* Laisse respirer le titre à gauche (sinon il passe dessous le bouton) */
+  .masthead__title,
+  .site-title{
+    padding-right: 56px !important;
+  }
+
+  /* Menu déroulant : plein-largeur sous la barre */
+  .nav__list nav,
   .nav__list .nav__items{
     position: fixed !important;
     top: calc(env(safe-area-inset-top, 0px) + var(--masthead-h)) !important;
     left: 0 !important;
     right: 0 !important;
-
     z-index: 99998 !important;
 
     background: rgba(251,248,242,.98) !important;
@@ -309,30 +348,28 @@ blockquote{
     overflow: auto !important;
     -webkit-overflow-scrolling: touch;
 
-    /* par défaut caché */
-    display: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  /* affichage quand checkbox checked */
-  .nav__list input#ac-toc:checked ~ .nav__items{
     display: block !important;
   }
 
-  /* liens */
+  /* IMPORTANT : checkbox toggle */
+  .nav__list input[type="checkbox"] ~ .nav__items{
+    display: none !important;
+  }
+  .nav__list input[type="checkbox"]:checked ~ .nav__items{
+    display: block !important;
+  }
+
+  /* Liens menu : confort iOS */
   .nav__list .nav__items a{
     display: block !important;
-    padding: .45rem .25rem .45rem .65rem !important;
-    border-left: 2px solid transparent !important;
-    color: var(--ink) !important;
-    text-decoration: none !important;
+    padding: .55rem .25rem .55rem .65rem !important;
+    border-left: 2px solid transparent;
   }
   .nav__list .nav__items a:hover{
-    border-left-color: var(--toxic) !important;
-    color: var(--toxic) !important;
+    border-left-color: var(--toxic);
   }
 }
 
-/* ---------- Marker debug ---------- */
-:root{ --HORTUS_MARKER_20260221_1413: 1; }
+/* =========================================================
+   Fin
+   ========================================================= */
