@@ -1,16 +1,18 @@
-# Jardin des simples — GitHub Pages + Jekyll (rendu Markdown correct)
+# Split Jardin des Simples into multiple pages
 
-Ce dépôt suit la structure Jekyll minimale (nécessaire pour avoir un vrai layout + CSS propre).
+Copy these files into the root of your repo (same level as your current index.md),
+and replace `_data/navigation.yml` with the provided `navigation.yml`.
 
-## Fichiers
-- `index.md` : ton contenu (Markdown pur)
-- `_layouts/default.html` : le template HTML (charge le CSS + les polices)
-- `assets/css/style.scss` : ton CSS (Jekyll génère `assets/css/style.css`)
-- `_config.yml` : configuration + thème `minima` (base)
+Then delete/rename your old monolithic index.md, and commit.
 
-## Activation GitHub Pages
-Settings → Pages → Source: Deploy from a branch → Branch: `main` → Folder: `/(root)` → Save.
-
-## Important
-- Ne mets pas de `.nojekyll`.
-- Supprime tout workflow `.github/workflows/*` (laisse Pages gérer le build Jekyll).
+Files created:
+- index.md (landing page with links)
+- le-site.md
+- introduction.md
+- des-origines-antiques-au-dispositif-monastique.md
+- de-l-abbaye-a-l-universite-le-basculement-des-juridictions-du-soin.md
+- legende.md
+- les-plantes.md
+- plantes-remarquables-du-site.md
+- geometrie.md
+- signaletique-prevention.md
